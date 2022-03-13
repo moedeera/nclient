@@ -1,18 +1,17 @@
-import logo from './logo.svg';
+
 import './App.css';
 import axios from 'axios'
+import { Homepage } from './pages/Homepage';
+import {About} from './pages/About'
+
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
 
 const fetchTest = async () => {
   var id = 2
  try {
-    // const config = {
-    //   headers: {
-    //     "Content-Type": "application/json",
-    //   },
-    // };
-
+   
     const string = `https://econnectsocial.herokuapp.com/api/users/profiles/${id}`;
     console.log(string, id);
     const res = await axios.get(string);
@@ -31,20 +30,12 @@ fetchTest()
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Hello world
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+   <Router>
+     <Routes>
+     <Route path="/" element={<Homepage/>}/>
+     <Route path="/about" element={<About/>}/>
+     </Routes>
+   </Router>
     </div>
   );
 }
