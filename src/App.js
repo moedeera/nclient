@@ -7,11 +7,11 @@ function App() {
 const fetchTest = async () => {
   var id = 2
  try {
-    const config = {
-      headers: {
-        "Content-Type": "application/json",
-      },
-    };
+    // const config = {
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    // };
 
     const string = `https://econnectsocial.herokuapp.com/api/users/profiles/${id}`;
     console.log(string, id);
