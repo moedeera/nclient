@@ -14,7 +14,7 @@ export const Nav = () => {
         }}
         className={active === 1 ? "active" : ""}
       >
-        <i class="fas fa-home fa-2x "></i>
+        <i class="fas fa-home "></i>
       </a>
       <a
         href="#portfolio"
@@ -23,7 +23,7 @@ export const Nav = () => {
         }}
         className={active === 2 ? "active" : ""}
       >
-        <i class="fas fa-code fa-2x"></i>
+        <i class="fas fa-code "></i>
       </a>
 
       <a
@@ -33,7 +33,7 @@ export const Nav = () => {
         }}
         className={active === 3 ? "active" : ""}
       >
-        <i class="fas fa-question fa-2x"></i>
+        <i class="fas fa-question "></i>
       </a>
 
       <a
@@ -43,7 +43,7 @@ export const Nav = () => {
         }}
         className={active === 4 ? "active" : ""}
       >
-        <i class="fas fa-comment fa-2x"></i>
+        <i class="fas fa-comment "></i>
       </a>
     </nav>
   );
