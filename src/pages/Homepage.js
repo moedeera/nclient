@@ -1,17 +1,21 @@
-import React from 'react'
-import { Link } from "react-router-dom";
+import React from "react";
+
+import { Header } from "../components/header/Header";
+import { Nav } from "../components/Nav/Nav";
+import { About } from "../components/About/About";
+import { Portfolio } from "../components/Portfolio/Portfolio";
+import { Footer } from "../components/Footer/Footer";
+import { Contact } from "../components/Contact/Contact";
 
 export const Homepage = () => {
   return (
     <div>
-        <h1>Welcome to the Main Page</h1>
-        
-<Link to='/about'>
-<h3>Go to About page</h3>
-</Link>
-
-
-
+      <Header />
+      <Nav />
+      <About />
+      <Portfolio />
+      <Contact />
+      <Footer />
     </div>
-  )
-}
+  );
+};
