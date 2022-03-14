@@ -38,7 +38,7 @@ body {
   background-color: var(--color-bg);
   color: white;
   line-height: 1;
-  background-image: url();
+
   --transition: all 400ms ease;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

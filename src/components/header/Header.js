@@ -3,6 +3,7 @@ import logo from "../../logo.svg";
 import "../../index.css";
 import "./header.css";
 import { CTA } from "./CTA";
+import { Socials } from "./Socials";
 
 export const Header = () => {
   return (
@@ -11,6 +12,8 @@ export const Header = () => {
         <h5>Hello</h5>
         <h1>Moe Deera</h1>
         <h5 className="text-light">Full Stack Developer</h5>
+        <CTA />
+        <Socials />
         <div className="me">
           <img src={logo}></img>
         </div>
