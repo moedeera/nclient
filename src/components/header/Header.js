@@ -15,7 +15,7 @@ export const Header = () => {
         <CTA />
         <Socials />
         <div className="me">
-          <img src={logo}></img>
+          <img src={logo} alt="image" />
         </div>
         <a href="#contact" className="scroll_down">
           Scroll Down
