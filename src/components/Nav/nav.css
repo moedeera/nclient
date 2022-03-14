@@ -1,0 +1,49 @@
+nav {
+  background-color: rgba(0, 0, 0, 0.329);
+
+  padding: 0.7rem 1.7rem;
+  z-index: 2;
+  position: fixed;
+
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+
+  bottom: 2rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: 5px;
+  backdrop-filter: blur(15px);
+}
+
+nav a {
+  background: transparent;
+  padding: 0.9rem 1.7rem;
+  border-radius: 50%;
+  display: flex;
+  color: var(--color--light);
+  font-size: 1.1rem;
+}
+nav a:hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.active {
+  background-color: rgba(255, 255, 255, 0.234);
+  color: white;
+}
+
+/* nav::after {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  background-color: aliceblue;
+}
+
+nav::before {
+  content: "";
+  width: 2rem;
+  height: 2px;
+  background-color: aliceblue;
+} */
