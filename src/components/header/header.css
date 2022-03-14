@@ -20,5 +20,33 @@ header {
 .header_socials {
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
+  height: 35vh;
   align-items: center;
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+}
+.header_socials::after {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background-color: var(--color-primary);
+}
+.header_socials::before {
+  content: "";
+  width: 1px;
+  height: 2rem;
+  background-color: var(--color-primary);
+}
+/***********************ME********************/
+.me {
+  background: linear-gradient(white, transparent);
+  width: 22rem;
+  height: 30rem;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: 18rem;
+  border-radius: 12rem 12rem 0 0;
 }
