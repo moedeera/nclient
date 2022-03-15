@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { UserContextProvider } from "../../Context/Context";
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useState } from "react";
+// import { useNavigate } from "react-router-dom";
 import { Nav } from "./Nav/NavTop/Nav";
 import { NavRight } from "./Nav/NavRight/NavRight";
 import { NavLeft } from "./Nav/NavLeft/NavLeft";
