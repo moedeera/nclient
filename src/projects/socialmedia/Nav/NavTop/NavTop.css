@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Roboto:wght@100;400;700;900&display=swap");
 .social-nav-top {
-  position: absolute;
+  position: fixed;
   top: 0;
   height: 7vh !important;
   width: 100%;
