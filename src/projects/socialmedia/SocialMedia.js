@@ -9,8 +9,9 @@ import { NavLeft } from "./Nav/NavLeft/NavLeft";
 import "./socialmedia.css";
 
 export const SocialMedia = () => {
-  const [log, setLog] = useState(true);
-  const navigate = useNavigate();
+  // const [log, setLog] = useState(true);
+  var log = true;
+  // const navigate = useNavigate();
 
   return (
     <UserContextProvider>
