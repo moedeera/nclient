@@ -2,9 +2,8 @@
   position: fixed;
   right: 9vw;
   top: 80px;
-  width: 25%;
-  max-width: 400px;
-  min-width: 180px;
+
+  left: calc(50vw+22.5vw+250px);
 
   color: black;
 }
@@ -13,12 +12,12 @@
   flex-direction: column;
   justify-content: space-around;
   height: 45vh;
-  width: 70%;
+
   border: 1px solid grey;
   text-align: center;
   grid-row-gap: 0px;
   background: white;
-  margin-left: 110px;
+
   padding: 7px;
   cursor: pointer;
   transition: 400ms ease-in-out;
@@ -80,12 +79,11 @@
   color: white;
   margin-top: 2vh;
   height: 35vh;
-  width: 70%;
+
   border: 2px solid grey;
   text-align: center;
   grid-row-gap: 0px;
 
-  margin-left: 110px;
   background: url(./ad.jpg) no-repeat center center/cover;
   cursor: pointer;
   transition: 400ms ease-in-out;
