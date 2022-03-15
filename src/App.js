@@ -1,7 +1,10 @@
 import "./index.css";
 import axios from "axios";
-import { Homepage } from "./pages/Homepage";
-import { About } from "./pages/About";
+import { Homepage } from "./projects/Homepage";
+import { About } from "./projects/About";
+import { Mainpage } from "./projects/Mainpage";
+import { Login } from "./projects/Login";
+import { SocialMedia } from "./projects/socialmedia/SocialMedia";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -26,6 +29,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Homepage />} />
           <Route path="/about" element={<About />} />
+
+          <Route path="socialmedia" element={<SocialMedia />}>
+            <Route index element={<Mainpage />} />
+            <Route path="login" element={<Login />} />
+          </Route>
         </Routes>
       </Router>
     </div>
