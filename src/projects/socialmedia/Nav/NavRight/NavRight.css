@@ -3,7 +3,7 @@
 
   top: 80px;
 
-  left: calc(50vw+22.5vw);
+  left: calc(50vw + 22.5vw + 10px);
 
   color: black;
 }
@@ -96,9 +96,6 @@
 }
 
 @media screen and (max-width: 1424px) {
-  .nav-right-stats-weekly-info h5 {
-    display: none;
-  }
 }
 
 @media screen and (max-width: 1224px) {

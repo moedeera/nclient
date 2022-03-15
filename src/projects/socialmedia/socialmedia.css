@@ -21,22 +21,25 @@ body {
 
 @media screen and (max-width: 1224px) {
   .nav-left {
-    left: 0;
-    min-width: 185px;
+    right: auto;
+    left: calc(17.5vw - 125px);
   }
   .content {
-    width: 78vw;
-    left: 60vw;
+    transform: translateX(0);
+    width: 58vw;
+    left: 35vw;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .nav-left,
   .nav-right {
     display: none;
   }
+
   .content {
-    width: 100vw;
-    left: 50vw;
+    width: calc(100vw - 6px);
+
+    left: 3px;
   }
 }
