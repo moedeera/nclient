@@ -84,7 +84,7 @@
 .social-nav-top ul i:hover {
   color: var(--color-secondary-social);
 }
-@media screen and (max-width: 1124px) {
+@media screen and (max-width: 1224px) {
   .nav-lg {
     display: none;
   }
