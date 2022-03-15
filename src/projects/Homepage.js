@@ -11,7 +11,7 @@ import "../index.css";
 
 export const Homepage = () => {
   return (
-    <div>
+    <div className="homepage">
       <Header />
       <Nav />
       <Portfolio />

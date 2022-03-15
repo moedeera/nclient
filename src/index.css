@@ -27,6 +27,9 @@ html {
   --container-width-lg: 75%;
   --container-width-md: 86%;
   --container-width-ms: 90%;
+  /*Social media*/
+  --color-primary-social: rgb(226, 135, 67);
+  --color-secondary-social: #154c79;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -37,14 +40,17 @@ body {
   margin: 0;
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
-  background-color: var(--color-bg);
+
   color: white;
   line-height: 1;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.homepage {
+  background-color: var(--color-bg);
+  height: 200vh;
+}
 .container {
   width: var(--container-width-lg);
   margin: 0 auto;
