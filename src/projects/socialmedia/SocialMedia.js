@@ -15,7 +15,7 @@ export const SocialMedia = () => {
   return (
     <UserContextProvider>
       {" "}
-      <button
+      {/* <button
         onClick={() => {
           setLog(!log);
           if (log) {
@@ -26,7 +26,7 @@ export const SocialMedia = () => {
         }}
       >
         toggle Login
-      </button>
+      </button> */}
       <div className="nav">
         <Nav status={log} />
         <NavLeft status={log} />
