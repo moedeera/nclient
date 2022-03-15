@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useContext, useState, useEffect } from "react";
+import { useState } from "react";
 import "./PostsFeed.css";
 export const PostsFeed = ({ LikeUpdate, CommentUpdate }) => {
   const user = {
@@ -114,7 +114,7 @@ export const PostsFeed = ({ LikeUpdate, CommentUpdate }) => {
     },
   ];
   const [formComment, setFormComment] = useState([]);
-  const [postID, setPostID] = useState([]);
+  const [postID] = useState([]);
 
   return (
     <div className="Feed">
