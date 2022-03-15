@@ -4,7 +4,7 @@
   top: 0;
   height: 7vh !important;
   width: 100vw;
-
+  z-index: 3;
   background: var(--color-primary-social);
   display: flex;
   flex-direction: row;

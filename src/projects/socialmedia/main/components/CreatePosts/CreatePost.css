@@ -1,7 +1,7 @@
 .CreatePost {
   background-color: var(--color-primary-social);
 
-  border: 1px solid white;
+  border: 1px solid rgba(128, 128, 128, 0.616);
   width: 100%;
   margin: 0 auto;
   padding: 5px 10px;
