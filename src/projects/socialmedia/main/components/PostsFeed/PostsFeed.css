@@ -1,110 +1,66 @@
-.Feed img {
-  width: 100%;
-}
-.Post-Feed {
-  width: 100%;
-
-  margin: 15px auto;
+.postFeed-post {
+  border: 1px solid rgba(128, 128, 128, 0.39);
   display: flex;
   flex-direction: column;
-  text-align: left;
-  justify-content: center;
+  padding: 25px 20px;
+  gap: 15px;
+  margin: 20px 0;
+  width: 100%;
+  background: var(--color-light);
+  cursor: pointer;
+}
+.postFeed-post:hover {
+  background-color: rgba(128, 128, 128, 0.106);
+}
+.postFeed-post-info {
+  display: flex;
+  gap: 2rem;
   align-items: center;
 }
-.Posts {
-  width: 100%;
-  margin: 5px 0px;
-  border: 1px solid grey;
-  background: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  transition: 2s ease-in-out;
-}
-.PostFeed-img {
-  width: 80px;
-  height: 80px;
+.postFeed-post-info img {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
+  cursor: pointer;
 }
-.PostPic {
-  width: auto;
-  max-width: 600px;
-  height: auto;
-  margin: 10px auto;
+.postFeed-post-image :hover {
+  opacity: 0.96;
 }
-.PosterInfo {
-  padding: 4px;
-  margin: 5px;
+.postFeed-post-info-stamp {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
-  gap: 7px;
-  border-radius: 10px;
-  font-size: 12px;
+  gap: 0.5rem;
 }
-.Poster {
-  padding: 5px;
-  display: grid;
-  grid-template-columns: 1fr 8fr;
-  align-items: center;
+.postFeed-post-info-stamp h3 {
+  color: var(--color-secondary-social);
+  font-weight: bold;
 }
-.CreatePost {
-  background-color: var(--color-primary-social);
-
-  border: 1px solid rgba(128, 128, 128, 0.616);
+.postFeed-post-image {
   width: 100%;
-  margin: 0 auto;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background: whitesmoke;
-  color: #282c34;
-  display: grid;
-  grid-template-columns: 1fr 5fr;
-  align-items: center;
-}
-.Interactions {
-  width: 80%;
+  max-width: 800px;
   display: flex;
-  justify-content: space-between;
+  cursor: pointer;
 }
-.SubmitComment {
-  width: 100%;
+.postFeed-post-stats {
   display: flex;
-  justify-content: flex-end;
-  padding: 10px;
+  justify-content: flex-start;
+  gap: 4rem;
+  padding: 15px 0;
 }
-.SubmitComment button {
-  padding: 7px, 20px;
-  border-radius: 5px;
-  font-size: 16px;
+.postFeed-post-stats > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }
-.Create-Post {
-  border-bottom: 1px solid rgba(128, 128, 128, 0.521);
-  padding: 10px;
-  display: grid;
-  grid-template-columns: 1fr 6fr;
-  width: 80%;
-  justify-content: center;
-  align-items: center;
+.postFeed-post-stats small {
+  margin-left: 1rem;
 }
-.Poster img {
-  border: 1px solid;
-  vertical-align: middle;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
+.postFeed-post-stats i {
+  font-size: 20px;
+  cursor: pointer;
 }
-.Create-Post input {
-  font-size: 16px;
-  border: none;
-  background: rgba(128, 128, 128, 0.519);
-  border-radius: 10px;
-  color: red !important;
-  padding: 10px;
-  width: 100%;
-}
-.Create-Post img {
-  border-radius: 50%;
-  padding: 5px;
+.postFeed-post-text {
+  color: var(--color-secondary-social);
+  letter-spacing: 1px;
+  cursor: pointer;
 }
