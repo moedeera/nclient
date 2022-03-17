@@ -27,7 +27,6 @@ export const PostsManagement = () => {
   };
   // GetsPersonalPosts
   const GetPosts = async () => {
-    var postIDs = [];
     if (user) {
       const config = {
         headers: {
@@ -66,7 +65,7 @@ export const PostsManagement = () => {
 
   useEffect(() => {
     GetPosts();
-  }, []);
+  }, [posts]);
 
   return {
     posts,

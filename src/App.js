@@ -1,5 +1,5 @@
 import "./index.css";
-import axios from "axios";
+
 import { Homepage } from "./projects/Homepage";
 
 import { Mainpage } from "./projects/socialmedia/main/Mainpage";
