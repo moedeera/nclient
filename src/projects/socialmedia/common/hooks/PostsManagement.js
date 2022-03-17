@@ -65,7 +65,7 @@ export const PostsManagement = () => {
 
   useEffect(() => {
     GetPosts();
-  }, [posts]);
+  }, []);
 
   return {
     posts,

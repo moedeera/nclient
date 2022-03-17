@@ -29,7 +29,7 @@ export const CreatePost = () => {
     }
   };
   useEffect(() => {
-    const timeId = setTimeout(() => {
+    setTimeout(() => {
       setAlert(false);
     }, 3000);
   }, [alert]);
