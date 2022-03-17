@@ -10,9 +10,9 @@ export const Portfolio = () => {
     <section id="portfolio" className="container">
       <h2>Portfolio</h2>
       <div className="portfolio_container">
-        <article className="portfolio_item">
+        <article className="portfolio_item social-media-project">
           <img src={social} alt="" />
-          <div className="portfolio_item_image">
+          <div className="portfolio_item_image ">
             <h3>Social Media website</h3>
             <div className="portfolio_links">
               <a

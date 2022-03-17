@@ -70,7 +70,7 @@
   width: 30%;
 
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
 }
 .menu-bar {
@@ -80,13 +80,20 @@
   font-size: 24px;
 }
 .social-nav-top li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
   cursor: pointer;
 }
-.social-nav-top ul i:hover {
+.social-nav-top ul li:hover {
   color: var(--color-secondary-social);
 }
 @media screen and (max-width: 1224px) {
   .nav-lg {
+    display: none !important;
+  }
+  .social-nav-top h5 {
     display: none;
   }
 }

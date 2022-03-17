@@ -1,9 +1,39 @@
 import React from "react";
 import "./CreatePost.css";
 import pic from "./blank-avatar.png";
+import { useState, useEffect } from "react";
+import { PostsManagement } from "../../../common/hooks/PostsManagement";
 export const CreatePost = () => {
+  const [alert, setAlert] = useState(false);
+  const { posts } = PostsManagement();
+  console.log(posts);
+  const [postBox, setPostBox] = useState({
+    PstText: "",
+    PstPicture: "",
+  });
+  const onPostBoxChange = (e) => {
+    setPostBox({ ...postBox, PstText: e.target.value });
+  };
+
   var jet = false;
-  var alert = false;
+  const onPostSubmission = () => {
+    if (postBox.PstText === "") {
+      console.log(postBox.PstText, "it was empty");
+
+      setAlert(true);
+    } else {
+      setPostBox({
+        ...postBox,
+        PstPicture: "",
+      });
+    }
+  };
+  useEffect(() => {
+    const timeId = setTimeout(() => {
+      setAlert(false);
+    }, 3000);
+  }, [alert]);
+
   return (
     <div className="CreatePost">
       <img src={pic} alt="new" />
@@ -13,6 +43,10 @@ export const CreatePost = () => {
             type="textarea"
             className="textarea"
             placeholder="Share a Post"
+            value={postBox.PstText}
+            onChange={(e) => {
+              onPostBoxChange(e);
+            }}
           />
         </div>
         {jet ? (
@@ -20,16 +54,30 @@ export const CreatePost = () => {
         ) : (
           ""
         )}
-        {alert ? <p style={{ color: "crimson" }}>Please Enter a Post</p> : ""}
+        {alert ? (
+          <p style={{ color: "crimson", padding: "10px 0" }}>
+            Please Enter a Post
+          </p>
+        ) : (
+          ""
+        )}
 
         <div className="MCbuttons">
-          <i class="fas fa-image"></i>
+          <i className="fas fa-image"></i>
 
-          <i class="fas fa-video"></i>
+          <i className="fas fa-video"></i>
 
-          <i class="fas fa-music fa"></i>
+          <i className="fas fa-music fa"></i>
 
-          <button className="btn btn-social-primary">Post</button>
+          <button
+            className="btn btn-social-primary"
+            onClick={() => {
+              setAlert(!alert);
+              onPostSubmission(postBox.PstText);
+            }}
+          >
+            Post
+          </button>
         </div>
       </div>
     </div>

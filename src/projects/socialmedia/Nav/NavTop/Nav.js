@@ -24,17 +24,27 @@ export const Nav = () => {
         <ul className="menu-items">
           <li>
             <i class="fas fa-home fa-2x"></i>
+            <h5>Home</h5>
           </li>
           <li>
             <i class="fas fa-bell fa-2x"></i>
+            <h5>Notifications</h5>
           </li>
+
+          <li>
+            <i class="fab fa-hotjar "></i>
+            <h5>Trending</h5>
+          </li>
+
           <li>
             {" "}
             <i class="fas fa-comment-alt fa-2x"></i>
+            <h5>Inbox</h5>
           </li>
 
           <li className="nav-lg">
             <i class="fas fa-user-friends fa-2x"></i>
+            <h5>Friends</h5>
           </li>
 
           <li>
