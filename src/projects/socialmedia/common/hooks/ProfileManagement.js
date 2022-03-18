@@ -4,7 +4,7 @@ import { UserContext } from "../../../../Context/Context";
 import axios from "axios";
 export const ProfileManagement = () => {
   const [profiles, setProfiles] = useState([]);
-  const [friendProfiles, setFriendProfiles] = useState([]);
+  // const [friendProfiles, setFriendProfiles] = useState([]);
   const [suggestedProfiles, setSuggestedProfiles] = useState([]);
   const user = useContext(UserContext);
 
@@ -15,7 +15,7 @@ export const ProfileManagement = () => {
       const res = await axios.get("http://localhost:8080/profiles");
       newProfiles = res.data;
     } catch (error) {
-      const res = await axios.get("http://deercoded.herokuapp.com/profiles");
+      const res = await axios.get("https://deercoded.herokuapp.com/profiles");
       newProfiles = res.data;
     }
 
