@@ -3,7 +3,7 @@
   position: fixed;
   top: 80px;
   width: 250px;
-  right: calc(50vw + 22.5vw + 10px);
+  right: calc(50vw + 15vw + 20px);
   color: black;
 }
 
@@ -38,12 +38,13 @@
   gap: 5px;
   width: 100%;
 }
+
 .nav-left-img img {
-  max-width: 95px;
-  max-height: 95px;
+  width: 85px;
+  height: 85px;
   border-radius: 50%;
-  border: 2px solid white;
 }
+
 .nav-left-profile-image-color1 {
   position: absolute;
   width: 100%;

@@ -5,8 +5,9 @@ import { useState, useEffect } from "react";
 import { PostsManagement } from "../../../common/hooks/PostsManagement";
 export const CreatePost = () => {
   const [alert, setAlert] = useState(false);
-  const { posts } = PostsManagement();
-  console.log(posts);
+  const { posts, CreatePosts } = PostsManagement();
+  // console.log(posts); // why does this get called every time I type
+  // Also why does the alert happen no matter what?
   const [postBox, setPostBox] = useState({
     PstText: "",
     PstPicture: "",
@@ -18,12 +19,14 @@ export const CreatePost = () => {
   var jet = false;
   const onPostSubmission = () => {
     if (postBox.PstText === "") {
-      console.log(postBox.PstText, "it was empty");
+      console.log(postBox.PstText, "the text box empty");
 
       setAlert(true);
     } else {
+      CreatePosts(postBox);
       setPostBox({
         ...postBox,
+        PstText: "",
         PstPicture: "",
       });
     }
@@ -63,7 +66,21 @@ export const CreatePost = () => {
         )}
 
         <div className="MCbuttons">
-          <i className="fas fa-image"></i>
+          <div>
+            <form>
+              <label htmlFor="file" type="submit">
+                <i className="fas fa-image"></i>
+              </label>
+              <input
+                style={{ display: "none" }}
+                id="file-input"
+                type="file"
+                onChange={(e) => {
+                  setPostBox({ ...postBox, PstPicture: e.target.files[0] });
+                }}
+              />
+            </form>
+          </div>
 
           <i className="fas fa-video"></i>
 
@@ -71,8 +88,7 @@ export const CreatePost = () => {
 
           <button
             className="btn btn-social-primary"
-            onClick={() => {
-              setAlert(!alert);
+            onClick={(e) => {
               onPostSubmission(postBox.PstText);
             }}
           >

@@ -1,14 +1,11 @@
 import React from "react";
-import { PostsManagement } from "../../../common/hooks/PostsManagement";
 
 import "./PostsFeed.css";
-export const PostsFeed = () => {
-  const { posts } = PostsManagement();
-
+export const PostsFeed = ({ Posts }) => {
   return (
     <div className="Feed">
       <div className="Post-Feed">
-        {posts.map((Post) => (
+        {Posts.map((Post) => (
           <div className="postFeed-post" key={Post.id}>
             <div className="postFeed-post-info">
               <img src={Post.PosterPic} alt="" />
@@ -24,7 +21,7 @@ export const PostsFeed = () => {
             <div className="postFeed-post-stats">
               <div>
                 <i className="fas fa-eye " style={{ color: "teal" }}></i>
-                <small>12</small>
+                <small>{Post.views}</small>
               </div>
               <div>
                 <i className="far fa-heart" style={{ color: "crimson" }}></i>

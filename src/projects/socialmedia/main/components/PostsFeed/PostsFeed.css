@@ -8,6 +8,7 @@
   width: 100%;
   background: var(--color-light);
   cursor: pointer;
+  line-height: 1.6em;
 }
 .postFeed-post:hover {
   background-color: rgba(128, 128, 128, 0.106);
