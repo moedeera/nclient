@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../../../Context/Context";
 
@@ -12,23 +12,26 @@ export const PostsManagement = () => {
   const GetAllPosts = async () => {
     let newPosts;
 
-    try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-      console.log(user);
+    if (process.env)
+      try {
+        const config = {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        };
+        console.log(user);
 
-      const testvar = await axios.get("http://localhost:8080/posts", config);
-      console.log("retrieved all public posts", testvar.data);
-      newPosts = testvar.data;
-    } catch (error) {
-      const testvar = await axios.get("https://deercoded.herokuapp.com/posts");
+        const testvar = await axios.get("http://localhost:8080/posts", config);
+        console.log("retrieved all public posts", testvar.data);
+        newPosts = testvar.data;
+      } catch (error) {
+        const testvar = await axios.get(
+          "https://deercoded.herokuapp.com/posts"
+        );
 
-      console.log("got all public posts", testvar.data);
-      newPosts = testvar.data;
-    }
+        console.log("got all public posts", testvar.data);
+        newPosts = testvar.data;
+      }
     setPosts(newPosts);
     return newPosts;
   };

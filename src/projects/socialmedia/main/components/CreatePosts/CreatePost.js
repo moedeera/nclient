@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { PostsManagement } from "../../../common/hooks/PostsManagement";
 export const CreatePost = () => {
   const [alert, setAlert] = useState(false);
-  const { posts, CreatePosts } = PostsManagement();
+  const { CreatePosts } = PostsManagement();
   // console.log(posts); // why does this get called every time I type
   // Also why does the alert happen no matter what?
   const [postBox, setPostBox] = useState({
