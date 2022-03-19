@@ -1,8 +1,10 @@
 import { useState, useContext } from "react";
 import axios from "axios";
 import { UserContext } from "../../../../Context/Context";
+import { general } from "../function/GeneralFunctions";
 
 export const PostsManagement = () => {
+  const {days,months}= general()
   const user = useContext(UserContext);
   const [posts, setPosts] = useState([]);
   const [trendingPosts, setTrendingPosts] = useState([]);
@@ -83,22 +85,65 @@ export const PostsManagement = () => {
     );
   };
   //Create Posts
-  const CreatePosts = async (newPost) => {
-    console.log("new post was created", newPost);
+  const CreatePosts = async (PostInfo) => {
+    console.log("new post was created", PostInfo);
+    var PostID = Math.floor(Math.random() * 1000 + 1);
+    var CurrentDate = new Date();
+    var day = JSON.stringify(days[CurrentDate.getDay()]);
+    var month = JSON.stringify(months[CurrentDate.getMonth()]);
+    var Year = JSON.stringify(CurrentDate.getUTCFullYear());
+
+    const newDate =
+      day.substring(1, 4) +
+      " " +
+      month.substring(1, 4) +
+      " " +
+      Year.substring(2, 4);
+
+      var date = new Date();
+      const newPost = {
+        status: "public",
+        id: PostID,
+        Poster: user.id,
+        PosterName: user.nickname,
+        PosterPic: user.profilePic,
+        postPic: PostInfo.file,
+        text: PostInfo.textPstText,
+        date: newDate,
+        comments: [],
+        likes: 0,
+        likers: [user.id],
+        datePosted: date,
+      };
+
+
     const config = {
       headers: {
         "Content-Type": "multipart/form-data",
       },
     };
+
+    const configuration = {
+      headers: {
+        "Content-Type":  "application/json",
+      },
+    };
+
     const data = new FormData();
-    data.append("text", newPost.PstText);
-    data.append("file", newPost.PstPicture);
+    
+    data.append("file", PostInfo.PstPicture);
+    const body = newPost;
 
     try {
       const res = await axios.post(
-        "http://localhost:8080/posts/create",
-        data,
+        "http://localhost:8080/posts/upload",
+        data,        
         config
+      );
+      const response = await axios.post(
+        "http://localhost:8080/posts/create",
+        body,        
+        configuration
       );
 
       setPosts({ ...posts, newPost });
@@ -106,13 +151,18 @@ export const PostsManagement = () => {
     } catch (error) {
       console.log(error);
       const res = await axios.post(
-        "http://https://deercoded.herokuapp.com/create",
+        "http://https://deercoded.herokuapp.com/upload",
         data,
         config
       );
+      const response = await axios.post(
+        "http://https://deercoded.herokuapp.com/create",
+        body,
+        configuration
+      );
 
       setPosts(res.data);
-      console.log("new post was successful");
+      console.log("new post was successful",response);
     }
   };
   // Fetch Trending Posts

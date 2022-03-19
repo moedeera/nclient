@@ -67,10 +67,8 @@ export const CreatePost = () => {
 
         <div className="MCbuttons">
           <div>
-            <form>
-              <label htmlFor="file" type="submit">
-                <i className="fas fa-image"></i>
-              </label>
+           
+           
               <input
                 style={{ display: "none" }}
                 id="file-input"
@@ -79,7 +77,12 @@ export const CreatePost = () => {
                   setPostBox({ ...postBox, PstPicture: e.target.files[0] });
                 }}
               />
-            </form>
+   <label htmlFor="file-input" type="submit">
+                <i className="fas fa-image"></i>
+              </label>
+                
+             
+         
           </div>
 
           <i className="fas fa-video"></i>
