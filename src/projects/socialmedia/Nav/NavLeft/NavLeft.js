@@ -39,8 +39,7 @@ export const NavLeft = ({ status }) => {
 
       <div className="nav-left-suggestions">
         <div className="nav-left-header">
-          <h4>Suggestions</h4>
-          <i class="fas fa-ellipsis-v"></i>
+          <h4>Friend Suggestions</h4>
         </div>
 
         {suggestedProfiles.map((profile) => (
