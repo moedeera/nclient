@@ -10,7 +10,7 @@
 .nav-left-profile {
   display: grid;
   grid-template-rows: 6fr 2fr 2fr 1fr;
-  height: 35vh;
+  height: 375px;
 
   border: 1px solid rgba(128, 128, 128, 0.489);
   text-align: center;
@@ -76,7 +76,7 @@
 .nav-left-suggestions {
   background-color: white;
 
-  height: 45vh;
+  height: 450px;
   margin-top: 2vh;
   display: flex;
   flex-direction: column;

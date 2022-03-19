@@ -3,9 +3,11 @@ import { useState, useContext } from "react";
 import "./Navleft.css";
 import pic from "./blank-avatar.png";
 import { UserContext } from "../../../../Context/Context";
+import { ProfileManagement } from "../../common/hooks/ProfileManagement";
 
 export const NavLeft = ({ status }) => {
   const user = useContext(UserContext);
+  const { suggestedProfiles } = ProfileManagement();
 
   return (
     <div className="nav-left">
@@ -34,94 +36,31 @@ export const NavLeft = ({ status }) => {
           <h4>View Profile</h4>
         </div>
       </div>
+
       <div className="nav-left-suggestions">
         <div className="nav-left-header">
           <h4>Suggestions</h4>
           <i class="fas fa-ellipsis-v"></i>
         </div>
-        <div className="nav-left-suggested-profile">
-          <div>
-            <img src={pic} alt="" />
-          </div>
-          <div className="nav-left-info">
-            {" "}
-            <h4>Jessica Swanson</h4>
-            <h5>Saskatoon,Sk</h5>
-          </div>
-          <div className="nav-left-add">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
 
-        <div className="nav-left-suggested-profile">
-          <div>
-            <img src={pic} alt="" />
+        {suggestedProfiles.map((profile) => (
+          <div className="nav-left-suggested-profile">
+            <div>
+              <img src={profile.profilePic} alt="" />
+            </div>
+            <div className="nav-left-info">
+              {" "}
+              <h4 style={{ fontSize: "14px", color: "navy" }}>
+                {profile.nickname}
+              </h4>
+              <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>
+            </div>
+            <div className="nav-left-add">
+              <i class="fas fa-plus"></i>
+            </div>
           </div>
-          <div className="nav-left-info">
-            {" "}
-            <h4>David Smith</h4>
-            <h5>Weston,Sk</h5>
-          </div>
-          <div className="nav-left-add">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
+        ))}
 
-        <div className="nav-left-suggested-profile">
-          <div>
-            <img src={pic} alt="" />
-          </div>
-          <div className="nav-left-info">
-            {" "}
-            <h4>Martin Lee</h4>
-            <h5>Madison,WI</h5>
-          </div>
-          <div className="nav-left-add">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
-
-        <div className="nav-left-suggested-profile">
-          <div>
-            <img src={pic} alt="" />
-          </div>
-          <div className="nav-left-info">
-            {" "}
-            <h4>Amanda Busch</h4>
-            <h5>Edmonton,AB</h5>
-          </div>
-          <div className="nav-left-add">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
-
-        <div className="nav-left-suggested-profile">
-          <div>
-            <img src={pic} alt="" />
-          </div>
-          <div className="nav-left-info">
-            {" "}
-            <h4>Larry Van Holt</h4>
-            <h5>Seattle,WSH</h5>
-          </div>
-          <div className="nav-left-add">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
-
-        <div className="nav-left-suggested-profile">
-          <div>
-            <img src={pic} alt="" />
-          </div>
-          <div className="nav-left-info">
-            {" "}
-            <h4>Kenneth Orlovsky</h4>
-            <h5>Seattle,WSH</h5>
-          </div>
-          <div className="nav-left-add">
-            <i class="fas fa-plus"></i>
-          </div>
-        </div>
         <div className="nav-left-profile-image-colord"></div>
         <div className="nav-left-dummy"></div>
         <div className="md-suggestion-icons">
