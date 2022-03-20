@@ -67,22 +67,17 @@ export const CreatePost = () => {
 
         <div className="MCbuttons">
           <div>
-           
-           
-              <input
-                style={{ display: "none" }}
-                id="file-input"
-                type="file"
-                onChange={(e) => {
-                  setPostBox({ ...postBox, PstPicture: e.target.files[0] });
-                }}
-              />
-   <label htmlFor="file-input" type="submit">
-                <i className="fas fa-image"></i>
-              </label>
-                
-             
-         
+            <input
+              style={{ display: "none" }}
+              id="file-input"
+              type="file"
+              onChange={(e) => {
+                setPostBox({ ...postBox, PstPicture: e.target.files[0] });
+              }}
+            />
+            <label htmlFor="file-input" type="submit">
+              <i className="fas fa-image"></i>
+            </label>
           </div>
 
           <i className="fas fa-video"></i>
