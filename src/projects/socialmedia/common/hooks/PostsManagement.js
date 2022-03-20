@@ -100,12 +100,17 @@ console.log(time);
       " " +
       month.substring(1, 4) +
       " " +
-      Year.substring(2, 4);
+      Year.substring(2, 4)+
+      " " +
+      "at" +
+      time.substring(2, 10)
+      ;
+
 
       var date = new Date();
       const newPost = {
-        status: "public",
         id: PostID,
+        status: "public",
         Poster: user.id,
         PosterName: user.nickname,
         PosterPic: user.profilePic,
@@ -113,7 +118,8 @@ console.log(time);
         text: PostInfo.textPstText,
         date: newDate,
         comments: [],
-        likes: 0,
+       views:1,
+       shares:0,
         likers: [user.id],
         datePosted: date,
       };

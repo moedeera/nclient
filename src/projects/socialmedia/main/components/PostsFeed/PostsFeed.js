@@ -16,7 +16,7 @@ export const PostsFeed = ({ Posts }) => {
             </div>
             <div className="postFeed-post-image">
               {" "}
-              <img src={Post.postPic} alt="" />
+             {Post} <img src={Post.postPic} alt="" />
             </div>
             <div className="postFeed-post-stats">
               <div>
