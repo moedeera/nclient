@@ -9,6 +9,7 @@ export const PostsManagement = () => {
   const [posts, setPosts] = useState([]);
   const [trendingPosts, setTrendingPosts] = useState([]);
   const [friendsPosts, setFriendsPosts] = useState([]);
+  var postImage ='http://localhost:8080/images/'
 
   //GetsAllposts
   const GetAllPosts = async () => {
@@ -92,7 +93,8 @@ export const PostsManagement = () => {
     var day = JSON.stringify(days[CurrentDate.getDay()]);
     var month = JSON.stringify(months[CurrentDate.getMonth()]);
     var Year = JSON.stringify(CurrentDate.getUTCFullYear());
-
+    var time = CurrentDate.toLocaleTimeString()
+console.log(time);
     const newDate =
       day.substring(1, 4) +
       " " +
@@ -107,7 +109,7 @@ export const PostsManagement = () => {
         Poster: user.id,
         PosterName: user.nickname,
         PosterPic: user.profilePic,
-        postPic: PostInfo.file,
+        postPic:postImage.concat(PostInfo.PstPicture.name),
         text: PostInfo.textPstText,
         date: newDate,
         comments: [],
@@ -131,7 +133,7 @@ export const PostsManagement = () => {
 
     const data = new FormData();
     
-    data.append("file", PostInfo.PstPicture);
+    data.append("file", PostInfo.PstPicture.name);
     const body = newPost;
 
     try {
@@ -147,7 +149,7 @@ export const PostsManagement = () => {
       );
 
       setPosts({ ...posts, newPost });
-      console.log("retrieved posts", res.data);
+      console.log("post sent, filename:", PostInfo.PstPicture.name);
     } catch (error) {
       console.log(error);
       const res = await axios.post(

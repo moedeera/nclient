@@ -12,6 +12,7 @@ export const CreatePost = () => {
     PstText: "",
     PstPicture: "",
   });
+  var postImage ='http://localhost:8080/images/image1.jpeg'
   const onPostBoxChange = (e) => {
     setPostBox({ ...postBox, PstText: e.target.value });
   };
@@ -39,7 +40,7 @@ export const CreatePost = () => {
 
   return (
     <div className="CreatePost">
-      <img src={pic} alt="new" />
+      <img src={postImage} alt="new" />
       <div className="MCpost">
         <div className="MCPostbox">
           <textarea
