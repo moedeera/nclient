@@ -27,6 +27,11 @@ export const general = () => {
       ];
 
 
+      function ConnectionRoute(link) {
+
+
+      }
+
 
   return {
       days,

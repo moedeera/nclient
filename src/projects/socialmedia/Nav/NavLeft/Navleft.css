@@ -137,6 +137,7 @@
   cursor: pointer;
 }
 .nav-left-dummy {
+  display: none;
 }
 .md-suggestion-icons i {
   display: none;

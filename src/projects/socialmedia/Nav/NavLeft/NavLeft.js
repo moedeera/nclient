@@ -43,7 +43,7 @@ export const NavLeft = ({ status }) => {
         </div>
 
         {suggestedProfiles.map((profile) => (
-          <div className="nav-left-suggested-profile">
+          <div className="nav-left-suggested-profile" key={profile.id}>
             <div>
               <img src={profile.profilePic} alt="" />
             </div>
@@ -55,7 +55,7 @@ export const NavLeft = ({ status }) => {
               <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>
             </div>
             <div className="nav-left-add">
-              <i class="fas fa-plus"></i>
+              <i className="fas fa-plus"></i>
             </div>
           </div>
         ))}
@@ -63,9 +63,9 @@ export const NavLeft = ({ status }) => {
         <div className="nav-left-profile-image-colord"></div>
         <div className="nav-left-dummy"></div>
         <div className="md-suggestion-icons">
-          <i class="fas fa-cog fa-2x"></i>
-          <i class="fas fa-user-edit fa-2x"></i>
-          <i class="fas fa-comment fa-2x"></i>
+          <i className="fas fa-cog fa-2x"></i>
+          <i className="fas fa-user-edit fa-2x"></i>
+          <i className="fas fa-comment fa-2x"></i>
         </div>
       </div>
     </div>

@@ -10,6 +10,7 @@ export const PostsManagement = () => {
   const [trendingPosts, setTrendingPosts] = useState([]);
   const [friendsPosts, setFriendsPosts] = useState([]);
   var postImage ='http://localhost:8080/images/'
+  // var productionImage ='http://deeracode.com/images/'
 
   //GetsAllposts
   const GetAllPosts = async () => {
@@ -40,46 +41,13 @@ export const PostsManagement = () => {
   };
   // GetsPersonalPosts
   const GetPosts = async () => {
-    if (user) {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
-
-      const body = user;
-
-      try {
-        const res = await axios.post(
-          "http://localhost:8080/posts",
-          body,
-          config
-        );
-
-        setFriendsPosts(res.data);
-        console.log("retrieved posts", res.data);
-        return res.data;
-      } catch (error) {
-        console.log(error);
-        const res = await axios.post(
-          "https://deercoded.herokuapp.com/posts",
-          body,
-          config
-        );
-
-        setFriendsPosts(res.data);
-        console.log("retrieved posts", res.data);
-        return res.data;
-      }
-    } else {
-      GetAllPosts();
-    }
+console.log("getPosts initated");
   };
   // Get Trending Posts
   const getTrendingPosts = async () => {
     var allPosts = await GetAllPosts();
 
-    setTrendingPosts(
+  setTrendingPosts(
       allPosts.sort(function (a, b) {
         return b.views - a.views;
       })
@@ -103,7 +71,9 @@ console.log(time);
       Year.substring(2, 4)+
       " " +
       "at" +
-      time.substring(2, 10)
+      " "
+      +
+      time.substring(3, 10)
       ;
 
 
@@ -159,12 +129,12 @@ console.log(time);
     } catch (error) {
       console.log(error);
       const res = await axios.post(
-        "http://https://deercoded.herokuapp.com/upload",
+        "http://deercoded.herokuapp.com/upload",
         data,
         config
       );
       const response = await axios.post(
-        "http://https://deercoded.herokuapp.com/create",
+        "http://deercoded.herokuapp.com/create",
         body,
         configuration
       );

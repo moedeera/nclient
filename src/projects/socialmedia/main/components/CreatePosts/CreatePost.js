@@ -40,7 +40,7 @@ export const CreatePost = () => {
 
   return (
     <div className="CreatePost">
-      <img src={postImage} alt="new" />
+      <img src={pic} alt="new" />
       <div className="MCpost">
         <div className="MCPostbox">
           <textarea
