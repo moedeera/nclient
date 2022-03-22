@@ -16,7 +16,7 @@ export const PostsFeed = ({ Posts }) => {
             </div>
             <div className="postFeed-post-image">
               {" "}
-             {Post} <img src={Post.postPic} alt="" />
+              <img src={Post.postPic} alt="" />
             </div>
             <div className="postFeed-post-stats">
               <div>
@@ -36,7 +36,7 @@ export const PostsFeed = ({ Posts }) => {
               </div>
               <div>
                 <i className="fas fa-share" style={{ color: "navy" }}></i>
-                <small>8</small>
+                <small>{Post.shares}</small>
               </div>
             </div>
             <div className="postFeed-post-text">{Post.text}</div>

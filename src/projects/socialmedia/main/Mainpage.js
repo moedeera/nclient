@@ -8,13 +8,12 @@ import "./MainPage.css";
 
 export const Mainpage = () => {
   const { friendsPosts, GetPosts } = PostsManagement();
- 
-  console.log(friendsPosts);
+
   useEffect(() => {
     GetPosts();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  console.log(friendsPosts);
   return (
     <div className="content">
       <CreatePost />

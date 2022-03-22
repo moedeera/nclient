@@ -21,7 +21,7 @@ export const NavRight = ({ status }) => {
             </div>
           </div>
           <div className="nav-right-like-count">
-            <i class="far fa-heart fa-2x"> </i>107 Likes
+            <i className="far fa-heart fa-2x"> </i>107 Likes
           </div>
           <div>
             <button className="btn btn-social-primary">View Stats</button>
@@ -29,7 +29,7 @@ export const NavRight = ({ status }) => {
         </div>
         <div className="nav-right-ads">
           <h3>Ad</h3>
-          <i class="fas fa-ellipsis-v"></i>
+          <i className="fas fa-ellipsis-v"></i>
         </div>
       </div>
     );

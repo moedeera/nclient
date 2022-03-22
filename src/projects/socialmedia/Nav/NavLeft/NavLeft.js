@@ -61,7 +61,7 @@ export const NavLeft = ({ status }) => {
         ))}
 
         <div className="nav-left-profile-image-colord"></div>
-        <div className="nav-left-dummy"></div>
+
         <div className="md-suggestion-icons">
           <i className="fas fa-cog fa-2x"></i>
           <i className="fas fa-user-edit fa-2x"></i>
