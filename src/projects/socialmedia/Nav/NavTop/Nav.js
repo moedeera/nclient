@@ -1,9 +1,12 @@
 import React from "react";
 import "./NavTop.css";
-import blank from "./blank-avatar.png";
+
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../../../Context/Context";
 
 export const Nav = () => {
+  const user = useContext(UserContext);
   return (
     <>
       <div className="social-nav-top ">
@@ -54,7 +57,7 @@ export const Nav = () => {
           </li>
 
           <li>
-            <img src={blank} alt="" className="top-nav-img" />
+            <img src={user.profilePic} alt="" className="top-nav-img" />
           </li>
         </ul>
         <div className="menu-bar">

@@ -4,12 +4,9 @@ import { PostsFeed } from "../main/components/PostsFeed/PostsFeed";
 import { PostsManagement } from "../common/hooks/PostsManagement";
 
 export const Trending = () => {
-  const { trendingPosts, getTrendingPosts } = PostsManagement();
+  const { trendingPosts } = PostsManagement();
   console.log(trendingPosts);
-  useEffect(() => {
-    getTrendingPosts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+
   return (
     <div className="content">
       <PostsFeed Posts={trendingPosts} />

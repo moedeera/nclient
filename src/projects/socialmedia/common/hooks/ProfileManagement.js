@@ -344,7 +344,7 @@ export const ProfileManagement = () => {
           },
         ],
         profilePic:
-          "https://cdn.pixabay.com/photo/2016/03/26/22/13/man-1281562_1280.jpg",
+          "https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg",
 
         followerCount: 3,
         login: false,

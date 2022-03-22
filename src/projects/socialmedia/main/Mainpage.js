@@ -7,9 +7,9 @@ import { PostsManagement } from "../common/hooks/PostsManagement";
 import "./MainPage.css";
 
 export const Mainpage = () => {
-  const { friendsPosts, UpdatePostLikes } = PostsManagement();
+  const { friendsPosts, UpdatePostLikes, posts } = PostsManagement();
 
-  console.log(friendsPosts);
+  console.log(posts);
   return (
     <div className="content">
       <CreatePost />
