@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { UserContext } from "../../../../Context/Context";
 import { general } from "../function/GeneralFunctions";
@@ -57,7 +57,7 @@ export const PostsManagement = () => {
         id: 3,
         status: "friends",
         Poster: 11,
-        PosterName: "Nick",
+        PosterName: "Nick Janovich",
         PosterPic:
           "https://cdn.pixabay.com/photo/2016/03/26/22/13/man-1281562_1280.jpg",
 
@@ -76,7 +76,7 @@ export const PostsManagement = () => {
         id: 4,
         status: "friends",
         Poster: 11,
-        PosterName: "Nick",
+        PosterName: "Nick Janovich",
         PosterPic:
           "https://cdn.pixabay.com/photo/2016/03/26/22/13/man-1281562_1280.jpg",
 
@@ -211,7 +211,7 @@ export const PostsManagement = () => {
     return allPosts;
   };
   // GetsPersonalPosts
-  const GetPosts = () => {
+  const GetFriendsPosts = () => {
     var PostSet = GetAllPosts();
     setFriendsPosts(PostSet.filter((post) => post.status === "friends"));
   };
@@ -310,16 +310,31 @@ export const PostsManagement = () => {
       console.log("new post was successful", response);
     }
   };
-  // Fetch Trending Posts
+  // Update Post Likes
+  const UpdatePostLikes = (id) => {
+    setPosts(
+      posts.map((post) =>
+        post.id === id ? { ...post, likers: [...post.likers, user.id] } : post
+      )
+    );
+    GetFriendsPosts();
+  };
+
+  useEffect(() => {
+    GetAllPosts();
+    GetFriendsPosts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return {
     posts,
     GetAllPosts,
-    GetPosts,
+    GetFriendsPosts,
     CreatePosts,
     trendingPosts,
     getTrendingPosts,
     friendsPosts,
     setFriendsPosts,
+    UpdatePostLikes,
   };
 };

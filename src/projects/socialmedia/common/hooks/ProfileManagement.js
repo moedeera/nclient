@@ -328,7 +328,7 @@ export const ProfileManagement = () => {
         id: 11,
         status: "private",
         name: "Nicholas Janovic",
-        nickname: "Nick",
+        nickname: "Nick Janovich",
         location: "Calgary, Alberta",
         description: "Night Owl",
         age: 22,
@@ -338,9 +338,6 @@ export const ProfileManagement = () => {
 
         Feed: [
           {
-            name: "Barbara Wiegel",
-            type: "request",
-            id: 12,
             name: "Kenneth Bolland",
             type: "request",
             id: 13,
@@ -373,9 +370,6 @@ export const ProfileManagement = () => {
 
         Feed: [
           {
-            name: "Jason Wiegel",
-            type: "like",
-            id: 10,
             name: "Kenneth Bolland",
             type: "request",
             id: 13,
@@ -410,9 +404,6 @@ export const ProfileManagement = () => {
             name: "Jason Wiegel",
             type: "like",
             id: 10,
-            name: "Kenneth Bolland",
-            type: "request",
-            id: 13,
           },
         ],
         profilePic:
@@ -443,9 +434,6 @@ export const ProfileManagement = () => {
             name: "Jason Wiegel",
             type: "like",
             id: 10,
-            name: "Kenneth Bolland",
-            type: "request",
-            id: 13,
           },
         ],
         profilePic:
@@ -476,9 +464,6 @@ export const ProfileManagement = () => {
             name: "Jason Wiegel",
             type: "like",
             id: 10,
-            name: "Kenneth Bolland",
-            type: "request",
-            id: 13,
           },
         ],
         profilePic: "https://pbs.twimg.com/media/FN-ucnyXIAU735X.jpg",
@@ -508,9 +493,6 @@ export const ProfileManagement = () => {
             name: "Jason Wiegel",
             type: "like",
             id: 10,
-            name: "Kenneth Bolland",
-            type: "request",
-            id: 13,
           },
         ],
         profilePic:

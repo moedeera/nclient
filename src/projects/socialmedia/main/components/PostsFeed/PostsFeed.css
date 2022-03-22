@@ -66,3 +66,23 @@
   letter-spacing: 1px;
   cursor: pointer;
 }
+.post-feed-action {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+}
+.post-feed-action > div {
+  width: 80px;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 21px;
+}
+
+@media screen and (min-width: 1024px) {
+  .post-feed-action > div:hover {
+    background-color: var(--color-secondary-social);
+    color: var(--color-primary-social);
+  }
+}

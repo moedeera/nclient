@@ -7,17 +7,13 @@ import { PostsManagement } from "../common/hooks/PostsManagement";
 import "./MainPage.css";
 
 export const Mainpage = () => {
-  const { friendsPosts, GetPosts } = PostsManagement();
+  const { friendsPosts, UpdatePostLikes } = PostsManagement();
 
-  useEffect(() => {
-    GetPosts();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
   console.log(friendsPosts);
   return (
     <div className="content">
       <CreatePost />
-      <PostsFeed Posts={friendsPosts} />
+      <PostsFeed Posts={friendsPosts} LikeCounter={UpdatePostLikes} />
     </div>
   );
 };

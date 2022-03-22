@@ -1,7 +1,7 @@
 import React from "react";
 
 import "./PostsFeed.css";
-export const PostsFeed = ({ Posts }) => {
+export const PostsFeed = ({ Posts, LikeCounter }) => {
   return (
     <div className="Feed">
       <div className="Post-Feed">
@@ -40,6 +40,23 @@ export const PostsFeed = ({ Posts }) => {
               </div>
             </div>
             <div className="postFeed-post-text">{Post.text}</div>
+            <div className="post-feed-action">
+              <div
+                style={{ color: "var(--color-primary-social)" }}
+                onClick={() => {
+                  LikeCounter(Post.id);
+                }}
+              >
+                <i className="fas fa-thumbs-up "></i>
+              </div>
+              <div style={{ color: "var(--color-primary-social)" }}>
+                <i className="fas fa-comment-alt "></i>
+              </div>
+
+              <div style={{ color: "var(--color-primary-social)" }}>
+                <i className="fas fa-share-alt"></i>
+              </div>
+            </div>
           </div>
         ))}
       </div>
