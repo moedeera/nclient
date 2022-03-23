@@ -1,18 +1,19 @@
 import React from "react";
 import "./CreatePost.css";
 import pic from "./blank-avatar.png";
-import { useState, useEffect } from "react";
-import { PostsManagement } from "../../../common/hooks/PostsManagement";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../../../../../Context/Context";
 export const CreatePost = () => {
   const [alert, setAlert] = useState(false);
-  const { CreatePosts } = PostsManagement();
+
   // console.log(posts); // why does this get called every time I type
   // Also why does the alert happen no matter what?
   const [postBox, setPostBox] = useState({
     PstText: "",
     PstPicture: "",
   });
-  var postImage ='http://localhost:8080/images/image1.jpeg'
+  const { CreatePosts } = useContext(UserContext);
+  var postImage = "http://localhost:8080/images/image1.jpeg";
   const onPostBoxChange = (e) => {
     setPostBox({ ...postBox, PstText: e.target.value });
   };

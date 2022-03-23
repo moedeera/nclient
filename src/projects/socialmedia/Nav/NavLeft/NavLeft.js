@@ -50,7 +50,7 @@ export const NavLeft = ({ status }) => {
             <div className="nav-left-info">
               {" "}
               <h4 style={{ fontSize: "14px", color: "navy" }}>
-                {profile.nickname}
+                {profile.name}
               </h4>
               <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>
             </div>

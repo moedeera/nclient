@@ -1,7 +1,13 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { UserContext } from "../../../../../Context/Context";
 
 import "./PostsFeed.css";
+
 export const PostsFeed = ({ Posts, LikeCounter }) => {
+  const { setCurrentPost } = useContext(UserContext);
+
   return (
     <div className="Feed">
       <div className="Post-Feed">
@@ -14,10 +20,18 @@ export const PostsFeed = ({ Posts, LikeCounter }) => {
                 <h5>Published {Post.date}</h5>
               </div>
             </div>
-            <div className="postFeed-post-image">
-              {" "}
-              <img src={Post.postPic} alt="" />
-            </div>
+            <Link
+              onClick={() => {
+                setCurrentPost(Post);
+              }}
+              to="posts"
+            >
+              <div className="postFeed-post-image">
+                {" "}
+                <img src={Post.postPic} alt="" />
+              </div>
+            </Link>
+
             <div className="postFeed-post-stats">
               <div>
                 <i className="fas fa-eye " style={{ color: "teal" }}></i>

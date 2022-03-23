@@ -257,12 +257,23 @@ const GetAllPosts = () => {
   }
   return AllPosts;
 };
+const GetCurrentPost = () => {
+  let CurrentPost;
 
-export const PostsManagement = () => {
+  if (localStorage.getItem("CurrentPost")) {
+    CurrentPost = JSON.parse(localStorage.getItem("CurrentPost"));
+  } else {
+    CurrentPost = 0;
+    localStorage.setItem("CurrentPost", JSON.stringify(CurrentPost));
+  }
+  return CurrentPost;
+};
+
+export const usePosts = () => {
   const { days, months } = general();
 
   const [posts, setPosts] = useState(GetAllPosts());
-
+  const [currentPost, setCurrentPost] = useState(GetCurrentPost());
   var friendsPosts = useMemo(
     function getFriendPosts() {
       return posts.filter((post) => post.status === "friends");
@@ -278,6 +289,9 @@ export const PostsManagement = () => {
     [posts]
   );
 
+  useEffect(() => {
+    localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
+  }, [currentPost]);
   var postImage = "http://localhost:8080/images/";
   // var productionImage ='http://deeracode.com/images/'
 
@@ -395,5 +409,7 @@ export const PostsManagement = () => {
     TrendingPosts,
     CreatePosts,
     UpdatePostLikes,
+    currentPost,
+    setCurrentPost,
   };
 };

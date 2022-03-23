@@ -40,7 +40,8 @@
 .PostCard-Post-details-post-text {
   padding: 5px 10px 10px;
   letter-spacing: 0.05em;
-  line-height: 1.2em;
+  line-height: 1.4em;
+  font-size: 14px;
 }
 .PostCard-Post-details-post-comments h5 {
   text-align: center;

@@ -1,6 +1,6 @@
 import { createContext } from "react";
-import { useState, useMemo } from "react";
-import { PostsManagement } from "../projects/socialmedia/common/hooks/PostsManagement";
+
+import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
 
 export const UserContext = createContext({});
 
@@ -13,7 +13,9 @@ export const UserContextProvider = ({ children }) => {
     TrendingPosts,
     CreatePosts,
     UpdatePostLikes,
-  } = PostsManagement();
+    currentPost,
+    setCurrentPost,
+  } = usePosts();
 
   return (
     <UserContext.Provider
@@ -25,6 +27,8 @@ export const UserContextProvider = ({ children }) => {
         TrendingPosts,
         CreatePosts,
         UpdatePostLikes,
+        currentPost,
+        setCurrentPost,
       }}
     >
       {children}
