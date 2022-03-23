@@ -1,17 +1,22 @@
-import { useState, useContext, useEffect } from "react";
+import { useState, useContext, useEffect, useMemo } from "react";
 import axios from "axios";
 import { UserContext } from "../../../../Context/Context";
 import { general } from "../function/GeneralFunctions";
 
 export const PostsManagement = () => {
   const { days, months, allPosts } = general();
-  const user = useContext(UserContext);
-  const [posts, setPosts] = useState([]);
+  const { user, posts, setPosts } = useContext(UserContext);
+
   const [trendingPosts, setTrendingPosts] = useState([]);
-  const [friendsPosts, setFriendsPosts] = useState([]);
+
   var postImage = "http://localhost:8080/images/";
   // var productionImage ='http://deeracode.com/images/'
-
+  var friendsPosts = useMemo(
+    function getFriendPosts() {
+      return posts.filter((post) => post.status === "friends");
+    },
+    [posts]
+  );
   //GetsAllposts
   const GetAllPosts = () => {
     let AllPosts;
@@ -22,14 +27,13 @@ export const PostsManagement = () => {
       AllPosts = JSON.stringify(allPosts);
       localStorage.setItem("Posts", AllPosts);
     }
-
+    console.log(AllPosts);
     setPosts(AllPosts);
-    setFriendsPosts(AllPosts.filter((post) => post.status === "friends"));
-    setTrendingPosts(
-      AllPosts.sort(function (a, b) {
-        return b.views - a.views;
-      })
-    );
+
+    const trends = AllPosts.sort(function (a, b) {
+      return b.views - a.views;
+    });
+    setTrendingPosts(trends.slice(0, 5));
   };
   // GetsPersonalPosts
   // const GetFriendsPosts = () => {
@@ -131,12 +135,23 @@ export const PostsManagement = () => {
   };
   // Update Post Likes
   const UpdatePostLikes = (id) => {
-    setPosts(
-      posts.map((post) =>
+    var updatedPosts;
+    console.log("like occurred");
+    var match = posts.find((post) => post.id === id);
+    if (match.likers.some((like) => like === user.id)) {
+      match.likers = match.likers.filter((like) => like !== user.id);
+      updatedPosts = posts.map((post) =>
+        post.id === id ? { ...post, likers: [...match.likers] } : post
+      );
+      setPosts(updatedPosts);
+    } else {
+      updatedPosts = posts.map((post) =>
         post.id === id ? { ...post, likers: [...post.likers, user.id] } : post
-      )
-    );
-    localStorage.setItem("Posts", "posts");
+      );
+      setPosts(updatedPosts);
+    }
+
+    localStorage.setItem("Posts", JSON.stringify(updatedPosts));
   };
 
   useEffect(() => {
@@ -154,7 +169,7 @@ export const PostsManagement = () => {
     trendingPosts,
     // getTrendingPosts,
     friendsPosts,
-    setFriendsPosts,
+
     UpdatePostLikes,
   };
 };

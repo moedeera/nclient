@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { UserContext } from "../../../../Context/Context";
 
 export const Nav = () => {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
   return (
     <>
       <div className="social-nav-top ">

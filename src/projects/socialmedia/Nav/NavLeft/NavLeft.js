@@ -1,12 +1,12 @@
 import React from "react";
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import "./Navleft.css";
-import pic from "./blank-avatar.png";
+
 import { UserContext } from "../../../../Context/Context";
 import { ProfileManagement } from "../../common/hooks/ProfileManagement";
 
 export const NavLeft = ({ status }) => {
-  const user = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { suggestedProfiles } = ProfileManagement();
 
   return (
