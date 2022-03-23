@@ -1,0 +1,53 @@
+.PostPage {
+  position: absolute;
+  border: 1px solid orange;
+  /* Add the blur effect */
+
+  width: 100vw;
+
+  height: 100vh;
+  padding-top: 80px;
+  backdrop-filter: blur(15px);
+  color: black;
+}
+.PostCard {
+  width: 100%;
+
+  max-width: 1600px;
+  margin: 0 auto;
+  border: 3px solid green;
+  background: white;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+}
+.PostCard > div {
+  border: 1px solid orange;
+}
+.PostCard-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.PostCard-Post {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+}
+
+.PostCard-Post-details-poster {
+  padding: 5px;
+}
+.PostCard-Post-details-post-text {
+  padding: 5px 10px 10px;
+  letter-spacing: 0.05em;
+  line-height: 1.2em;
+}
+.PostCard-Post-details-post-comments h5 {
+  text-align: center;
+}
+
+@media screen and (max-width: 968px) {
+  .PostCard-Post {
+    grid-template-columns: 1fr;
+  }
+}

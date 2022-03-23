@@ -7,6 +7,7 @@ import { Login } from "./projects/socialmedia/login/Login";
 import { Trending } from "./projects/socialmedia/Trending/Trending";
 import { SocialMedia } from "./projects/socialmedia/SocialMedia";
 import { Profiles } from "./projects/socialmedia/Profiles/Profiles";
+import { PostPage } from "./projects/socialmedia/main/components/PostPage/PostPage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
@@ -22,6 +23,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="trending" element={<Trending />} />
             <Route path="friends" element={<Profiles />} />
+            <Route path="posts" element={<PostPage />} />
           </Route>
         </Routes>
       </Router>
