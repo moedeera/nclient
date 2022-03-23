@@ -1,15 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
+import { useContext } from "react";
 import { PostsFeed } from "../main/components/PostsFeed/PostsFeed";
-import { PostsManagement } from "../common/hooks/PostsManagement";
+
+import { UserContext } from "../../../Context/Context";
 
 export const Trending = () => {
-  const { trendingPosts } = PostsManagement();
-  console.log(trendingPosts);
-
+  const { TrendingPosts } = useContext(UserContext);
   return (
     <div className="content">
-      <PostsFeed Posts={trendingPosts} />
+      <PostsFeed Posts={TrendingPosts} />
     </div>
   );
 };
