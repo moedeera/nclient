@@ -7,47 +7,8 @@ export const PostsManagement = () => {
   const { days, months, allPosts } = general();
   const { user, posts, setPosts } = useContext(UserContext);
 
-  const [trendingPosts, setTrendingPosts] = useState([]);
-
   var postImage = "http://localhost:8080/images/";
   // var productionImage ='http://deeracode.com/images/'
-  var friendsPosts = useMemo(
-    function getFriendPosts() {
-      return posts.filter((post) => post.status === "friends");
-    },
-    [posts]
-  );
-  //GetsAllposts
-  const GetAllPosts = () => {
-    let AllPosts;
-
-    if (localStorage.getItem("Posts")) {
-      AllPosts = JSON.parse(localStorage.getItem("Posts"));
-    } else {
-      AllPosts = JSON.stringify(allPosts);
-      localStorage.setItem("Posts", AllPosts);
-    }
-    console.log(AllPosts);
-    setPosts(AllPosts);
-
-    const trends = AllPosts.sort(function (a, b) {
-      return b.views - a.views;
-    });
-    setTrendingPosts(trends.slice(0, 5));
-  };
-  // GetsPersonalPosts
-  // const GetFriendsPosts = () => {
-  //   setFriendsPosts(posts.filter((post) => post.status === "friends"));
-  // };
-
-  // Get Trending Posts
-  // const getTrendingPosts = () => {
-  //   setTrendingPosts(
-  //     posts.sort(function (a, b) {
-  //       return b.views - a.views;
-  //     })
-  //   );
-  // };
 
   const CreatePosts = async (PostInfo) => {
     console.log("new post was created", PostInfo);
@@ -154,21 +115,11 @@ export const PostsManagement = () => {
     localStorage.setItem("Posts", JSON.stringify(updatedPosts));
   };
 
-  useEffect(() => {
-    GetAllPosts();
-    // GetFriendsPost()
-
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return {
-    posts,
-    GetAllPosts,
     // GetFriendsPosts,
     CreatePosts,
-    trendingPosts,
+
     // getTrendingPosts,
-    friendsPosts,
 
     UpdatePostLikes,
   };
