@@ -31,6 +31,12 @@ export const PostPage = ({ post, previous }) => {
         <div className="PostCard-Post">
           <div className="PostCard-Post-image">
             <img src={currentPost.postPic} alt="" />
+            <div className="PostCard-Post-details-post-actions">
+              <i className="fa fa-heart fa-2x" aria-hidden="true"></i>
+              <i className="fas fa-eye fa-2x" aria-hidden="true"></i>
+              <i className="fa fa-share fa-2x" aria-hidden="true"></i>
+              <i className="fa fa-comments fa-2x" aria-hidden="true"></i>
+            </div>
           </div>
           <div className="PostCard-Post-details">
             <div className="PostCard-Post-details-poster">
@@ -45,20 +51,18 @@ export const PostPage = ({ post, previous }) => {
             <div className="PostCard-Post-details-post-text">
               {currentPost.text}
             </div>
-            <h5>Comments</h5>
+            <h4>Comments</h4>
             <div className="PostCard-Post-details-post-comments">
               {comments.map((comment) => (
                 <Comments comment={comment} key={comment.id} />
               ))}
             </div>
 
-            <div className="PostCard-Post-details-post-actions">
-              <i className="fa fa-heart" aria-hidden="true"></i>
-              <i className="fa fa-share " aria-hidden="true"></i>
-            </div>
             <div className="PostCard-Post-details-post-make-comment">
-              <div></div>
               <div>Make Comment</div>
+              <div>
+                <input type="text" />
+              </div>
             </div>
           </div>
         </div>

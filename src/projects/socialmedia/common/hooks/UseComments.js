@@ -80,7 +80,7 @@ export const UseComments = () => {
       author: 4,
       name: "Amanda Busch",
       picture:
-        "https://pixabay.com/photos/family-love-parenthood-vacation-6475821/",
+        "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
       date: "Feb 4 ",
       post: 3,
       text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
