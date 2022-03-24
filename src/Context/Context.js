@@ -1,7 +1,7 @@
 import { createContext } from "react";
-
+import { useEffect } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
-
+import { UseComments } from "../projects/socialmedia/common/hooks/UseComments";
 export const UserContext = createContext({});
 
 export const UserContextProvider = ({ children }) => {
@@ -16,6 +16,11 @@ export const UserContextProvider = ({ children }) => {
     currentPost,
     setCurrentPost,
   } = usePosts();
+  const { GetComments, comments, setComments } = UseComments();
+
+  useEffect(() => {
+    GetComments(currentPost.id);
+  }, []);
 
   return (
     <UserContext.Provider
@@ -29,6 +34,9 @@ export const UserContextProvider = ({ children }) => {
         UpdatePostLikes,
         currentPost,
         setCurrentPost,
+        GetComments,
+        setComments,
+        comments,
       }}
     >
       {children}

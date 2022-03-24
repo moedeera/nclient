@@ -13,7 +13,7 @@ export const CreatePost = () => {
     PstPicture: "",
   });
   const { CreatePosts } = useContext(UserContext);
-  var postImage = "http://localhost:8080/images/image1.jpeg";
+
   const onPostBoxChange = (e) => {
     setPostBox({ ...postBox, PstText: e.target.value });
   };

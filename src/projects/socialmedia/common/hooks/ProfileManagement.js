@@ -496,7 +496,7 @@ export const ProfileManagement = () => {
           },
         ],
         profilePic:
-          "https://pixabay.com/photos/family-love-parenthood-vacation-6475821/",
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
 
         login: false,
         Notifications: 1,
@@ -514,7 +514,7 @@ export const ProfileManagement = () => {
 
   const GetSuggestedProfiles = () => {
     let newProfiles = getAllProfiles();
-    console.log(newProfiles);
+
     //Exclude Own Profile
     var profileSet = newProfiles.filter((profile) => profile.id !== user.id);
     // Exclude all the friend profiles

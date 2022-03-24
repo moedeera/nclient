@@ -2,12 +2,25 @@ import React from "react";
 import "./PostPage.css";
 import { useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
+import { Comments } from "./Comments";
+import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
 export const PostPage = ({ post }) => {
-  const { posts, currentPost } = useContext(UserContext);
-  console.log(currentPost);
+  const navigate = useNavigate();
+  const { currentPost, comments } = useContext(UserContext);
+  console.log(comments, currentPost.id);
+
+  document.addEventListener("click", (e) => {
+    if (
+      e.target.className === "PostPage" ||
+      e.target.className === "social-nav-top"
+    ) {
+      console.log("outside");
+      navigate("../");
+    }
+  });
 
   return (
     <div className="PostPage">
@@ -34,10 +47,20 @@ export const PostPage = ({ post }) => {
             </div>
             <div className="PostCard-Post-details-post-comments">
               <h5>Comments</h5>
-              <div className="PostCard-Post-comment"></div>
+
+              {comments.map((comment) => (
+                <Comments comment={comment} key={comment.id} />
+              ))}
             </div>
-            <div className="PostCard-Post-details-post-actions"></div>
-            <div className="PostCard-Post-details-post-make-comment"></div>
+
+            <div className="PostCard-Post-details-post-actions">
+              <i className="fa fa-heart" aria-hidden="true"></i>
+              <i className="fa fa-share " aria-hidden="true"></i>
+            </div>
+            <div className="PostCard-Post-details-post-make-comment">
+              <div></div>
+              <div>Make Comment</div>
+            </div>
           </div>
         </div>
         <div className="PostCard-arrow">
