@@ -45,9 +45,8 @@ export const PostPage = ({ post, previous }) => {
             <div className="PostCard-Post-details-post-text">
               {currentPost.text}
             </div>
+            <h5>Comments</h5>
             <div className="PostCard-Post-details-post-comments">
-              <h5>Comments</h5>
-
               {comments.map((comment) => (
                 <Comments comment={comment} key={comment.id} />
               ))}
