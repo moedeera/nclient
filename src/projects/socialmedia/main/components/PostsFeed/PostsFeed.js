@@ -5,7 +5,7 @@ import { UserContext } from "../../../../../Context/Context";
 
 import "./PostsFeed.css";
 
-export const PostsFeed = ({ Posts, LikeCounter }) => {
+export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
   const { setCurrentPost } = useContext(UserContext);
 
   return (
@@ -24,7 +24,7 @@ export const PostsFeed = ({ Posts, LikeCounter }) => {
               onClick={() => {
                 setCurrentPost(Post);
               }}
-              to="posts"
+              to={Page === "main" ? "posts" : "../posts"}
             >
               <div className="postFeed-post-image">
                 {" "}

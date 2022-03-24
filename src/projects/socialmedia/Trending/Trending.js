@@ -5,10 +5,14 @@ import { PostsFeed } from "../main/components/PostsFeed/PostsFeed";
 import { UserContext } from "../../../Context/Context";
 
 export const Trending = () => {
-  const { TrendingPosts } = useContext(UserContext);
+  const { TrendingPosts, UpdatePostLikes } = useContext(UserContext);
   return (
     <div className="content">
-      <PostsFeed Posts={TrendingPosts} />
+      <PostsFeed
+        Posts={TrendingPosts}
+        LikeCounter={UpdatePostLikes}
+        Page="trending"
+      />
     </div>
   );
 };

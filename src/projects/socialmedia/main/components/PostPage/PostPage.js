@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 // import { Link } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
-export const PostPage = ({ post }) => {
+export const PostPage = ({ post, previous }) => {
   const navigate = useNavigate();
   const { currentPost, comments } = useContext(UserContext);
   console.log(comments, currentPost.id);

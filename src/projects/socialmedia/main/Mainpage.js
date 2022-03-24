@@ -13,7 +13,11 @@ export const Mainpage = () => {
   return (
     <div className="content">
       <CreatePost />
-      <PostsFeed Posts={friendsPosts} LikeCounter={UpdatePostLikes} />
+      <PostsFeed
+        Posts={friendsPosts}
+        LikeCounter={UpdatePostLikes}
+        Page="main"
+      />
     </div>
   );
 };
