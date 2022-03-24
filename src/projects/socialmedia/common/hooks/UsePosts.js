@@ -380,10 +380,18 @@ export const usePosts = () => {
       console.log(error);
     }
   };
+  const UpdateViews = (id) => {
+    setPosts(
+      posts.map((post) =>
+        post.id === id ? { ...post, views: post.views + 1 } : post
+      )
+    );
+  };
+
   // Update Post Likes
   const UpdatePostLikes = (id) => {
     var updatedPosts;
-    console.log("like occurred");
+
     var match = posts.find((post) => post.id === id);
     if (match.likers.some((like) => like === user.id)) {
       match.likers = match.likers.filter((like) => like !== user.id);
@@ -411,5 +419,6 @@ export const usePosts = () => {
     UpdatePostLikes,
     currentPost,
     setCurrentPost,
+    UpdateViews,
   };
 };

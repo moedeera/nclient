@@ -15,8 +15,9 @@ export const UserContextProvider = ({ children }) => {
     UpdatePostLikes,
     currentPost,
     setCurrentPost,
+    UpdateViews,
   } = usePosts();
-  const { GetComments, comments, setComments } = UseComments();
+  const { GetComments, comments, setComments, CreateComment } = UseComments();
 
   useEffect(() => {
     GetComments(currentPost.id);
@@ -37,6 +38,8 @@ export const UserContextProvider = ({ children }) => {
         GetComments,
         setComments,
         comments,
+        UpdateViews,
+        CreateComment,
       }}
     >
       {children}

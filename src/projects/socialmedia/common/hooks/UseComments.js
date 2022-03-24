@@ -102,9 +102,14 @@ export const UseComments = () => {
     setComments(Comments.filter((comment) => comment.post === PostId));
   };
 
+  const CreateComment = (comment) => {
+    console.log("comment was created");
+  };
+
   return {
     GetComments,
     comments,
     setComments,
+    CreateComment,
   };
 };

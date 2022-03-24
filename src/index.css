@@ -104,6 +104,14 @@ a:hover {
   color: var(--color-bg);
 }
 
+.btn-secondary {
+  background-color: var(--color-primary-social);
+  color: white;
+}
+.btn-secondary:hover {
+  background-color: var(--color-secondary-social);
+  color: white;
+}
 img {
   display: block;
   width: 100%;

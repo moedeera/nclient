@@ -1,12 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UserContext } from "../../../../../Context/Context";
+import { PostFeedComments } from "./PostFeedComments";
 
 import "./PostsFeed.css";
 
 export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
-  const { setCurrentPost } = useContext(UserContext);
+  const { setCurrentPost, UpdateViews } = useContext(UserContext);
+  const [commentBox, showCommentBox] = useState(false);
+
+  const CommentBoxToggle = () => {
+    showCommentBox(!commentBox);
+  };
 
   return (
     <div className="Feed">
@@ -23,6 +29,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
             <Link
               onClick={() => {
                 setCurrentPost(Post);
+                UpdateViews(Post.id);
               }}
               to={Page === "main" ? "posts" : "../posts"}
             >
@@ -63,7 +70,12 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               >
                 <i className="fas fa-thumbs-up "></i>
               </div>
-              <div style={{ color: "var(--color-primary-social)" }}>
+              <div
+                style={{ color: "var(--color-primary-social)" }}
+                onClick={() => {
+                  showCommentBox(!commentBox);
+                }}
+              >
                 <i className="fas fa-comment-alt "></i>
               </div>
 
@@ -71,6 +83,11 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                 <i className="fas fa-share-alt"></i>
               </div>
             </div>
+            {commentBox ? (
+              <PostFeedComments showComment={CommentBoxToggle} />
+            ) : (
+              ""
+            )}
           </div>
         ))}
       </div>
