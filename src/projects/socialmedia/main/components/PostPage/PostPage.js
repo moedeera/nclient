@@ -162,8 +162,8 @@ export const PostPage = () => {
             </div>
 
             <div className="PostCard-Post-details-post-make-comment">
-              <div>Comment</div>
-              <div>
+              <div id="comment">Comment</div>
+              <div className="PostCard-Post-details-make-comment-input">
                 <input type="text" />
               </div>
               <div></div>{" "}

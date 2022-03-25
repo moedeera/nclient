@@ -133,22 +133,34 @@
   height: 600px;
 }
 .PostCard-Post-details-post-make-comment {
-  width: 80%;
-  margin: 5px auto;
+  background-color: cornflowerblue;
+  width: 100%;
+  padding-top: 5px;
+  margin: 5px auto 0;
 }
+
 .PostCard-Post-details-post-make-comment input {
   width: 100%;
 
   height: 2rem;
   border-radius: 5px;
   border: none;
+  margin-bottom: 5px;
 }
 .PostCard-Post-details-post-make-comment > div {
   margin: 5px auto;
 }
+.PostCard-Post-details-make-comment-input {
+  width: 80%;
+  margin: 10px auto;
+}
 .sm-l,
 .sm-r {
   display: none;
+}
+#comment {
+  text-align: center;
+  margin: 10px 0;
 }
 @media screen and (min-width: 910px) {
   .PostCard-Post-details-post-comments {
