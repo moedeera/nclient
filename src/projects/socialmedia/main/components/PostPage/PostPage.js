@@ -21,7 +21,7 @@ export const PostPage = () => {
   } = useContext(UserContext);
 
   const [RenderedPost, setRenderedPost] = useState(currentPost);
-  console.log(comments[0].commentList);
+  // console.log(comments[0].commentList);
   if (page === "main") {
     Posts = friendsPosts;
   } else if (page === "trending") {
@@ -36,7 +36,7 @@ export const PostPage = () => {
         match = j;
       }
     }
-    console.log(match);
+
     // console.log(currentPost, Posts, Posts[match], match);
 
     if (action === "increment") {
@@ -49,7 +49,6 @@ export const PostPage = () => {
         setCurrentPost(Posts[0]);
         setRenderedPost(Posts[0]);
       }
-      console.log(Posts, match);
     }
 
     if (action === "decrement") {
@@ -64,8 +63,6 @@ export const PostPage = () => {
       }
       console.log(Posts, match);
     }
-
-    console.log(RenderedPost);
   };
 
   useEffect(() => {
