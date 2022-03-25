@@ -35,11 +35,18 @@ export const UserContextProvider = ({ children }) => {
   const { GetComments, comments, setComments, CreateComment } = UseComments();
 
   useEffect(() => {
-    GetComments(currentPost.id);
-  }, []);
-  useEffect(() => {
     localStorage.setItem("CurrentPage", JSON.stringify(page));
   }, [page]);
+
+  useEffect(() => {
+    localStorage.setItem("CurrentPostId", JSON.stringify(currentPost));
+    GetComments(currentPost);
+  }, [currentPost]);
+
+  useEffect(() => {
+    localStorage.setItem("Comments", JSON.stringify(comments));
+  }, [comments]);
+
   return (
     <UserContext.Provider
       value={{

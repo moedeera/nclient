@@ -263,7 +263,7 @@ const GetCurrentPost = () => {
   if (localStorage.getItem("CurrentPost")) {
     CurrentPost = JSON.parse(localStorage.getItem("CurrentPost"));
   } else {
-    CurrentPost = 0;
+    CurrentPost = Posts[0];
     localStorage.setItem("CurrentPost", JSON.stringify(CurrentPost));
   }
   return CurrentPost;

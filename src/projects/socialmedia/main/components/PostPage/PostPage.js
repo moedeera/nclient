@@ -9,8 +9,6 @@ import { useNavigate, useLocation } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
 export const PostPage = () => {
-  const location = useLocation();
-
   let Posts;
   const navigate = useNavigate();
   var {
@@ -20,17 +18,13 @@ export const PostPage = () => {
     friendsPosts,
     TrendingPosts,
     page,
-    postIndex,
-    setPostIndex,
   } = useContext(UserContext);
 
   const [RenderedPost, setRenderedPost] = useState(currentPost);
-
+  console.log(comments[0].commentList);
   if (page === "main") {
-    console.log("condition previous main");
     Posts = friendsPosts;
   } else if (page === "trending") {
-    console.log("condition previous trending");
     Posts = TrendingPosts;
   }
 
@@ -47,7 +41,6 @@ export const PostPage = () => {
 
     if (action === "increment") {
       index = Posts.length - 1;
-      console.log("increment", match, index, Posts.length);
 
       if (match < index) {
         setCurrentPost(Posts[match + 1]);
@@ -56,12 +49,10 @@ export const PostPage = () => {
         setCurrentPost(Posts[0]);
         setRenderedPost(Posts[0]);
       }
-      console.log(Posts, match);
     }
 
     if (action === "decrement") {
       index = Posts.length - 1;
-      console.log("decrement", match, Posts.length);
 
       if (match > 0) {
         setCurrentPost(Posts[match - 1]);
@@ -143,7 +134,7 @@ export const PostPage = () => {
             </div>
             <h4>Comments</h4>
             <div className="PostCard-Post-details-post-comments">
-              {comments.map((comment) => (
+              {comments[0].commentList.map((comment) => (
                 <Comments comment={comment} key={comment.id} />
               ))}
             </div>
