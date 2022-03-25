@@ -1,10 +1,25 @@
 import { createContext } from "react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
 import { UseComments } from "../projects/socialmedia/common/hooks/UseComments";
 export const UserContext = createContext({});
 
+const GetCurrentPage = () => {
+  let CurrentPage;
+
+  if (localStorage.getItem("CurrentPage")) {
+    CurrentPage = JSON.parse(localStorage.getItem("CurrentPage"));
+  } else {
+    CurrentPage = "main";
+    localStorage.setItem("CurrentPage", JSON.stringify(CurrentPage));
+  }
+  return CurrentPage;
+};
+
 export const UserContextProvider = ({ children }) => {
+  const [page, setPage] = useState(GetCurrentPage());
+  const [postIndex, setPostIndex] = useState(0);
+
   const {
     user,
     posts,
@@ -22,7 +37,9 @@ export const UserContextProvider = ({ children }) => {
   useEffect(() => {
     GetComments(currentPost.id);
   }, []);
-
+  useEffect(() => {
+    localStorage.setItem("CurrentPage", JSON.stringify(page));
+  }, [page]);
   return (
     <UserContext.Provider
       value={{
@@ -40,6 +57,10 @@ export const UserContextProvider = ({ children }) => {
         comments,
         UpdateViews,
         CreateComment,
+        page,
+        setPage,
+        postIndex,
+        setPostIndex,
       }}
     >
       {children}

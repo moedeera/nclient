@@ -10,6 +10,7 @@ import { Profiles } from "./projects/socialmedia/Profiles/Profiles";
 import { PostPage } from "./projects/socialmedia/main/components/PostPage/PostPage";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { ProfilePage } from "./projects/socialmedia/main/components/ProfilePage/ProfilePage";
 
 function App() {
   return (
@@ -23,7 +24,8 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="trending" element={<Trending />} />
             <Route path="friends" element={<Profiles />} />
-            <Route path="posts" element={<PostPage />} />
+            <Route path="posts" element={<PostPage  />} />
+            <Route path="profile" element={<ProfilePage />} />
           </Route>
         </Routes>
       </Router>

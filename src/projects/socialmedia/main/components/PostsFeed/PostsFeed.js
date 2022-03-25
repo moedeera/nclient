@@ -7,7 +7,7 @@ import { PostFeedComments } from "./PostFeedComments";
 import "./PostsFeed.css";
 
 export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
-  const { setCurrentPost, UpdateViews } = useContext(UserContext);
+  const { setCurrentPost, UpdateViews, setPostIndex } = useContext(UserContext);
   const [commentBox, showCommentBox] = useState(false);
 
   const CommentBoxToggle = () => {
@@ -17,7 +17,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
   return (
     <div className="Feed">
       <div className="Post-Feed">
-        {Posts.map((Post) => (
+        {Posts.map((Post, index) => (
           <div className="postFeed-post" key={Post.id}>
             <div className="postFeed-post-info">
               <img src={Post.PosterPic} alt="" />
@@ -30,6 +30,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               onClick={() => {
                 setCurrentPost(Post);
                 UpdateViews(Post.id);
+                setPostIndex(index);
               }}
               to={Page === "main" ? "posts" : "../posts"}
             >

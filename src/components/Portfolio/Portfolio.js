@@ -24,7 +24,7 @@ export const Portfolio = () => {
                 Repository
                 <i class="fa fa-github" aria-hidden="true"></i>
               </a>
-              <a href="/SocialMedia" className="btn btn-primary">
+              <a href="/socialmedia" className="btn btn-primary">
                 Live Demo
               </a>
             </div>

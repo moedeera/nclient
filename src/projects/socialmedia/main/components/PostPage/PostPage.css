@@ -14,11 +14,11 @@
 .PostCard {
   width: 100%;
 
-  max-width: 1600px;
+  max-width: 1200px;
   margin: 50px auto 0;
 
   display: grid;
-  grid-template-columns: 1fr 10fr 1fr;
+  grid-template-columns: 1fr;
   backdrop-filter: blur(15px);
 }
 .PostCard > div {

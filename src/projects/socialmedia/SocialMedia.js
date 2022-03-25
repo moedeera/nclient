@@ -7,9 +7,11 @@ import { Nav } from "./Nav/NavTop/Nav";
 import { NavRight } from "./Nav/NavRight/NavRight";
 import { NavLeft } from "./Nav/NavLeft/NavLeft";
 import "./socialmedia.css";
+import { useLocation } from "react-router-dom";
 
 export const SocialMedia = () => {
   var log = true;
+  // const location = useLocation();
 
   return (
     <UserContextProvider>

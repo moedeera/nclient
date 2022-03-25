@@ -3,7 +3,7 @@ import "./PostsFeed.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
 
-export const PostFeedComments = (showComment) => {
+export const PostFeedComments = ({ showComment }) => {
   const { user } = useContext(UserContext);
 
   return (
