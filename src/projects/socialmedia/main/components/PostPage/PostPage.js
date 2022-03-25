@@ -49,6 +49,7 @@ export const PostPage = () => {
         setCurrentPost(Posts[0]);
         setRenderedPost(Posts[0]);
       }
+      console.log(Posts, match);
     }
 
     if (action === "decrement") {
@@ -98,6 +99,24 @@ export const PostPage = () => {
           <div className="PostCard-Post-image">
             <img src={RenderedPost.postPic} alt="" />
 
+            <div className="PostCard-arrow sm-l">
+              <i
+                className="fas fa-chevron-circle-left"
+                onClick={() => {
+                  PostCrement("decrement");
+                }}
+              ></i>
+            </div>
+
+            <div className="PostCard-arrow sm-r">
+              <i
+                className="fas fa-chevron-circle-right"
+                onClick={() => {
+                  PostCrement("increment");
+                }}
+              ></i>
+            </div>
+
             <div className="PostCard-Post-details-post-actions">
               <div className="PostCard-arrow">
                 <i
@@ -132,7 +151,10 @@ export const PostPage = () => {
             <div className="PostCard-Post-details-post-text">
               {RenderedPost.text}
             </div>
-            <h4>Comments</h4>
+            <div className="PostCard-Post-details-post-commentsHeader">
+              {" "}
+              <h4>Comments</h4>
+            </div>
             <div className="PostCard-Post-details-post-comments">
               {comments[0].commentList.map((comment) => (
                 <Comments comment={comment} key={comment.id} />
@@ -140,9 +162,21 @@ export const PostPage = () => {
             </div>
 
             <div className="PostCard-Post-details-post-make-comment">
-              <div>Make Comment</div>
+              <div>Comment</div>
               <div>
                 <input type="text" />
+              </div>
+              <div></div>{" "}
+              <div className="post-feed-comment-buttons">
+                <button className="btn btn-secondary">Submit</button>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    console.log("comment submitted");
+                  }}
+                >
+                  Cancel
+                </button>
               </div>
             </div>
           </div>

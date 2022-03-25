@@ -15,8 +15,9 @@
   width: 100%;
 
   max-width: 1200px;
-  margin: 50px auto 0;
 
+  margin: 0 auto;
+  margin-top: 50px;
   display: grid;
   grid-template-columns: 1fr;
   backdrop-filter: blur(15px);
@@ -36,43 +37,55 @@
   background-color: rgba(210, 105, 30, 0.386);
   background: rgba(255, 255, 255, 0.473);
   border: 2px solid rgba(128, 128, 128, 0.61);
-  height: 750px;
+  height: 100%;
+  max-height: 750px;
   padding: 0;
   color: white;
 }
 
 .PostCard-Post-details {
+  width: 100%;
   display: grid;
   background-color: #154c7988;
-  grid-template-rows: 1fr 1fr 1fr 10fr 2fr;
+  grid-template-rows: 2fr 4fr 1fr 8fr 4fr;
   border: 1px solid orange;
-  height: 740px;
-  margin: 5px auto;
+  height: 100%;
+  max-height: 740px;
 }
 .PostCard-Post-details-poster {
   padding: 5px;
 }
 .PostCard-Post-details-post-text {
-  padding: 5px 10px 10px;
   letter-spacing: 0.05em;
   line-height: 1.4em;
   font-size: 14px;
+
+  padding: 5px;
 }
-.PostCard-Post-details-post-comments h5 {
-  color: navy;
+.PostCard-Post-details-post-commentsHeader {
   text-align: center;
+  margin: 0px auto;
+
+  padding: 5px;
 }
+
 .PostCard-Post-details-post-comments h3 {
   color: white;
   font-weight: 500;
 }
 .PostCard-Post-details-post-comments {
-  overflow-y: scroll;
+  /* height: 350px; */
 }
 .PostCard-Post-comment {
   padding: 5px 2px 10px;
+  font-size: 13px;
   display: grid;
   grid-template-columns: 1fr 5fr;
+}
+.PostCard-Post-comment-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .PostCard-Post-comment img {
   width: 50px;
@@ -90,6 +103,8 @@
   padding: 5px;
   border-radius: 5px;
   color: aliceblue;
+  width: 95%;
+  max-width: 600px;
 }
 .PostCard-Post-comment-interactions {
   display: flex;
@@ -111,14 +126,19 @@
   font-size: 45px;
   color: var(--color-primary-social);
 }
+.PostCard-Post-image {
+  position: relative;
+}
 .PostCard-Post-image img {
   height: 600px;
 }
 .PostCard-Post-details-post-make-comment {
-  width: 100%;
+  width: 80%;
+  margin: 5px auto;
 }
 .PostCard-Post-details-post-make-comment input {
   width: 100%;
+
   height: 2rem;
   border-radius: 5px;
   border: none;
@@ -126,11 +146,26 @@
 .PostCard-Post-details-post-make-comment > div {
   margin: 5px auto;
 }
+.sm-l,
+.sm-r {
+  display: none;
+}
+@media screen and (min-width: 910px) {
+  .PostCard-Post-details-post-comments {
+    /* height: 350px; */
+    overflow-y: scroll;
+  }
+}
 
-@media screen and (max-width: 1238px) {
+@media screen and (max-width: 909px) {
+  .PostCard-Post-details {
+    overflow-y: scroll;
+    max-height: 347px;
+  }
+
   .PostCard-Post {
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 3fr;
+    grid-template-rows: 1fr 1fr;
   }
   .PostCard-Post-details-post-actions {
     display: none;
@@ -140,5 +175,19 @@
   }
   .PostCard-Post-image img {
     height: 400px;
+  }
+  .sm-l {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+  }
+  .sm-r {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
   }
 }
