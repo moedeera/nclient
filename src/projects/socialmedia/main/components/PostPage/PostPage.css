@@ -111,8 +111,8 @@
   font-size: 45px;
   color: var(--color-primary-social);
 }
-.PostCard-Post-image {
-  margin: 10px;
+.PostCard-Post-image img {
+  height: 600px;
 }
 .PostCard-Post-details-post-make-comment {
   width: 100%;
@@ -126,6 +126,7 @@
 .PostCard-Post-details-post-make-comment > div {
   margin: 5px auto;
 }
+
 @media screen and (max-width: 1238px) {
   .PostCard-Post {
     grid-template-columns: 1fr;
