@@ -2,6 +2,7 @@ import { createContext } from "react";
 import { useEffect, useState } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
 import { UseComments } from "../projects/socialmedia/common/hooks/UseComments";
+import {ProfileManagement} from "../projects/socialmedia/common/hooks/ProfileManagement";
 export const UserContext = createContext({});
 
 const GetCurrentPage = () => {
@@ -19,6 +20,8 @@ const GetCurrentPage = () => {
 export const UserContextProvider = ({ children }) => {
   const [page, setPage] = useState(GetCurrentPage());
   const [postIndex, setPostIndex] = useState(0);
+
+  const {profiles} = ProfileManagement()
 
   const {
     user,
@@ -68,6 +71,7 @@ export const UserContextProvider = ({ children }) => {
         setPage,
         postIndex,
         setPostIndex,
+        profiles
       }}
     >
       {children}

@@ -192,7 +192,7 @@ var Posts = [
     url: true,
   },
 ];
-var user = {
+var User = {
   id: 1,
   status: "public",
   name: "Jennifer Smith",
@@ -270,6 +270,7 @@ const GetCurrentPost = () => {
 };
 
 export const usePosts = () => {
+  const [user, setUser] = useState(User);
   const { days, months } = general();
 
   const [posts, setPosts] = useState(GetAllPosts());
@@ -420,5 +421,6 @@ export const usePosts = () => {
     currentPost,
     setCurrentPost,
     UpdateViews,
+    setUser,
   };
 };

@@ -1,0 +1,24 @@
+.options {
+    /* width: 20%;
+    padding: 5px 10px;
+    color: black;
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+  
+    background: white;
+    cursor: pointer; */
+    z-index: 91;
+    border-radius:1px solid crimson;
+    background-color:blue;
+  }
+  
+  .options:hover {
+    background: rgba(255, 255, 255, 0.445);
+    color: #1c8be3;
+  }
+  .images {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+  }

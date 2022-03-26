@@ -1,5 +1,6 @@
 import React from "react";
 import "./NavTop.css";
+import {Searchbar} from "./Searchbar.js"
 
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -16,13 +17,7 @@ export const Nav = () => {
           </h3>
           <i className="fab fa-pied-piper-alt fa-2x sm-icon"></i>
 
-          <div className="search">
-            <input type="text" placeholder="search" />
-            <div className="search-bar">
-              {" "}
-              <i className="fas fa-search "></i>
-            </div>
-          </div>
+         <Searchbar/>
         </div>
 
         <ul className="menu-items">

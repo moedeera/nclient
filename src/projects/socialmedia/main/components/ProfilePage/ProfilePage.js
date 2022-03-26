@@ -19,7 +19,7 @@ export const ProfilePage = () => {
          <img src={'https://cdn.pixabay.com/photo/2018/11/19/15/06/bridge-3825439_960_720.jpg'} alt=''/>
        </div> */}
          <div className="profile-page-upper-top-status">
-                  <i class="fas fa-circle"></i>
+                  <i className="fas fa-circle"></i>
                   {/* <li> <i className="fas fa-heart fa-2x"></i><h4>18</h4></li>
            <li> <i className="fas fa-user-friends fa-2x"></i><h4>18</h4></li>
             */}
@@ -80,7 +80,7 @@ export const ProfilePage = () => {
          <h3>Friends</h3>
          <div className="profile-page-friendList">
 
-{profiles.map((profile)=>( <div className="profile-page-friend">
+{profiles.map((profile)=>( <div key={profile.id} className="profile-page-friend">
 <img src={profile.profilePic} alt='' />
 <p>{profile.name}</p>
 
