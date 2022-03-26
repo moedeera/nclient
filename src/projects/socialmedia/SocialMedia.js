@@ -11,15 +11,24 @@ import { useLocation } from "react-router-dom";
 
 export const SocialMedia = () => {
   var log = true;
-  // const location = useLocation();
+  var show = true;
+  const location = useLocation();
+  console.log(location.pathname);
+  if (location.pathname === "/socialmedia/profile") {
+    show = false;
+  }
 
   return (
     <UserContextProvider>
       {" "}
       <div className="nav">
         <Nav status={log} />
-        <NavLeft status={log} />
-        <NavRight status={log} />
+        {show && (
+          <>
+            <NavLeft status={log} />
+            <NavRight status={log} />
+          </>
+        )}
       </div>
       <div>
         {log ? "You are logged in" : <>Please Log in</>}
