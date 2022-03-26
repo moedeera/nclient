@@ -12,7 +12,7 @@ export const PostFeedComments = ({ showComment }) => {
         <img src={user.profilePic} alt="" />
         <input
           type="textarea"
-          placeholder="Say something"
+          placeholder="Say something about this post"
           onClick={() => {
             console.log("clicked");
           }}
