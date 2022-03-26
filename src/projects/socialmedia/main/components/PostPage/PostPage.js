@@ -159,21 +159,15 @@ export const PostPage = () => {
             </div>
 
             <div className="PostCard-Post-details-post-make-comment">
-              <div id="comment">Comment</div>
+              <div id="comment">
+                <div>Comment</div>
+              </div>
               <div className="PostCard-Post-details-make-comment-input">
                 <input type="text" />
               </div>
               <div></div>{" "}
-              <div className="post-feed-comment-buttons">
+              <div className="PostCard-buttons">
                 <button className="btn btn-secondary">Submit</button>
-                <button
-                  className="btn btn-secondary"
-                  onClick={() => {
-                    console.log("comment submitted");
-                  }}
-                >
-                  Cancel
-                </button>
               </div>
             </div>
           </div>

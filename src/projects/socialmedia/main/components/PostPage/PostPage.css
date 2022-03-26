@@ -14,7 +14,7 @@
 .PostCard {
   width: 100%;
 
-  max-width: 1200px;
+  max-width: 1500px;
 
   margin: 0 auto;
   margin-top: 50px;
@@ -38,7 +38,7 @@
   background: rgba(255, 255, 255, 0.473);
   border: 2px solid rgba(128, 128, 128, 0.61);
   height: 100%;
-  max-height: 750px;
+  max-height: 850px;
   padding: 0;
   color: white;
 }
@@ -47,26 +47,32 @@
   width: 100%;
   display: grid;
   background-color: #154c7988;
-  grid-template-rows: 2fr 4fr 1fr 8fr 4fr;
+  grid-template-rows: 2fr 3fr 1fr 8fr 3.15fr;
   border: 1px solid orange;
   height: 100%;
-  max-height: 740px;
+  max-height: 840px;
 }
 .PostCard-Post-details-poster {
   padding: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
 }
 .PostCard-Post-details-post-text {
   letter-spacing: 0.05em;
   line-height: 1.4em;
   font-size: 14px;
-
+  border-bottom: 3px solid rgba(128, 128, 128, 0.582);
   padding: 5px;
+  margin-bottom: 5px;
 }
 .PostCard-Post-details-post-commentsHeader {
-  text-align: center;
-  margin: 0px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 
-  padding: 5px;
+  margin: 0px auto;
+  border-bottom: 3px solid rgba(128, 128, 128, 0.582);
 }
 
 .PostCard-Post-details-post-comments h3 {
@@ -130,13 +136,14 @@
   position: relative;
 }
 .PostCard-Post-image img {
-  height: 600px;
+  height: 100%;
+  max-height: 700px;
 }
 .PostCard-Post-details-post-make-comment {
-  background-color: cornflowerblue;
   width: 100%;
   padding-top: 5px;
   margin: 5px auto 0;
+  border-top: 1px solid var(--color-secondary-social);
 }
 
 .PostCard-Post-details-post-make-comment input {
@@ -159,8 +166,21 @@
   display: none;
 }
 #comment {
-  text-align: center;
-  margin: 10px 0;
+  display: flex;
+  width: 80%;
+}
+#comment > div {
+  background-color: var(--color-secondary-social);
+  padding: 7px;
+  border-radius: 5px;
+}
+.PostCard-buttons {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+.PostCard-buttons button {
+  cursor: pointer;
 }
 @media screen and (min-width: 910px) {
   .PostCard-Post-details-post-comments {
