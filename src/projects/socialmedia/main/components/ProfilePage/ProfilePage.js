@@ -4,11 +4,12 @@ import pic from "./blank-avatar.png";
 import {PostsFeed} from "../PostsFeed/PostsFeed"
 import {useContext} from "react"
 import {UserContext} from "../../../../../Context/Context"
-
+import { ProfileManagement } from "../../../common/hooks/ProfileManagement";
 export const ProfilePage = () => {
-  const {posts,
+  const {profiles}=ProfileManagement()
+  const {
     UpdatePostLikes,
-    page
+    page,user,friendsPosts
   } = useContext(UserContext);
   return <div className="profile-page-main">
        
@@ -19,25 +20,32 @@ export const ProfilePage = () => {
        </div> */}
          <div className="profile-page-upper-top-status">
                   <i class="fas fa-circle"></i>
+                  {/* <li> <i className="fas fa-heart fa-2x"></i><h4>18</h4></li>
+           <li> <i className="fas fa-user-friends fa-2x"></i><h4>18</h4></li>
+            */}
+
+
+
           </div>
          <div className="profile-page-upper-top-name">
-             <h2>Jonathan Smith</h2>
+             <h2>{user.name}</h2>
            </div>
+
     </div>
 
    <div className="profile-page-upper-bottom">
        <div className="profile-page-upper-bottom-list">
          <ul>
-           <li><small>From</small><h4>Toronto, Ont</h4></li>
+           <li><small>From</small><h4>{user.location}</h4></li>
            <li><small>Works at</small><h4>BV Engineering</h4></li>
-           
+    
          </ul>
             
             
        </div>
     </div>
    <div className="profile-page-upper-image">
-             <img src={pic} alt=''/>
+             <img src={user.profilePic} alt=''/>
     </div>
 
     </div>
@@ -50,18 +58,18 @@ export const ProfilePage = () => {
                  <button className="btn btn-secondary">Message</button>
               </div>
             <div className="profile-page-lower-btn">
-                <button className="btn btn-secondary">Invite</button>
+                <button className="btn btn-secondary">Follow</button>
             </div>
       </div>
 
        <div className="profile-page-lower-bio">
          
          <ul>
-           <li><h3>Bio</h3></li>
-           <li>Nigh Owl</li>
-           <li>"Live life for the moment"</li>
-           <li>Toronto Ontario</li>
-           <li>25 years old</li>
+           <li><h3>Bio:</h3></li>
+           {user.description!==""&&<li>"{user.description}"</li>}
+           {user.header!==""&&<li>'{user.header}'</li>}
+           <li><i className="fas fa-map-pin"></i> Toronto Ontario</li>
+           <li><i className="fab fa-pagelines"></i>25 years old</li>
            
          </ul>
 
@@ -72,31 +80,13 @@ export const ProfilePage = () => {
          <h3>Friends</h3>
          <div className="profile-page-friendList">
 
-      <div className="profile-page-friend">
-<img src={pic} alt='' />
-<p>James Vitto</p>
+{profiles.map((profile)=>( <div className="profile-page-friend">
+<img src={profile.profilePic} alt='' />
+<p>{profile.name}</p>
 
-      </div>
-      <div className="profile-page-friend">
-<img src={pic} alt='' />
-<p>James Vitto</p>
+      </div>))}
+     
 
-      </div>
-      <div className="profile-page-friend">
-<img src={pic} alt='' />
-<p>James Vitto</p>
-
-      </div>
-      <div className="profile-page-friend">
-<img src={pic} alt='' />
-<p>James Vitto</p>
-
-      </div>
-      <div className="profile-page-friend">
-<img src={pic} alt='' />
-<p>James Vitto</p>
-
-      </div>
 
          </div>
       
@@ -105,15 +95,18 @@ export const ProfilePage = () => {
 
     <div className="profile-page-footer">
   <small>Privacy Policy</small>
-  <small>Privacy Policy</small>
-  <small>Econnect Technologies</small>
+  <small>Terms</small>
+  <small>2021 Copyright</small>
 
      </div>
 
       </div>
  
 <div className="profile-page-lower-posts">
-  <PostsFeed Posts={posts}
+  <div className="postFeed-post" style={{fontWeight:'bold'}}>
+    {user.name}'s Posts
+  </div>
+  <PostsFeed Posts={friendsPosts}
   LikeCounter ={UpdatePostLikes}
   Page ={page}
   />
