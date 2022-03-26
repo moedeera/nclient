@@ -17,7 +17,9 @@ export const ProfilePage = () => {
        {/* <div className="profile-page-upper-top-overlay">
          <img src={'https://cdn.pixabay.com/photo/2018/11/19/15/06/bridge-3825439_960_720.jpg'} alt=''/>
        </div> */}
-         <div className="profile-page-upper-top-status">Online <i className="fas fa-check"></i></div>
+         <div className="profile-page-upper-top-status">
+                  <i class="fas fa-circle"></i>
+          </div>
          <div className="profile-page-upper-top-name">
              <h2>Jonathan Smith</h2>
            </div>
@@ -69,11 +71,6 @@ export const ProfilePage = () => {
 
          <h3>Friends</h3>
          <div className="profile-page-friendList">
-<div className="profile-page-friend">
-<img src={pic} alt='' />
-<p>James Vitto</p>
-
-      </div>
 
       <div className="profile-page-friend">
 <img src={pic} alt='' />
@@ -90,7 +87,16 @@ export const ProfilePage = () => {
 <p>James Vitto</p>
 
       </div>
+      <div className="profile-page-friend">
+<img src={pic} alt='' />
+<p>James Vitto</p>
 
+      </div>
+      <div className="profile-page-friend">
+<img src={pic} alt='' />
+<p>James Vitto</p>
+
+      </div>
 
          </div>
       
