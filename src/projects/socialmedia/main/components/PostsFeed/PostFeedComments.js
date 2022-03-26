@@ -3,8 +3,33 @@ import "./PostsFeed.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
 
-export const PostFeedComments = ({ showComment }) => {
-  const { user } = useContext(UserContext);
+export const PostFeedComments = ({showComment}) => {
+ 
+
+const { user } = useContext(UserContext);
+
+const [formComment, setFormComment] = useState([]);
+
+
+
+
+
+  const onCommentChange = (e) => {
+   
+    if (e.target.value.length > 0) {
+      document.addEventListener("click", (e) => {
+        if (
+          e.target.className !== "btn-secondary"
+                  ) {
+      
+          setFormComment([]);
+        }
+      });
+    }
+    setFormComment(e.target.value);
+  };
+
+
 
   return (
     <div className="post-feed-comment">
@@ -12,23 +37,31 @@ export const PostFeedComments = ({ showComment }) => {
         <img src={user.profilePic} alt="" />
         <input
           type="textarea"
-          placeholder="Say something about this post"
-          onClick={() => {
-            console.log("clicked");
+          value={formComment}
+          onChange={(e) => {
+            onCommentChange(e);
           }}
+
+          placeholder="Say something about this post"
+       
         />
       </div>
-      <div className="post-feed-comment-buttons">
-        <button className="btn btn-secondary">Submit</button>
+
+      
+     <div className="post-feed-comment-buttons">
+        <button className="btn btn-secondary"
+        onClick={()=>{console.log("clicked");}}
+        
+        >Submit</button>
         <button
           className="btn btn-secondary"
           onClick={() => {
-            showComment();
+            showComment()
           }}
         >
           Cancel
         </button>
-      </div>
+      </div> 
     </div>
   );
 };
