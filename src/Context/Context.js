@@ -5,6 +5,15 @@ import { UseComments } from "../projects/socialmedia/common/hooks/UseComments";
 import { useProfiles } from "../projects/socialmedia/common/hooks/useProfiles";
 export const UserContext = createContext({});
 
+//GetDemoStatus
+const getDemoStatus = () => {
+  let demo = true;
+  if (localStorage.getItem("token")) {
+    demo = false;
+  }
+  return demo;
+};
+
 //LoadUser
 const LoadUser = () => {
   var DemoUser = {
@@ -55,7 +64,7 @@ const LoadUser = () => {
       },
     ],
 
-    Friends: [2, 3, 4, 6],
+    Friends: [2, 3, 4, 6, 11],
     followers: [5, 6, 9],
     following: [5, 7, 9],
     Posts: [6, 5, 1],
@@ -88,6 +97,7 @@ const GetCurrentPage = () => {
 
 export const UserContextProvider = ({ children }) => {
   const [page, setPage] = useState(GetCurrentPage());
+
   const [postIndex, setPostIndex] = useState(0);
   const {
     profiles,
@@ -130,10 +140,11 @@ export const UserContextProvider = ({ children }) => {
   }, [comments]);
 
   useEffect(() => {
+    console.log(user);
     GetSuggestedProfiles(user);
     GetFriendsProfiles(user);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [user]);
+  }, []);
 
   return (
     <UserContext.Provider
