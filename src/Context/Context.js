@@ -2,12 +2,12 @@ import { createContext } from "react";
 import { useEffect, useState } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
 import { UseComments } from "../projects/socialmedia/common/hooks/UseComments";
-import {useProfiles} from "../projects/socialmedia/common/hooks/useProfiles";
+import { useProfiles } from "../projects/socialmedia/common/hooks/useProfiles";
 export const UserContext = createContext({});
 
 //LoadUser
-const LoadUser =()=>{
-  var DemoUser= {
+const LoadUser = () => {
+  var DemoUser = {
     id: 1,
     status: "public",
     name: "Jennifer Smith",
@@ -50,18 +50,18 @@ const LoadUser =()=>{
         text: "Thanks for the gift yo sent!",
         picture:
           "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
-  
+
         pending: true,
       },
     ],
-  
+
     Friends: [2, 3, 4, 6],
     followers: [5, 6, 9],
     following: [5, 7, 9],
     Posts: [6, 5, 1],
   };
-  console.log('user loading')
-  
+  console.log("user loading");
+
   let User;
   if (localStorage.getItem("User")) {
     User = JSON.parse(localStorage.getItem("User"));
@@ -70,13 +70,10 @@ const LoadUser =()=>{
     localStorage.setItem("User", JSON.stringify(User));
   }
 
-  console.log('user loaded', User)
+  console.log("user loaded", User);
   return User;
-
-
-}
-
-
+};
+//
 const GetCurrentPage = () => {
   let CurrentPage;
 
@@ -89,12 +86,7 @@ const GetCurrentPage = () => {
   return CurrentPage;
 };
 
-export const UserContextProvider = ({ children }) => 
-
-
-
-
-{
+export const UserContextProvider = ({ children }) => {
   const [page, setPage] = useState(GetCurrentPage());
   const [postIndex, setPostIndex] = useState(0);
   const {
@@ -103,11 +95,12 @@ export const UserContextProvider = ({ children }) =>
     friendProfiles,
     GetSuggestedProfiles,
     GetFriendsProfiles,
-    } = useProfiles()
+  } = useProfiles();
+
   const [user, setUser] = useState(LoadUser());
 
   const {
-     posts,
+    posts,
     setPosts,
     friendsPosts,
     TrendingPosts,
@@ -122,7 +115,6 @@ export const UserContextProvider = ({ children }) =>
   useEffect(() => {
     localStorage.setItem("User", JSON.stringify(user));
   }, [user]);
-
 
   useEffect(() => {
     localStorage.setItem("CurrentPage", JSON.stringify(page));
@@ -141,10 +133,7 @@ export const UserContextProvider = ({ children }) =>
     GetSuggestedProfiles(user);
     GetFriendsProfiles(user);
     // eslint-disable-next-line react-hooks/exhaustive-deps
- }, [user]);
-
-
-
+  }, [user]);
 
   return (
     <UserContext.Provider

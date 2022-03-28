@@ -3,8 +3,7 @@ import { useEffect, useState, useContext } from "react";
 import { UserContext } from "../../../../Context/Context";
 import axios from "axios";
 
-
-// Fetch 
+// Fetch
 var Profiles = [
   {
     id: 1,
@@ -69,8 +68,7 @@ var Profiles = [
     age: 21,
     scores: [85, 42, 35],
     header: "Future Nurse in the making",
-    about:
-      "Currently enrolled in UofS Nursing, OilersFan and a shopaholic ",
+    about: "Currently enrolled in UofS Nursing, OilersFan and a shopaholic ",
 
     Feed: [
       { name: "Jen Smith", type: "like", id: 1 },
@@ -305,8 +303,7 @@ var Profiles = [
     age: 32,
     scores: [1, 3, 1],
     header: "Long neck ice cold beer never broke my heart... ",
-    about:
-      "If you are a flames fan, get the hell out of my profile page, NOW!",
+    about: "If you are a flames fan, get the hell out of my profile page, NOW!",
 
     Feed: [{ name: "Barbara Wiegel", type: "request", id: 12 }],
     profilePic:
@@ -504,7 +501,7 @@ var Profiles = [
   },
 ];
 // Mock database
-const GetAllProfiles = () => {
+const getAllProfiles = () => {
   let AllProfiles;
   if (localStorage.getItem("Profiles")) {
     AllProfiles = JSON.parse(localStorage.getItem("Profiles"));
@@ -514,40 +511,44 @@ const GetAllProfiles = () => {
   }
   return AllProfiles;
 };
-// 
-
-
-
-
+//
 
 export const useProfiles = () => {
-const [profiles, setProfiles] = useState([]);
- const [friendProfiles, setFriendProfiles] = useState([]);
- const [suggestedProfiles, setSuggestedProfiles] = useState([]);
- 
+  const [profiles, setProfiles] = useState([]);
+  const [friendProfiles, setFriendProfiles] = useState([]);
+  const [suggestedProfiles, setSuggestedProfiles] = useState([]);
 
-const GetFriendsProfiles = () =>{
-// fetch request
+  const GetFriendsProfiles = () => {
+    // fetch request
 
-var Fetched = GetAllProfiles();
+    let Fetched = getAllProfiles();
 
-setFriendProfiles(Fetched.filter((set)=>Profiles.friends.some((num)=>num===set.id)))
-console.log(Fetched.filter((set)=>Profiles.friends.some((num)=>num===set.id)))
-}
+    setFriendProfiles(
+      Fetched.filter((set) => Profiles?.friends?.some((num) => num === set.id))
+    );
+    console.log(
+      Fetched.filter((set) => Profiles?.friends?.some((num) => num === set.id))
+    );
+  };
 
   const GetSuggestedProfiles = (user) => {
-    let newProfiles = GetAllProfiles();
-console.log(user)
+    let newProfiles = getAllProfiles();
+    console.log(user);
     //Exclude Own Profile
     var profileSet = newProfiles.filter((profile) => profile.id !== user.id);
     // Exclude all the friend profiles
- 
-    profileSet = profileSet.filter((profile)=>!user.friends.some((friend)=>friend.id===profile.id)).slice(0,6)
+    //
+    console.log(user.friends);
+    profileSet =
+      profileSet
+        .filter(
+          (profile) =>
+            !user?.friends?.some((friend) => friend?.id === profile?.id)
+        )
+        .slice(0, 6) || [];
     // Select randomly up to 6 of the remaining profiles
     setSuggestedProfiles(profileSet);
   };
-
-
 
   return {
     profiles,
