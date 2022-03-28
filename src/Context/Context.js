@@ -72,7 +72,6 @@ const LoadUser = () => {
       following: [5, 7, 9],
       Posts: [6, 5, 1],
     };
-    console.log("user loading");
 
     let User;
     if (localStorage.getItem("User")) {
@@ -82,7 +81,6 @@ const LoadUser = () => {
       localStorage.setItem("User", JSON.stringify(User));
     }
 
-    console.log("user loaded", User);
     return User;
   }
 };
@@ -144,7 +142,6 @@ export const UserContextProvider = ({ children }) => {
   }, [comments]);
 
   useEffect(() => {
-    console.log(user);
     GetSuggestedProfiles(user);
     GetFriendsProfiles(user);
     // eslint-disable-next-line react-hooks/exhaustive-deps

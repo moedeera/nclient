@@ -18,7 +18,7 @@ const getDemoStatus = () => {
 
 export const useProfiles = () => {
   let demo = getDemoStatus();
-  console.log(demo);
+
   const [profiles, setProfiles] = useState([]);
   const [friendProfiles, setFriendProfiles] = useState([]);
   const [suggestedProfiles, setSuggestedProfiles] = useState([]);
