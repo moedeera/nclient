@@ -63,6 +63,7 @@ export const Searchbar = () => {
 
 
   return (
+    
     <div className="search">
     <input type="text" placeholder="search"
     name="text"
@@ -70,13 +71,28 @@ export const Searchbar = () => {
     onChange={(e) => onChangeText(e.target.value)}
        
     />
+    <div className="search-bar">
+      {" "}
+      <i className="fas fa-search "></i>
+    </div>
 
-{suggestions
+
+{/* <div className="options">John Smith</div><div className="options"> <img src={profiles[0].profilePic} alt="" /></div> */}
+
+
+
+
+{/* {suggestions
               ? suggestions.map((result, i) => (
-                  <Link to="/" onClick={() => FriendsProfile(result.id)}>
-                    <div className="options" key={i}>
-                      <div> {result.name}</div>
-                      <div>
+                <>
+                <Link to="/" onClick={() => FriendsProfile(result.id)}>
+                        <div className="options" key={i}>
+                              <div> {result.name}</div>
+                         </div>
+                  </Link>
+
+
+                <div className="options" key={i+ 20}>
                         {" "}
                         <img
                           src={result.profilePic}
@@ -84,17 +100,17 @@ export const Searchbar = () => {
                           className="images"
                         />
                       </div>
-                    </div>
-                  </Link>
+                
+              
+                       
+                 </>
+                  
                 ))
-              : ""}
+              : ""} */}
 
 
 
-    <div className="search-bar">
-      {" "}
-      <i className="fas fa-search "></i>
-    </div>
+
   </div>
   )
 }

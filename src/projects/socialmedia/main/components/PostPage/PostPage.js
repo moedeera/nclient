@@ -3,7 +3,7 @@ import "./PostPage.css";
 import { useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
 import { Comments } from "./Comments";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // import { Link } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
@@ -18,6 +18,7 @@ export const PostPage = () => {
     friendsPosts,
     TrendingPosts,
     page,
+    
   } = useContext(UserContext);
 
   const [RenderedPost, setRenderedPost] = useState(currentPost);

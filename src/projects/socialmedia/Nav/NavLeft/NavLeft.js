@@ -3,11 +3,11 @@ import { useContext } from "react";
 import "./Navleft.css";
 
 import { UserContext } from "../../../../Context/Context";
-import { ProfileManagement } from "../../common/hooks/ProfileManagement";
+
 
 export const NavLeft = ({ status }) => {
-  const { user } = useContext(UserContext);
-  const { suggestedProfiles } = ProfileManagement();
+const { user,suggestedProfiles } = useContext(UserContext);
+console.log(suggestedProfiles)
 
   return (
     <div className="nav-left">
@@ -22,7 +22,7 @@ export const NavLeft = ({ status }) => {
 
           <div className="nav-left-profile-image-color1"></div>
           <div className="nav-left-profile-image-color2"></div>
-        </div>
+          </div>
         <div className="nav-left-follow">
           {" "}
           <h4>Following</h4>

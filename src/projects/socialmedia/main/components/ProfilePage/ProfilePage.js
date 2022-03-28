@@ -4,16 +4,16 @@ import pic from "./blank-avatar.png";
 import {PostsFeed} from "../PostsFeed/PostsFeed"
 import {useContext} from "react"
 import {UserContext} from "../../../../../Context/Context"
-import { ProfileManagement } from "../../../common/hooks/ProfileManagement";
+import { useProfiles } from "../../../common/hooks/useProfiles";
 export const ProfilePage = () => {
-  const {profiles}=ProfileManagement()
+  const {profiles}=useProfiles()
   const {
     UpdatePostLikes,
     page,user,friendsPosts
   } = useContext(UserContext);
   return <div className="profile-page-main">
        
-<div className="profile-page-upper">
+ <div className="profile-page-upper">
      <div className="profile-page-upper-top">
        {/* <div className="profile-page-upper-top-overlay">
          <img src={'https://cdn.pixabay.com/photo/2018/11/19/15/06/bridge-3825439_960_720.jpg'} alt=''/>
@@ -49,11 +49,11 @@ export const ProfilePage = () => {
     </div>
 
     </div>
-<div className="profile-page-lower">
+ <div className="profile-page-lower">
 
  <div className="profile-page-lower-top-side">
 
-      <div className="profile-page-lower-buttons">
+ <div className="profile-page-lower-buttons">
              <div className="profile-page-lower-btn">
                  <button className="btn btn-secondary">Message</button>
               </div>
@@ -62,7 +62,7 @@ export const ProfilePage = () => {
             </div>
       </div>
 
-       <div className="profile-page-lower-bio">
+ <div className="profile-page-lower-bio">
          
          <ul>
            <li><h3>Bio:</h3></li>
@@ -73,7 +73,7 @@ export const ProfilePage = () => {
            
          </ul>
 
-       </div>
+</div>
 
        <div className="profile-page-lower-friends">
 

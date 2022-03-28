@@ -1,17 +1,16 @@
 .options {
-    /* width: 20%;
-    padding: 5px 10px;
-    color: black;
-    text-align: left;
-    display: flex;
-    justify-content: space-between;
+ 
   
-    background: white;
-    cursor: pointer; */
-    z-index: 91;
-    border-radius:1px solid crimson;
-    background-color:blue;
-    
+  }
+  .options img{
+   
+
+    border-radius: 50%;
+  }
+
+  .search.option:first-child{
+
+    margin-top: 50px;
   }
   
 
