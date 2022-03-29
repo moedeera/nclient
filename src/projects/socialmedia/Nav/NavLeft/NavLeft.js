@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import "./Navleft.css";
+import { Suggestions } from "./Suggestions";
 
 import { UserContext } from "../../../../Context/Context";
 
@@ -41,21 +42,7 @@ export const NavLeft = ({ status }) => {
         </div>
 
         {suggestedProfiles.map((profile) => (
-          <div className="nav-left-suggested-profile" key={profile.id}>
-            <div>
-              <img src={profile.profilePic} alt="" />
-            </div>
-            <div className="nav-left-info">
-              {" "}
-              <h4 style={{ fontSize: "14px", color: "navy" }}>
-                {profile.name}
-              </h4>
-              <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>
-            </div>
-            <div className="nav-left-add">
-              <i className="fas fa-plus"></i>
-            </div>
-          </div>
+          <Suggestions profile={profile} key={profile.id} />
         ))}
 
         <div className="nav-left-profile-image-colord"></div>

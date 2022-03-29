@@ -142,6 +142,9 @@
 .md-suggestion-icons i {
   display: none;
 }
+
+/*Suggestions animation*/
+
 @media screen and (max-width: 1224px) {
   .nav-left-view {
     display: none !important;
