@@ -1,5 +1,6 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { UserContext } from "../../../../Context/Context";
 import { mock_comments } from "../../../../assets/MockDataBase";
 
 const getDemoStatus = () => {
@@ -23,24 +24,27 @@ const getAllComments = () => {
   }
 };
 
-const GetCurrentComments = () => {
-  let CurrentsComments;
+const getCurrentComments = () => {
+  let currentComments;
   if (getDemoStatus()) {
     if (localStorage.getItem("Comments")) {
-      CurrentsComments = JSON.parse(localStorage.getItem("Comments"));
-    } else {
-      CurrentsComments = [{ PostId: 0, commentList: [] }];
-      localStorage.setItem("Comments", JSON.stringify(CurrentsComments));
+      const parsed = JSON.parse(localStorage.getItem("Comments"));
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        currentComments = parsed;
+      }
+    }
+    if (!currentComments) {
+      currentComments = [{ PostId: 0, commentList: [] }];
+      localStorage.setItem("Comments", JSON.stringify(currentComments));
     }
   }
 
-  return CurrentsComments;
+  return currentComments;
 };
+export const useComments = ({ setPosts }) => {
+  const [comments, setComments] = useState(getCurrentComments());
 
-export const useComments = () => {
-  const [comments, setComments] = useState(GetCurrentComments());
-
-  const GetComments = (Post) => {
+  const getComments = (Post) => {
     // fetch posts for ID
 
     if (getDemoStatus) {
@@ -49,8 +53,9 @@ export const useComments = () => {
     }
   };
 
-  const CreateComment = (comment, postId, user) => {
+  const createComment = (comment, postId, user) => {
     console.log("comment was created", comment, postId, user.name);
+    let newPosts;
     const key = Math.floor(Math.random() * 1000 + 1);
 
     const newComment = {
@@ -73,16 +78,29 @@ export const useComments = () => {
       let match = currentComments.find((comment) => comment.PostId === postId);
       let newCurrentComments = [];
       newCurrentComments.push(match);
-      console.log(newCurrentComments, comments);
+
       setComments(newCurrentComments);
+
+      let fetchedPosts = localStorage.getItem("Posts");
+      newPosts = JSON.parse(fetchedPosts);
+      if (fetchedPosts) {
+        newPosts = newPosts.map((post) =>
+          post.id === postId
+            ? { ...post, comments: [...post.comments, key] }
+            : post
+        );
+      }
+
       localStorage.setItem("Comments-all", JSON.stringify(currentComments));
     }
+
+    setPosts(newPosts);
   };
 
   return {
-    GetComments,
+    getComments,
     comments,
     setComments,
-    CreateComment,
+    createComment,
   };
 };

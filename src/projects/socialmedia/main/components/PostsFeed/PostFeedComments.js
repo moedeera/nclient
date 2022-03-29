@@ -4,7 +4,7 @@ import { useState, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
 
 export const PostFeedComments = ({ showComment, PostId }) => {
-  const { user, CreateComment } = useContext(UserContext);
+  const { user, createComment } = useContext(UserContext);
 
   const [formComment, setFormComment] = useState([]);
 
@@ -37,7 +37,7 @@ export const PostFeedComments = ({ showComment, PostId }) => {
         <button
           className="btn btn-secondary"
           onClick={() => {
-            CreateComment(formComment, PostId, user);
+            createComment(formComment, PostId, user);
           }}
         >
           Submit

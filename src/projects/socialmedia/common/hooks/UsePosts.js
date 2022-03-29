@@ -13,18 +13,20 @@ const getDemoStatus = () => {
   }
 };
 
-const GetAllPosts = () => {
+const getAllPosts = () => {
   let AllPosts;
 
-  if (localStorage.getItem("Posts")) {
-    AllPosts = JSON.parse(localStorage.getItem("Posts"));
-  } else {
-    AllPosts = mock_posts;
-    localStorage.setItem("Posts", JSON.stringify(mock_posts));
+  if (getDemoStatus()) {
+    if (localStorage.getItem("Posts")) {
+      AllPosts = JSON.parse(localStorage.getItem("Posts"));
+    } else {
+      AllPosts = mock_posts;
+      localStorage.setItem("Posts", JSON.stringify(mock_posts));
+    }
+    return AllPosts;
   }
-  return AllPosts;
 };
-const GetCurrentPost = () => {
+const getCurrentPost = () => {
   let CurrentPost;
 
   if (localStorage.getItem("CurrentPost")) {
@@ -36,10 +38,15 @@ const GetCurrentPost = () => {
   return CurrentPost;
 };
 
+/// function that fetches values
+
 export const usePosts = () => {
   const { days, months } = general();
-  const [posts, setPosts] = useState(GetAllPosts());
-  const [currentPost, setCurrentPost] = useState(GetCurrentPost());
+  const [posts, setPosts] = useState([]);
+  const [currentPost, setCurrentPost] = useState({
+    PostID: 0,
+    commentsList: [],
+  });
 
   var friendsPosts = useMemo(
     function getFriendPosts() {
@@ -159,7 +166,7 @@ export const usePosts = () => {
   // Update Post Likes
   const UpdatePostLikes = (id) => {
     if (getDemoStatus) {
-      var updatedPosts;
+      let updatedPosts;
       let user = localStorage.getItem("User");
       var match = posts.find((post) => post.id === id);
 
@@ -179,6 +186,14 @@ export const usePosts = () => {
       localStorage.setItem("Posts", JSON.stringify(updatedPosts));
     }
   };
+
+  useEffect(() => {
+    console.log(getDemoStatus());
+    if (getDemoStatus()) {
+      setPosts(getAllPosts());
+      setCurrentPost(getCurrentPost());
+    }
+  }, []);
 
   return {
     posts,

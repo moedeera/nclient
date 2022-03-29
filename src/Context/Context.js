@@ -122,7 +122,9 @@ export const UserContextProvider = ({ children }) => {
     setCurrentPost,
     UpdateViews,
   } = usePosts();
-  const { GetComments, comments, setComments, CreateComment } = useComments();
+  const { getComments, comments, setComments, createComment } = useComments({
+    setPosts,
+  });
 
   useEffect(() => {
     localStorage.setItem("User", JSON.stringify(user));
@@ -134,12 +136,15 @@ export const UserContextProvider = ({ children }) => {
 
   useEffect(() => {
     localStorage.setItem("CurrentPostId", JSON.stringify(currentPost));
-    GetComments(currentPost);
+    getComments(currentPost);
   }, [currentPost]);
 
   useEffect(() => {
     localStorage.setItem("Comments", JSON.stringify(comments));
   }, [comments]);
+  useEffect(() => {
+    localStorage.setItem("Posts", JSON.stringify(posts));
+  }, [posts]);
 
   useEffect(() => {
     GetSuggestedProfiles(user);
@@ -159,11 +164,11 @@ export const UserContextProvider = ({ children }) => {
         UpdatePostLikes,
         currentPost,
         setCurrentPost,
-        GetComments,
+        getComments,
         setComments,
         comments,
         UpdateViews,
-        CreateComment,
+        createComment,
         page,
         setPage,
         postIndex,

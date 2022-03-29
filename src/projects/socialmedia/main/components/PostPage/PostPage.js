@@ -24,7 +24,7 @@ export const PostPage = () => {
 
   let Posts;
   const navigate = useNavigate();
-  var {
+  const {
     currentPost,
     comments,
     setCurrentPost,
@@ -32,7 +32,7 @@ export const PostPage = () => {
     TrendingPosts,
     page,
     user,
-    CreateComment,
+    createComment,
   } = useContext(UserContext);
 
   const [RenderedPost, setRenderedPost] = useState(currentPost);
@@ -80,22 +80,20 @@ export const PostPage = () => {
   };
 
   useEffect(() => {
-    const OutsideClick = () => {
-      document.addEventListener("click", (e) => {
-        if (
-          e.target.className === "PostPage" ||
-          e.target.className === "social-nav-top"
-        ) {
-          if (page === "main") {
-            navigate("../");
-          } else {
-            navigate("../trending");
-          }
+    const OutsideClick = (e) => {
+      if (
+        e.target.className === "PostPage" ||
+        e.target.className === "social-nav-top"
+      ) {
+        if (page === "main") {
+          navigate("../");
+        } else {
+          navigate("../trending");
         }
-      });
+      }
     };
 
-    OutsideClick();
+    document.addEventListener("click", OutsideClick);
     return () => {
       document.removeEventListener("click", OutsideClick);
     };
@@ -189,7 +187,7 @@ export const PostPage = () => {
                 <button
                   className="btn btn-secondary"
                   onClick={() => {
-                    CreateComment(formComment, currentPost.id, user);
+                    createComment(formComment, currentPost.id, user);
                   }}
                 >
                   Submit
