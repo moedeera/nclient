@@ -4,10 +4,8 @@ import "./Navleft.css";
 
 import { UserContext } from "../../../../Context/Context";
 
-
 export const NavLeft = ({ status }) => {
-const { user,suggestedProfiles } = useContext(UserContext);
-console.log(suggestedProfiles)
+  const { user, suggestedProfiles } = useContext(UserContext);
 
   return (
     <div className="nav-left">
@@ -22,7 +20,7 @@ console.log(suggestedProfiles)
 
           <div className="nav-left-profile-image-color1"></div>
           <div className="nav-left-profile-image-color2"></div>
-          </div>
+        </div>
         <div className="nav-left-follow">
           {" "}
           <h4>Following</h4>

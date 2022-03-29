@@ -1,7 +1,7 @@
 import { createContext } from "react";
 import { useEffect, useState } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
-import { UseComments } from "../projects/socialmedia/common/hooks/UseComments";
+import { useComments } from "../projects/socialmedia/common/hooks/UseComments";
 import { useProfiles } from "../projects/socialmedia/common/hooks/useProfiles";
 export const UserContext = createContext({});
 
@@ -122,7 +122,7 @@ export const UserContextProvider = ({ children }) => {
     setCurrentPost,
     UpdateViews,
   } = usePosts();
-  const { GetComments, comments, setComments, CreateComment } = UseComments();
+  const { GetComments, comments, setComments, CreateComment } = useComments();
 
   useEffect(() => {
     localStorage.setItem("User", JSON.stringify(user));

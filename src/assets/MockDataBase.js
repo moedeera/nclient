@@ -508,7 +508,7 @@ var mock_posts = [
       "https://images.pexels.com/photos/1842182/pexels-photo-1842182.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260",
     text: "Teddy was just enjoying the sun",
     date: "March 1 2022 at 5:12pm",
-    comments: [3],
+    comments: [6, 5],
     views: 10,
     shares: 5,
     likers: [1, 2],
@@ -525,9 +525,9 @@ var mock_posts = [
 
     postPic:
       "https://cdn.pixabay.com/photo/2020/12/15/14/38/covid-19-5833844_960_720.png",
-    text: "Booster shots now available across Canada",
+    text: "Booster shots now available across Canada, Book Yours at at Weston Health clinic at www.westclinic.ca",
     date: "Jan 10 2022 at 1:25am ",
-    comments: [],
+    comments: [96, 95, 103, 104, 105, 106],
     views: 220,
     shares: 103,
     likers: [1, 2],
@@ -546,10 +546,10 @@ var mock_posts = [
       "https://cdn.pixabay.com/photo/2017/05/09/03/46/alberta-2297204_960_720.jpg",
     text: "Banff is offering free ski lessons from March 10 to the 16th, I am a newbie myself but would love it if anyone joined me ",
     date: "January 10 2022 at 8:45pm",
-    comments: [],
+    comments: [97, 98],
     views: 2,
     shares: 1,
-    likers: [],
+    likers: [4],
     datePosted: new Date("2022-01-10"),
     url: true,
   },
@@ -565,7 +565,7 @@ var mock_posts = [
       "https://cdn.pixabay.com/photo/2017/10/28/07/47/woman-2896389_960_720.jpg",
     text: "We already have 4 people attending, I will be driving so we can all car-pool, anyone care to join  ",
     date: "January 14 2022 at 8:45pm",
-    comments: [],
+    comments: [99, 100, 101, 102],
     views: 30,
     shares: 25,
     likers: [],
@@ -584,7 +584,7 @@ var mock_posts = [
     postPic:
       "https://cdn.pixabay.com/photo/2016/11/19/14/30/aurora-borealis-1839582_960_720.jpg",
     text: "Enjoying some quite time at the cabin, amazing view of the northern lights",
-    comments: [1, 5],
+    comments: [103, 104],
     date: "March 2 2022 at 2:15pm",
     views: 100,
     shares: 25,
@@ -603,7 +603,7 @@ var mock_posts = [
       "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
     text: "Happy Anniversary Babe",
     date: "Feb 22 2022 at 11:45pm",
-    comments: [2, 4],
+    comments: [25, 24],
     views: 150,
     shares: 15,
     likers: [1, 2, 3, 4],
@@ -621,7 +621,7 @@ var mock_posts = [
       "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
     text: "Hey guys, we are organizing a little party next weekend at the Western pub end for our anniversary, everyone is welcome to join but just let us know in advance, thanks",
     date: "Feb 2 2022 at 8:45pm",
-    comments: [],
+    comments: [29],
     views: 2,
     shares: 1,
     likers: [4],
@@ -639,7 +639,7 @@ var mock_posts = [
       "https://cdn.pixabay.com/photo/2022/03/02/13/42/peace-7043225_960_720.jpg",
     text: "Help Ukrainian refugees by donating to one of the following charities for as little as a dollar; UNICEF, UNESCO, WHO organization, Doctors without Borders, and Plan Canada, clink on the link for more info www.ukrainecrisis.org",
     date: "Feb 2 2022 at 8:45pm",
-    comments: [1, 7, 8],
+    comments: [21, 27, 28],
     views: 322,
     shares: 51,
     likers: [1, 2, 3, 4, 5, 10, 11, 12, 13],
@@ -657,7 +657,7 @@ var mock_posts = [
       "https://cdn.pixabay.com/photo/2017/02/26/20/51/balloon-2101359_960_720.jpg",
     text: "Prairie Fest is back this summer! After two years of postponement we are glad to welcome everyone back. Bundle family tickets are available for this year's summer fest, see our family package bundles at prairesummerfest.com and get 20% off by using the promo-code 'summer 2022 ",
     date: "March 10 2022 at 1:45pm",
-    comments: [6, 7, 8],
+    comments: [14, 15, 16, 17, 18, 19],
     views: 1022,
     shares: 151,
     likers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
@@ -686,4 +686,350 @@ var mock_posts = [
   },
 ];
 
-module.exports = { mock_profiles, mock_posts };
+var mock_comments = [
+  {
+    PostId: 1,
+    commentList: [
+      {
+        id: 1,
+        author: 6,
+        name: "Mitch Wiz",
+        picture:
+          "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
+        date: "Feb 1",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 2,
+        author: 5,
+        name: "Jimmy",
+        picture:
+          "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 11",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+
+  {
+    PostId: 2,
+    commentList: [
+      {
+        id: 95,
+        author: 6,
+        name: "Mitch Wiz",
+        picture:
+          "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
+        date: "Feb 1",
+
+        text: "Awesome, I will book mines today",
+      },
+      {
+        id: 96,
+        author: 5,
+        name: "Jimmy",
+        picture:
+          "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 11",
+
+        text: "Which booster is being offered? my wife wants the Moderna booster",
+      },
+
+      {
+        id: 103,
+        author: 1,
+        name: "Jenny",
+        picture:
+          "https://images.pexels.com/photos/1090387/pexels-photo-1090387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Jan 1",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 104,
+        author: 4,
+        name: "James",
+        picture:
+          "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 11",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 105,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 106,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 3,
+    commentList: [
+      {
+        id: 97,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+
+      {
+        id: 98,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 99,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 4,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 4,
+    commentList: [
+      {
+        id: 99,
+        author: 4,
+        name: "James",
+        picture:
+          "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 11",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 100,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 5,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 101,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 102,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 5,
+    commentList: [
+      {
+        id: 103,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 104,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 6,
+    commentList: [
+      {
+        id: 24,
+        author: 1,
+        name: "Jenny",
+        picture:
+          "https://images.pexels.com/photos/1090387/pexels-photo-1090387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 11",
+
+        text: "Cute Couple!, I am so jealous of U 2! ; ",
+      },
+      {
+        id: 25,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 5,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 7,
+    commentList: [
+      {
+        id: 29,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 4,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 8,
+    commentList: [
+      {
+        id: 21,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 8,
+        text: "Slava Ukraina",
+      },
+      {
+        id: 27,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 5 ",
+        post: 8,
+        text: "Lets pray for peace",
+      },
+      {
+        id: 28,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 8,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+
+  {
+    PostId: 9,
+    commentList: [
+      {
+        id: 14,
+        author: 4,
+        name: "James",
+        picture:
+          "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 11",
+
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 15,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 5,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 16,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 17,
+        author: 4,
+        name: "Matt",
+        picture:
+          "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+        date: "Feb 4",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 18,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 3,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+      {
+        id: 19,
+        author: 4,
+        name: "Amanda Busch",
+        picture:
+          "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+        date: "Feb 4 ",
+        post: 4,
+        text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco",
+      },
+    ],
+  },
+  {
+    PostId: 10,
+    commentList: [],
+  },
+];
+
+module.exports = { mock_profiles, mock_posts, mock_comments };

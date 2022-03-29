@@ -13,14 +13,10 @@ export const SocialMedia = () => {
   var log = true;
   var show = true;
   const location = useLocation();
-  console.log(location.pathname);
+
   if (location.pathname === "/socialmedia/profile") {
     show = false;
   }
-
-
-
-  
 
   return (
     <UserContextProvider>
