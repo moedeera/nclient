@@ -10,7 +10,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
   const { setCurrentPost, UpdateViews, setPostIndex } = useContext(UserContext);
   const [commentBox, showCommentBox] = useState(false);
 
-  const [postId, setPostId]= useState(0)
+  const [postId, setPostId] = useState(0);
 
   const CommentBoxToggle = () => {
     showCommentBox(!commentBox);
@@ -76,15 +76,13 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               <div
                 style={{ color: "var(--color-primary-social)" }}
                 onClick={() => {
-                  if (postId!==Post.id) {
-                    showCommentBox(true)
-                    setPostId(Post.id)
-
-                  }else {
-                  showCommentBox(!commentBox);
-                  setPostId(Post.id)
+                  if (postId !== Post.id) {
+                    showCommentBox(true);
+                    setPostId(Post.id);
+                  } else {
+                    showCommentBox(!commentBox);
+                    setPostId(Post.id);
                   }
-                  
                 }}
               >
                 <i className="fas fa-comment-alt "></i>
@@ -94,8 +92,11 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                 <i className="fas fa-share-alt"></i>
               </div>
             </div>
-            {commentBox && Post.id=== postId  ? (
-              <PostFeedComments showComment={CommentBoxToggle} />
+            {commentBox && Post.id === postId ? (
+              <PostFeedComments
+                showComment={CommentBoxToggle}
+                PostId={Post.id}
+              />
             ) : (
               ""
             )}

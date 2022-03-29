@@ -162,7 +162,6 @@ export const usePosts = () => {
       var updatedPosts;
       let user = localStorage.getItem("User");
       var match = posts.find((post) => post.id === id);
-      console.log(match);
 
       if (match.likers.some((like) => like === user.id)) {
         match.likers = match.likers.filter((like) => like !== user.id);
@@ -171,11 +170,6 @@ export const usePosts = () => {
         );
         setPosts(updatedPosts);
       } else {
-        console.log(
-          posts.map((x) =>
-            x.id === 1 ? { ...x, likers: [...x.likers, user.id] } : x
-          )
-        );
         updatedPosts = posts.map((post) =>
           post.id === id ? { ...post, likers: [...post.likers, user.id] } : post
         );

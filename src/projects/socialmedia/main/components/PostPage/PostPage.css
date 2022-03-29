@@ -21,6 +21,7 @@
   display: grid;
   grid-template-columns: 1fr;
   backdrop-filter: blur(15px);
+  height: 845px;
 }
 .PostCard > div {
 }

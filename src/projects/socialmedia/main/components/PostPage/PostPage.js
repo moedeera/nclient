@@ -9,6 +9,19 @@ import { useNavigate } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
 
 export const PostPage = () => {
+  const [formComment, setFormComment] = useState([]);
+
+  const onCommentChange = (e) => {
+    if (e.target.value.length > 0) {
+      document.addEventListener("click", (e) => {
+        if (e.target.className !== "btn-secondary") {
+          setFormComment([]);
+        }
+      });
+    }
+    setFormComment(e.target.value);
+  };
+
   let Posts;
   const navigate = useNavigate();
   var {
@@ -18,6 +31,8 @@ export const PostPage = () => {
     friendsPosts,
     TrendingPosts,
     page,
+    user,
+    CreateComment,
   } = useContext(UserContext);
 
   const [RenderedPost, setRenderedPost] = useState(currentPost);
@@ -160,11 +175,25 @@ export const PostPage = () => {
                 <div>Comment</div>
               </div>
               <div className="PostCard-Post-details-make-comment-input">
-                <input type="text" />
+                <input
+                  type="text"
+                  value={formComment}
+                  onChange={(e) => {
+                    onCommentChange(e);
+                  }}
+                  placeholder="Say something about this post"
+                />
               </div>
               <div></div>{" "}
               <div className="PostCard-buttons">
-                <button className="btn btn-secondary">Submit</button>
+                <button
+                  className="btn btn-secondary"
+                  onClick={() => {
+                    CreateComment(formComment, currentPost.id, user);
+                  }}
+                >
+                  Submit
+                </button>
               </div>
             </div>
           </div>

@@ -3,33 +3,21 @@ import "./PostsFeed.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
 
-export const PostFeedComments = ({showComment}) => {
- 
+export const PostFeedComments = ({ showComment, PostId }) => {
+  const { user, CreateComment } = useContext(UserContext);
 
-const { user } = useContext(UserContext);
-
-const [formComment, setFormComment] = useState([]);
-
-
-
-
+  const [formComment, setFormComment] = useState([]);
 
   const onCommentChange = (e) => {
-   
     if (e.target.value.length > 0) {
       document.addEventListener("click", (e) => {
-        if (
-          e.target.className !== "btn-secondary"
-                  ) {
-      
+        if (e.target.className !== "btn-secondary") {
           setFormComment([]);
         }
       });
     }
     setFormComment(e.target.value);
   };
-
-
 
   return (
     <div className="post-feed-comment">
@@ -41,27 +29,28 @@ const [formComment, setFormComment] = useState([]);
           onChange={(e) => {
             onCommentChange(e);
           }}
-
           placeholder="Say something about this post"
-       
         />
       </div>
 
-      
-     <div className="post-feed-comment-buttons">
-        <button className="btn btn-secondary"
-        onClick={()=>{console.log("clicked");}}
-        
-        >Submit</button>
+      <div className="post-feed-comment-buttons">
         <button
           className="btn btn-secondary"
           onClick={() => {
-            showComment()
+            CreateComment(formComment, PostId, user);
+          }}
+        >
+          Submit
+        </button>
+        <button
+          className="btn btn-secondary"
+          onClick={() => {
+            showComment();
           }}
         >
           Cancel
         </button>
-      </div> 
+      </div>
     </div>
   );
 };
