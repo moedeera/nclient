@@ -18,7 +18,6 @@ export const PostPage = () => {
     friendsPosts,
     TrendingPosts,
     page,
-    
   } = useContext(UserContext);
 
   const [RenderedPost, setRenderedPost] = useState(currentPost);
@@ -62,7 +61,6 @@ export const PostPage = () => {
         setCurrentPost(Posts[index]);
         setRenderedPost(Posts[index]);
       }
-      console.log(Posts, match);
     }
   };
 
@@ -73,8 +71,6 @@ export const PostPage = () => {
           e.target.className === "PostPage" ||
           e.target.className === "social-nav-top"
         ) {
-          console.log("outside");
-
           if (page === "main") {
             navigate("../");
           } else {

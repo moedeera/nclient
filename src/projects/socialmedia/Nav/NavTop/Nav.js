@@ -1,6 +1,6 @@
 import React from "react";
 import "./NavTop.css";
-import {Searchbar} from "./Searchbar.js"
+import { Searchbar } from "./Searchbar.js";
 
 import { Link } from "react-router-dom";
 import { useContext } from "react";
@@ -17,7 +17,7 @@ export const Nav = () => {
           </h3>
           <i className="fab fa-pied-piper-alt fa-2x sm-icon"></i>
 
-         <Searchbar/>
+          <Searchbar />
         </div>
 
         <ul className="menu-items">
@@ -55,11 +55,13 @@ export const Nav = () => {
             <img src={user.profilePic} alt="" className="top-nav-img" />
           </li>
         </ul>
+
         <div className="menu-bar">
           {" "}
           <i className="fas fa-bars fa-2x"></i>
         </div>
       </div>
+      {/* <div className="drop-down">Hello</div> */}
     </>
   );
 };

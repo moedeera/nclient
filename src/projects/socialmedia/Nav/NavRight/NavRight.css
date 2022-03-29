@@ -49,6 +49,21 @@
   align-items: center;
   gap: 10px;
 }
+
+.secondary-like-count {
+  justify-content: space-between;
+  padding: 0 5px;
+}
+.secondary-like-count i {
+  color: var(--color-primary-social);
+}
+.stat-count {
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
 .btn-social-primary {
   font-size: 16px;
   color: white;
@@ -66,6 +81,9 @@
   background-color: var(--color-secondary-social);
   width: 15%;
   height: 12%;
+}
+.alternate {
+  background-color: var(--color-primary-social);
 }
 .nav-right-stats-header {
   text-align: left;
@@ -93,6 +111,10 @@
 }
 .nav-right-ads:hover {
   transform: scale(1.02);
+}
+.show {
+  background-color: var(--color-secondary-social);
+  color: white;
 }
 
 @media screen and (max-width: 1424px) {

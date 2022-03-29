@@ -96,6 +96,12 @@ a:visited,
 a {
   color: white;
 }
+.drop-down {
+  background: blue;
+  height: 300px;
+  width: 200px;
+}
+
 @media screen and (max-width: 1224px) {
   .nav-lg {
     display: none !important;
