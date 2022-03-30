@@ -12,13 +12,6 @@ export const PostPage = () => {
   const [formComment, setFormComment] = useState([]);
 
   const onCommentChange = (e) => {
-    if (e.target.value.length > 0) {
-      document.addEventListener("click", (e) => {
-        if (e.target.className !== "btn-secondary") {
-          setFormComment([]);
-        }
-      });
-    }
     setFormComment(e.target.value);
   };
 
@@ -35,7 +28,8 @@ export const PostPage = () => {
     createComment,
   } = useContext(UserContext);
 
-  const [RenderedPost, setRenderedPost] = useState(currentPost);
+  console.log(currentPost);
+
   // console.log(comments[0].commentList);
   if (page === "main") {
     Posts = friendsPosts;
@@ -59,10 +53,8 @@ export const PostPage = () => {
 
       if (match < index) {
         setCurrentPost(Posts[match + 1]);
-        setRenderedPost(Posts[match + 1]);
       } else if (match === index) {
         setCurrentPost(Posts[0]);
-        setRenderedPost(Posts[0]);
       }
     }
 
@@ -71,10 +63,8 @@ export const PostPage = () => {
 
       if (match > 0) {
         setCurrentPost(Posts[match - 1]);
-        setRenderedPost(Posts[match - 1]);
       } else if (match === 0) {
         setCurrentPost(Posts[index]);
-        setRenderedPost(Posts[index]);
       }
     }
   };
@@ -104,7 +94,7 @@ export const PostPage = () => {
       <div className="PostCard">
         <div className="PostCard-Post">
           <div className="PostCard-Post-image">
-            <img src={RenderedPost.postPic} alt="" />
+            <img src={currentPost.postPic} alt="" />
 
             <div className="PostCard-arrow sm-l">
               <i
@@ -148,22 +138,22 @@ export const PostPage = () => {
           <div className="PostCard-Post-details">
             <div className="PostCard-Post-details-poster">
               <div className="postFeed-post-info">
-                <img src={RenderedPost.PosterPic} alt="" />
+                <img src={currentPost.PosterPic} alt="" />
                 <div className="postFeed-post-info-stamp">
-                  <h3>{RenderedPost.PosterName}</h3>
-                  <h5>Published {RenderedPost.date}</h5>
+                  <h3>{currentPost.PosterName}</h3>
+                  <h5>Published {currentPost.date}</h5>
                 </div>
               </div>
             </div>
             <div className="PostCard-Post-details-post-text">
-              {RenderedPost.text}
+              {currentPost.text}
             </div>
             <div className="PostCard-Post-details-post-commentsHeader">
               {" "}
               <h4>Comments</h4>
             </div>
             <div className="PostCard-Post-details-post-comments">
-              {comments[0].commentList.map((comment) => (
+              {comments[0]?.commentList?.map((comment) => (
                 <Comments comment={comment} key={comment.id} />
               ))}
             </div>

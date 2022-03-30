@@ -63,9 +63,9 @@ export const usePosts = () => {
     [posts]
   );
 
-  useEffect(() => {
-    localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
-  }, [currentPost]);
+  // useEffect(() => {
+  //   localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
+  // }, [currentPost]);
   var postImage = "http://localhost:8080/images/";
   // var productionImage ='http://deeracode.com/images/'
 

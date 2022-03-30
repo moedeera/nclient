@@ -135,7 +135,7 @@ export const UserContextProvider = ({ children }) => {
   }, [page]);
 
   useEffect(() => {
-    localStorage.setItem("CurrentPostId", JSON.stringify(currentPost));
+    localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
     getComments(currentPost);
   }, [currentPost]);
 
