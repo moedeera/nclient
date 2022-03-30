@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./PostsFeed.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
@@ -18,6 +18,14 @@ export const PostFeedComments = ({ showComment, PostId }) => {
     }
     setFormComment(e.target.value);
   };
+
+  // useEffect(() => {
+  //   return (e) = {
+  //     document.removeEventListener("click",())
+
+  //   }
+
+  // },[])
 
   return (
     <div className="post-feed-comment">

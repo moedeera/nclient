@@ -28,8 +28,6 @@ export const PostPage = () => {
     createComment,
   } = useContext(UserContext);
 
-  console.log(currentPost);
-
   // console.log(comments[0].commentList);
   if (page === "main") {
     Posts = friendsPosts;

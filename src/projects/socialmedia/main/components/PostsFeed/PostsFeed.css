@@ -45,7 +45,7 @@
 }
 .postFeed-post-stats {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 4rem;
   padding: 15px 0;
 }

@@ -88,9 +88,9 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                 <i className="fas fa-comment-alt "></i>
               </div>
 
-              <div style={{ color: "var(--color-primary-social)" }}>
+              {/* <div style={{ color: "var(--color-primary-social)" }}>
                 <i className="fas fa-share-alt"></i>
-              </div>
+              </div> */}
             </div>
             {commentBox && Post.id === postId ? (
               <PostFeedComments
