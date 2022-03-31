@@ -19,7 +19,7 @@ const getDemoStatus = () => {
 export const useProfiles = () => {
   let demo = getDemoStatus();
 
-  const [profiles, setProfiles] = useState([]);
+  const [profiles, setProfiles] = useState(mock_profiles);
   const [friendProfiles, setFriendProfiles] = useState([]);
   const [suggestedProfiles, setSuggestedProfiles] = useState([]);
 
