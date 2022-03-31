@@ -16,15 +16,13 @@ const getDemoStatus = () => {
 const getAllPosts = () => {
   let AllPosts;
 
-  if (getDemoStatus()) {
-    if (localStorage.getItem("Posts")) {
-      AllPosts = JSON.parse(localStorage.getItem("Posts"));
-    } else {
-      AllPosts = mock_posts;
-      localStorage.setItem("Posts", JSON.stringify(mock_posts));
-    }
-    return AllPosts;
+  if (localStorage.getItem("Posts")) {
+    AllPosts = JSON.parse(localStorage.getItem("Posts"));
+  } else {
+    AllPosts = mock_posts;
+    localStorage.setItem("Posts", JSON.stringify(mock_posts));
   }
+  return AllPosts;
 };
 const getCurrentPost = () => {
   let CurrentPost;
