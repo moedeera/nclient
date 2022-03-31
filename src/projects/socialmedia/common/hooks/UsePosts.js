@@ -16,35 +16,36 @@ const getDemoStatus = () => {
 const getAllPosts = () => {
   let AllPosts;
 
-  if (localStorage.getItem("Posts")) {
-    AllPosts = JSON.parse(localStorage.getItem("Posts"));
-  } else {
-    AllPosts = mock_posts;
-    localStorage.setItem("Posts", JSON.stringify(mock_posts));
+  if (getDemoStatus()) {
+    if (localStorage.getItem("Posts")) {
+      AllPosts = JSON.parse(localStorage.getItem("Posts"));
+    } else {
+      AllPosts = mock_posts;
+      localStorage.setItem("Posts", JSON.stringify(mock_posts));
+    }
+    return AllPosts;
   }
-  return AllPosts;
 };
 const getCurrentPost = () => {
   let CurrentPost;
 
-  if (localStorage.getItem("CurrentPost")) {
-    CurrentPost = JSON.parse(localStorage.getItem("CurrentPost"));
-  } else {
-    CurrentPost = mock_posts[0];
-    localStorage.setItem("CurrentPost", JSON.stringify(CurrentPost));
+  if (getDemoStatus) {
+    if (localStorage.getItem("CurrentPost")) {
+      CurrentPost = JSON.parse(localStorage.getItem("CurrentPost"));
+    } else {
+      CurrentPost = mock_posts[0];
+      localStorage.setItem("CurrentPost", JSON.stringify(CurrentPost));
+    }
+    return CurrentPost;
   }
-  return CurrentPost;
 };
 
 /// function that fetches values
 
 export const usePosts = () => {
   const { days, months } = general();
-  const [posts, setPosts] = useState([]);
-  const [currentPost, setCurrentPost] = useState({
-    PostID: 0,
-    commentsList: [],
-  });
+  const [posts, setPosts] = useState(getAllPosts());
+  const [currentPost, setCurrentPost] = useState(getCurrentPost());
 
   var friendsPosts = useMemo(
     function getFriendPosts() {
@@ -185,13 +186,12 @@ export const usePosts = () => {
     }
   };
 
-  useEffect(() => {
-    console.log(getDemoStatus());
-    if (getDemoStatus()) {
-      setPosts(getAllPosts());
-      setCurrentPost(getCurrentPost());
-    }
-  }, []);
+  // useEffect(() => {
+  //   console.log(getDemoStatus());
+  //   if (getDemoStatus()) {      setPosts(getAllPosts());
+  //     setCurrentPost(getCurrentPost());
+  //   }
+  // }, []);
 
   return {
     posts,
