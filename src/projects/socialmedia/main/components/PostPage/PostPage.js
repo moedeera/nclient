@@ -121,8 +121,7 @@ export const PostPage = () => {
                   }}
                 ></i>
               </div>
-              <i className="fa fa-heart fa-2x" aria-hidden="true"></i>
-              <i className="fa fa-share fa-2x" aria-hidden="true"></i>
+
               <div className="PostCard-arrow">
                 <i
                   className="fas fa-chevron-circle-right"
@@ -154,6 +153,12 @@ export const PostPage = () => {
               {comments[0]?.commentList?.map((comment) => (
                 <Comments comment={comment} key={comment.id} />
               ))}
+              {comments[0].commentList.length === 0 && (
+                <div className="no-comments">
+                  {" "}
+                  <h3>No comments to show</h3>
+                </div>
+              )}
             </div>
 
             <div className="PostCard-Post-details-post-make-comment">
