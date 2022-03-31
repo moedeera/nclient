@@ -76,7 +76,7 @@
 .nav-left-suggestions {
   background-color: white;
 
-  height: 450px;
+  height: auto;
   margin-top: 2vh;
   display: flex;
   flex-direction: column;

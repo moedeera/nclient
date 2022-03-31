@@ -1,11 +1,11 @@
 .PostPage {
   position: absolute;
-  border: 1px solid orange;
+
   /* Add the blur effect */
   margin-top: -20px;
   width: 100vw;
 
-  height: 100%;
+  height: fit-content;
 
   backdrop-filter: blur(15px);
   color: black;
@@ -21,7 +21,9 @@
   display: grid;
   grid-template-columns: 1fr;
   backdrop-filter: blur(15px);
-  height: 845px;
+  height: fit-content;
+  overflow-y: scroll;
+  border: 1px solid grey;
 }
 .PostCard > div {
 }
@@ -37,7 +39,7 @@
   grid-column-gap: 0;
   background-color: rgba(210, 105, 30, 0.386);
   background: rgba(255, 255, 255, 0.473);
-  border: 2px solid rgba(128, 128, 128, 0.61);
+
   height: 100%;
   max-height: 850px;
   padding: 0;
@@ -49,9 +51,9 @@
   display: grid;
   background-color: #154c7988;
   grid-template-rows: 2fr 3fr 1fr 8fr 3.15fr;
-  border: 1px solid orange;
-  height: 100%;
-  max-height: 840px;
+
+  height: auto;
+  /* max-height: 840px; */
 }
 .PostCard-Post-details-poster {
   padding: 5px;
@@ -71,7 +73,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  background: var(--color-secondary-social);
+  color: navy;
   margin: 0px auto;
 }
 
@@ -80,7 +82,7 @@
   font-weight: 500;
 }
 .PostCard-Post-details-post-comments {
-  /* height: 350px; */
+  height: 350px;
 }
 .PostCard-Post-comment {
   padding: 5px 2px 10px;
@@ -143,12 +145,11 @@
   width: 100%;
   padding-top: 5px;
   margin: 5px auto 0;
-  border-top: 1px solid var(--color-secondary-social);
 }
 
 .PostCard-Post-details-post-make-comment input {
   width: 100%;
-
+  padding: 0 2rem;
   height: 2rem;
   border-radius: 5px;
   border: none;
@@ -190,25 +191,31 @@
 }
 
 @media screen and (max-width: 909px) {
+  .PostPage {
+    margin-top: -65px;
+  }
   .PostCard-Post-details {
     overflow-y: scroll;
-    max-height: 347px;
   }
-
+  .PostCard {
+  }
   .PostCard-Post {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
+
+    height: auto;
   }
   .PostCard-Post-details-post-actions {
     display: none;
   }
   .PostCard-Post-details {
-    height: 400px;
+    height: 500px;
   }
   .PostCard-Post-image img {
-    height: 400px;
+    height: 500px;
   }
   .sm-l {
+    font-size: 32px;
     display: block;
     position: absolute;
     top: 50%;
@@ -216,10 +223,15 @@
     transform: translate(-50%, -50%);
   }
   .sm-r {
+    font-size: 32px;
     display: block;
     position: absolute;
     top: 50%;
     right: 0%;
     transform: translate(-50%, -50%);
+  }
+  .PostCard-Post-details-post-comments {
+    height: 250px;
+    overflow-y: scroll;
   }
 }
