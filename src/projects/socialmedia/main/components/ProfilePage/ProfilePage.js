@@ -11,53 +11,38 @@ export const ProfilePage = () => {
 
   return (
     <div className="profile-page-main">
-      <div className="profile-page-upper">
-        <div className="profile-page-upper-top">
-          {/* <div className="profile-page-upper-top-overlay">
-         <img src={'https://cdn.pixabay.com/photo/2018/11/19/15/06/bridge-3825439_960_720.jpg'} alt=''/>
-       </div> */}
-          <div className="profile-page-upper-top-status">
-            <i className="fas fa-circle"></i>
-            {/* <li> <i className="fas fa-heart fa-2x"></i><h4>18</h4></li>
-           <li> <i className="fas fa-user-friends fa-2x"></i><h4>18</h4></li>
-            */}
-          </div>
-          <div className="profile-page-upper-top-name">
-            <h1>{user.name}</h1>
-          </div>
-        </div>
-
-        <div className="profile-page-upper-bottom">
-          <h2 className="header-sm">Jennifer Smith</h2>
-          <div className="profile-page-upper-bottom-list">
-            <div className="profile-page-upper-bottom-list-actions">
-              <div className="profile-page-lower-btn" id="message-lg">
-                <button className="btn btn-secondary"> Befriend</button>
-              </div>
-
-              <div className="profile-page-lower-btn" id="msg">
-                <button className="btn btn-secondary">Message</button>
-              </div>
-              <div className="profile-page-lower-btn" id="msg">
-                <button className="btn btn-secondary">Follow</button>
-              </div>
-            </div>
-            <ul>
-              <li>
-                <small>From</small>
-                <h4>{user.location}</h4>
-              </li>
-              <li>
-                <small>Works at</small>
-                <h4>BV Engineering</h4>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="profile-page-upper-image">
+      <div className="profile-page-upper-new">
+        <div className="profile-page-upper-top-new">
           <img src={user.profilePic} alt="" />
         </div>
+        <div className="profile-page-upper-bottom-new">
+          <div className="profile-page-info">
+            <div>
+              <h1>{user.name}</h1>
+            </div>
+
+            <div>
+              <h5>Last Online: 1 minute ago</h5>
+            </div>
+
+            <div className="profile-about">
+              <p>{user.about}</p>
+            </div>
+          </div>
+          <div className="profile-page-buttons">
+            <div className="profile-page-lower-btn" id="message-lg">
+              <button className="btn btn-secondary"> Follow</button>
+            </div>
+            <div className="profile-page-lower-btn" id="message-lg">
+              <button className="btn btn-secondary"> Message</button>
+            </div>
+            <div className="profile-page-lower-btn" id="message-lg">
+              <button className="btn btn-secondary"> Request</button>
+            </div>
+          </div>
+        </div>
       </div>
+
       <div className="profile-page-lower">
         <div className="profile-page-lower-top-side">
           <div className="profile-page-lower-buttons">
