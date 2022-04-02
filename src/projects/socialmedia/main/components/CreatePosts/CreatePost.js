@@ -21,8 +21,6 @@ export const CreatePost = () => {
   var jet = false;
   const onPostSubmission = () => {
     if (postBox.PstText === "") {
-      console.log(postBox.PstText, "the text box empty");
-
       setAlert(true);
     } else {
       CreatePosts(postBox);
@@ -34,9 +32,10 @@ export const CreatePost = () => {
     }
   };
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setAlert(false);
     }, 3000);
+    return () => clearTimeout(timeout);
   }, [alert]);
 
   return (

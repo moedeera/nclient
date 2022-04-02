@@ -46,7 +46,7 @@ export const useComments = ({ setPosts }) => {
 
   const getComments = (Post) => {
     // fetch posts for ID
-
+    if (!Post) return null;
     if (getDemoStatus) {
       let allComments = getAllComments();
       setComments(allComments.filter((comment) => comment.PostId === Post.id));

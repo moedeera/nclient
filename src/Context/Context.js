@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
 import { useComments } from "../projects/socialmedia/common/hooks/UseComments";
 import { useProfiles } from "../projects/socialmedia/common/hooks/useProfiles";
+
 export const UserContext = createContext({});
 
 //GetDemoStatus
@@ -97,6 +98,8 @@ const GetCurrentPage = () => {
   return CurrentPage;
 };
 
+//
+
 export const UserContextProvider = ({ children }) => {
   const [page, setPage] = useState(GetCurrentPage());
 
@@ -135,15 +138,20 @@ export const UserContextProvider = ({ children }) => {
   }, [page]);
 
   useEffect(() => {
-    localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
-    getComments(currentPost);
+    if (currentPost) {
+      localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
+      getComments(currentPost);
+    }
   }, [currentPost]);
 
   useEffect(() => {
     localStorage.setItem("Comments", JSON.stringify(comments));
   }, [comments]);
+
   useEffect(() => {
-    localStorage.setItem("Posts", JSON.stringify(posts));
+    if (Array.isArray(posts) && posts.length > 0) {
+      localStorage.setItem("Posts", JSON.stringify(posts));
+    }
   }, [posts]);
 
   useEffect(() => {

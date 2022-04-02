@@ -51,10 +51,7 @@ const getCurrentPost = () => {
 export const usePosts = () => {
   const { days, months } = general();
   const [posts, setPosts] = useState([]);
-  const [currentPost, setCurrentPost] = useState({
-    PostID: 0,
-    commentsList: [],
-  });
+  const [currentPost, setCurrentPost] = useState();
 
   var friendsPosts = useMemo(
     function getFriendPosts() {

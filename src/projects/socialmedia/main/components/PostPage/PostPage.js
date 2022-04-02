@@ -87,6 +87,10 @@ export const PostPage = () => {
     };
   }, []);
 
+  if (!currentPost) {
+    return null;
+  }
+
   return (
     <div className="PostPage">
       <div className="PostCard">
