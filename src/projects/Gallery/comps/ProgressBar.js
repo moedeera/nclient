@@ -14,11 +14,10 @@ export const ProgressBar = ({ file, setFile }) => {
   console.log(progress, url);
 
   return (
-    <div
+    <motion.div
       className="progress-bar"
-      style={{
-        width: progress + "%",
-      }}
-    ></div>
+      initial={{ width: 0 }}
+      animate={{ width: progress + "%" }}
+    ></motion.div>
   );
 };

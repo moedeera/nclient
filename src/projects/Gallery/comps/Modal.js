@@ -9,19 +9,19 @@ const Modal = ({ setSelectedImg, selectedImg }) => {
   };
 
   return (
-    <div
+    <motion.div
       className="backdrop"
       onClick={handleClick}
-      //   initial={{ opacity: 0 }}
-      //   animate={{ opacity: 1 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
     >
-      <img
+      <motion.img
         src={selectedImg}
         alt="enlarged pic"
-        // initial={{ y: "-100vh" }}
-        // animate={{ y: 0 }}
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
       />
-    </div>
+    </motion.div>
   );
 };
 
