@@ -193,7 +193,7 @@ export const usePosts = () => {
   };
 
   useEffect(() => {
-    console.log(getDemoStatus());
+    // console.log(getDemoStatus());
     if (getDemoStatus()) {
       setPosts(getAllPosts());
       setCurrentPost(getCurrentPost());

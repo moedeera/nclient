@@ -110,6 +110,10 @@ export const UserContextProvider = ({ children }) => {
     friendProfiles,
     GetSuggestedProfiles,
     GetFriendsProfiles,
+    viewedProfile,
+    setViewedProfile,
+    filter,
+    filteredProfiles,
   } = useProfiles();
 
   const [user, setUser] = useState(LoadUser());
@@ -149,6 +153,10 @@ export const UserContextProvider = ({ children }) => {
   }, [comments]);
 
   useEffect(() => {
+    localStorage.setItem("Viewed-Profile", JSON.stringify(viewedProfile));
+  }, [viewedProfile]);
+
+  useEffect(() => {
     if (Array.isArray(posts) && posts.length > 0) {
       localStorage.setItem("Posts", JSON.stringify(posts));
     }
@@ -184,6 +192,10 @@ export const UserContextProvider = ({ children }) => {
         profiles,
         suggestedProfiles,
         friendProfiles,
+        viewedProfile,
+        setViewedProfile,
+        filter,
+        filteredProfiles,
       }}
     >
       {children}

@@ -14,7 +14,10 @@ export const SocialMedia = () => {
   var show = true;
   const location = useLocation();
 
-  if (location.pathname === "/socialmedia/profile") {
+  if (
+    location.pathname === "/socialmedia/profile" ||
+    location.pathname === "/socialmedia/friends"
+  ) {
     show = false;
   }
 
@@ -25,7 +28,7 @@ export const SocialMedia = () => {
         <Nav status={log} />
         {show && (
           <>
-            <NavLeft status={log} />
+            {} <NavLeft status={log} />
             <NavRight status={log} />
           </>
         )}

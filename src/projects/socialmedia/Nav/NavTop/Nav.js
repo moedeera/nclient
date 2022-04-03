@@ -46,11 +46,12 @@ export const Nav = () => {
             <h5>Inbox</h5>
           </li>
 
-          <li className="nav-lg">
-            <i className="fas fa-user-friends fa-2x"></i>
-            <h5>Friends</h5>
-          </li>
-
+          <Link to="friends">
+            <li className="nav-lg">
+              <i className="fas fa-user-friends fa-2x"></i>
+              <h5>Friends</h5>
+            </li>
+          </Link>
           <li>
             <img src={user.profilePic} alt="" className="top-nav-img" />
           </li>

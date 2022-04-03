@@ -1,26 +1,51 @@
 import React from "react";
 import "./Suggestions.css";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "../../../../Context/Context";
+import { Link } from "react-router-dom";
 
-export const Suggestions = ({ profile }) => {
+export const Suggestions = ({ profile, onView }) => {
   const [request, setRequest] = useState(false);
+  const { viewedProfile, setViewedProfile } = useContext(UserContext);
 
   useEffect(() => {
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       setRequest(false);
     }, 4000);
+    return () => clearTimeout(timeout);
   }, [request]);
 
   return (
     <div className="nav-left-suggested-profile" key={profile.id}>
-      <div>
-        <img src={profile.profilePic} alt="" />
-      </div>
-      <div className="nav-left-info">
-        {" "}
-        <h4 style={{ fontSize: "14px", color: "navy" }}>{profile.name}</h4>
-        <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>
-      </div>
+      <Link
+        onClick={() => {
+          setViewedProfile(profile);
+        }}
+        to={"./profile"}
+      >
+        <div
+          onClick={() => {
+            setViewedProfile(profile);
+            console.log(profile);
+          }}
+        >
+          <img src={profile.profilePic} alt="" />
+        </div>
+      </Link>
+
+      <Link
+        onClick={() => {
+          setViewedProfile(profile);
+        }}
+        to={"./profile"}
+      >
+        <div className="nav-left-info">
+          {" "}
+          <h4 style={{ fontSize: "14px", color: "navy" }}>{profile.name}</h4>
+          <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>
+        </div>
+      </Link>
+
       <div className="nav-left-add">
         <i
           className="fas fa-plus"

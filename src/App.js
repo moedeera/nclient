@@ -24,7 +24,7 @@ function App() {
             <Route path="login" element={<Login />} />
             <Route path="trending" element={<Trending />} />
             <Route path="friends" element={<Profiles />} />
-            <Route path="posts" element={<PostPage  />} />
+            <Route path="posts" element={<PostPage />} />
             <Route path="profile" element={<ProfilePage />} />
           </Route>
         </Routes>

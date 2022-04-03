@@ -1,11 +1,11 @@
 .PostPage {
   position: absolute;
-
+  top: 0;
   /* Add the blur effect */
-  margin-top: -20px;
+  margin-top: 0px;
   width: 100vw;
 
-  height: fit-content;
+  height: 100vh;
 
   backdrop-filter: blur(15px);
   color: black;
@@ -53,6 +53,7 @@
   grid-template-rows: 2fr 3fr 1fr 8fr 3.15fr;
 
   height: auto;
+  padding-bottom: 20px;
   /* max-height: 840px; */
 }
 .PostCard-Post-details-poster {

@@ -7,26 +7,19 @@ import { UserContext } from "../../../../../Context/Context";
 import { useProfiles } from "../../../common/hooks/useProfiles";
 export const ProfilePage = () => {
   const { profiles } = useProfiles();
-  const { UpdatePostLikes, page, user, friendsPosts } = useContext(UserContext);
-
+  const { UpdatePostLikes, page, user, friendsPosts, viewedProfile } =
+    useContext(UserContext);
+  console.log(viewedProfile);
   return (
     <div className="profile-page-main">
       <div className="profile-page-upper-new">
         <div className="profile-page-upper-top-new">
-          <img src={user.profilePic} alt="" />
+          <img src={viewedProfile.profilePic} alt="" />
         </div>
         <div className="profile-page-upper-bottom-new">
           <div className="profile-page-info">
-            <div>
-              <h1>{user.name}</h1>
-            </div>
-
-            <div>
-              <h5>Last Online: 1 minute ago</h5>
-            </div>
-
-            <div className="profile-about">
-              <p>{user.about}</p>
+            <div className="profile-name">
+              <h1>{viewedProfile.name}</h1>
             </div>
           </div>
           <div className="profile-page-buttons">
@@ -37,7 +30,7 @@ export const ProfilePage = () => {
               <button className="btn btn-secondary"> Message</button>
             </div>
             <div className="profile-page-lower-btn" id="message-lg">
-              <button className="btn btn-secondary"> Request</button>
+              <button className="btn btn-secondary"> Like</button>
             </div>
           </div>
         </div>
@@ -51,14 +44,14 @@ export const ProfilePage = () => {
                 className="fas fa-user-friends fa-2x"
                 style={{ color: "green" }}
               ></i>
-              <h3>{user.Friends.length}</h3>
+              <h3>{viewedProfile.Friends.length}</h3>
             </div>
             <div>
               <i
                 className="fas fa-street-view fa-2x"
                 style={{ color: "var(--color-primary-social)" }}
               ></i>
-              <h3>{user.followers.length}</h3>
+              <h3>{viewedProfile.followers.length}</h3>
             </div>
             <div>
               {" "}
@@ -66,14 +59,14 @@ export const ProfilePage = () => {
                 className="fas fa-eye fa-2x"
                 style={{ color: "var(--color-secondary-social)" }}
               ></i>
-              <h3>{user.views ? user.views : 239}</h3>
+              <h3>{viewedProfile.views ? viewedProfile.views : 239}</h3>
             </div>
             <div>
               <i
                 className="fab fa-gratipay fa-2x"
                 style={{ color: "crimson" }}
               ></i>
-              <h3>{user.likes ? user.likes : 113}</h3>
+              <h3>{viewedProfile.likes ? viewedProfile.likes : 113}</h3>
             </div>
           </div>
 
@@ -82,8 +75,10 @@ export const ProfilePage = () => {
               <li>
                 <h3>Bio:</h3>
               </li>
-              {user.description !== "" && <li>"{user.description}"</li>}
-              {user.header !== "" && <li>'{user.header}'</li>}
+              {viewedProfile.description !== "" && (
+                <li>"{viewedProfile.description}"</li>
+              )}
+              {viewedProfile.header !== "" && <li>'{viewedProfile.header}'</li>}
               <li>
                 <i className="fas fa-map-pin"></i> Toronto Ontario
               </li>
@@ -114,7 +109,7 @@ export const ProfilePage = () => {
 
         <div className="profile-page-lower-posts">
           <div className="postFeed-post" style={{ fontWeight: "bold" }}>
-            {user.name}'s Posts
+            {viewedProfile.name}'s Posts
           </div>
           <PostsFeed
             Posts={friendsPosts}

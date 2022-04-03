@@ -7,7 +7,14 @@ import { PostFeedComments } from "./PostFeedComments";
 import "./PostsFeed.css";
 
 export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
-  const { setCurrentPost, UpdateViews, setPostIndex } = useContext(UserContext);
+  const {
+    setCurrentPost,
+    UpdateViews,
+    setPostIndex,
+
+    setViewedProfile,
+    profiles,
+  } = useContext(UserContext);
   const [commentBox, showCommentBox] = useState(false);
 
   const [postId, setPostId] = useState(0);
@@ -22,12 +29,31 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
         {Posts.map((Post, index) => (
           <div className="postFeed-post" key={Post.id}>
             <div className="postFeed-post-info">
-              <img src={Post.PosterPic} alt="" />
-              <div className="postFeed-post-info-stamp">
-                <h3>{Post.PosterName}</h3>
-                <h5>Published {Post.date}</h5>
-              </div>
+              <Link
+                onClick={() => {
+                  setViewedProfile(
+                    profiles.find((person) => person.id === Post.Poster)
+                  );
+                }}
+                to={"./profile"}
+              >
+                <img src={Post.PosterPic} alt="" />
+              </Link>
+              <Link
+                onClick={() => {
+                  setViewedProfile(
+                    profiles.find((person) => person.id === Post.Poster)
+                  );
+                }}
+                to={"./profile"}
+              >
+                <div className="postFeed-post-info-stamp">
+                  <h3>{Post.PosterName}</h3>
+                  <h5 style={{ color: "black" }}>Published {Post.date}</h5>
+                </div>
+              </Link>
             </div>
+
             <Link
               onClick={() => {
                 setCurrentPost(Post);

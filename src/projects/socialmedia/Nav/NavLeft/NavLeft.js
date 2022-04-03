@@ -6,7 +6,8 @@ import { Suggestions } from "./Suggestions";
 import { UserContext } from "../../../../Context/Context";
 
 export const NavLeft = ({ status }) => {
-  const { user, suggestedProfiles } = useContext(UserContext);
+  const { user, suggestedProfiles, setViewedProfiles } =
+    useContext(UserContext);
 
   return (
     <div className="nav-left">
@@ -42,7 +43,11 @@ export const NavLeft = ({ status }) => {
         </div>
 
         {suggestedProfiles.map((profile) => (
-          <Suggestions profile={profile} key={profile.id} />
+          <Suggestions
+            profile={profile}
+            key={profile.id}
+            onView={setViewedProfiles}
+          />
         ))}
 
         <div className="nav-left-profile-image-colord"></div>
