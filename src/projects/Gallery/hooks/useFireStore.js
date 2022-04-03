@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { unstable_batchedUpdates } from "react-dom";
+
 import { projectFirestore } from "../Firebase/config";
 
-export const useFirestore = (collection) => {
+const useFirestore = (collection) => {
   const [docs, setDocs] = useState([]);
 
   useEffect(() => {
@@ -12,13 +12,16 @@ export const useFirestore = (collection) => {
       .onSnapshot((snap) => {
         let documents = [];
         snap.forEach((doc) => {
-          document.push({ ...doc.data(), id: doc.id });
+          documents.push({ ...doc.data(), id: doc.id });
         });
+
         setDocs(documents);
+        console.log(documents);
       });
 
     return () => unsub();
   }, [collection]);
 
-  return docs;
+  return { docs };
 };
+export default useFirestore;

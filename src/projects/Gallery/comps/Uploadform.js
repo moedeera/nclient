@@ -4,9 +4,7 @@ import { ProgressBar } from "./ProgressBar";
 export const Uploadform = () => {
   const [file, setFile] = useState(null);
   const [error, setError] = useState(null);
-  useEffect(() => {
-    console.log(file);
-  }, [file]);
+  useEffect(() => {}, [file]);
 
   const changeHandler = (e) => {
     console.log("changed", e.target.files[0]);
