@@ -5,7 +5,6 @@ export const SearchProfile = ({ profile, selected, setSelected, index }) => {
   return (
     <>
       <div
-        key={profile.id}
         className={selected ? "CProfile  PSelected" : "CProfile"}
         onClick={() => setSelected(index)}
       >

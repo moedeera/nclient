@@ -8,7 +8,7 @@ import { Trending } from "./projects/socialmedia/Trending/Trending";
 import { SocialMedia } from "./projects/socialmedia/SocialMedia";
 import { Profiles } from "./projects/socialmedia/Profiles/Profiles";
 import { PostPage } from "./projects/socialmedia/main/components/PostPage/PostPage";
-
+import { Gallery } from "./projects/Gallery/Gallery";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { ProfilePage } from "./projects/socialmedia/main/components/ProfilePage/ProfilePage";
 
@@ -18,6 +18,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/" element={<Homepage />} />
+          <Route path="/PhotoBox" element={<Gallery />} />
 
           <Route path="socialmedia" element={<SocialMedia />}>
             <Route index element={<Mainpage />} />
