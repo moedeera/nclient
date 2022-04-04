@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { usePosts } from "../projects/socialmedia/common/hooks/UsePosts";
 import { useComments } from "../projects/socialmedia/common/hooks/UseComments";
 import { useProfiles } from "../projects/socialmedia/common/hooks/useProfiles";
-
+import useDatabase from "../projects/socialmedia/common/hooks/UseDataBase";
 export const UserContext = createContext({});
 
 //GetDemoStatus
@@ -102,8 +102,9 @@ const GetCurrentPage = () => {
 
 export const UserContextProvider = ({ children }) => {
   const [page, setPage] = useState(GetCurrentPage());
-
+  const [file, setFile] = useState(null);
   const [postIndex, setPostIndex] = useState(0);
+  const { progress, url, error } = useDatabase();
   const {
     profiles,
     suggestedProfiles,
@@ -123,7 +124,7 @@ export const UserContextProvider = ({ children }) => {
     setPosts,
     friendsPosts,
     TrendingPosts,
-    CreatePosts,
+    createPosts,
     UpdatePostLikes,
     currentPost,
     setCurrentPost,
@@ -176,7 +177,7 @@ export const UserContextProvider = ({ children }) => {
         setPosts,
         friendsPosts,
         TrendingPosts,
-        CreatePosts,
+        createPosts,
         UpdatePostLikes,
         currentPost,
         setCurrentPost,
@@ -196,6 +197,11 @@ export const UserContextProvider = ({ children }) => {
         setViewedProfile,
         filter,
         filteredProfiles,
+        file,
+        setFile,
+        progress,
+        url,
+        error,
       }}
     >
       {children}

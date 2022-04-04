@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
 import { Comments } from "./Comments";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 // import { Link } from "react-router-dom";
 // import { Navigate } from "react-router-dom";
@@ -93,7 +94,11 @@ export const PostPage = () => {
 
   return (
     <div className="PostPage">
-      <div className="PostCard">
+      <motion.div
+        className="PostCard"
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
+      >
         <div className="PostCard-Post">
           <div className="PostCard-Post-image">
             <img src={currentPost.postPic} alt="" />
@@ -193,7 +198,7 @@ export const PostPage = () => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

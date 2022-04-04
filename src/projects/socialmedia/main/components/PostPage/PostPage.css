@@ -206,6 +206,7 @@
     overflow-y: scroll;
   }
   .PostCard {
+    height: 110vh;
   }
   .PostCard-Post {
     grid-template-columns: 1fr;

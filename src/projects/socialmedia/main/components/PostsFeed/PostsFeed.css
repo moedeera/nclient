@@ -8,7 +8,7 @@
   margin-bottom: 20px;
   width: 100%;
   background: var(--color-light);
-
+  transition: 200ms ease-in-out;
   line-height: 1.6em;
 }
 .postFeed-post:hover {

@@ -3,7 +3,11 @@ import axios from "axios";
 import { UserContext } from "../../../../Context/Context";
 import { general } from "../function/GeneralFunctions";
 import { mock_posts } from "../../../../assets/MockDataBase";
-
+import {
+  projectStorage,
+  projectFirestore,
+  timestamp,
+} from "../../../Gallery/Firebase/config";
 // Fetch DemoStatus
 const getDemoStatus = () => {
   if (localStorage.getItem("token")) {
@@ -45,6 +49,7 @@ const getCurrentPost = () => {
   }
   return CurrentPost;
 };
+//
 
 /// function that fetches values
 
@@ -68,15 +73,7 @@ export const usePosts = () => {
     [posts]
   );
 
-  // useEffect(() => {
-  //   localStorage.setItem("CurrentPost", JSON.stringify(currentPost));
-  // }, [currentPost]);
-  var postImage = "http://localhost:8080/images/";
-  // var productionImage ='http://deeracode.com/images/'
-
-  const CreatePosts = async (PostInfo) => {
-    let user = localStorage.getItem("User");
-    console.log("new post was created", PostInfo);
+  const createPosts = async (PostInfo) => {
     var PostID = Math.floor(Math.random() * 1000 + 1);
     var CurrentDate = new Date();
     var day = JSON.stringify(days[CurrentDate.getDay()]);
@@ -95,71 +92,57 @@ export const usePosts = () => {
       " " +
       time.substring(3, 10);
     var date = new Date();
-    const newPost = {
-      id: PostID,
-      status: "public",
-      Poster: user.id,
-      PosterName: user.nickname,
-      PosterPic: user.profilePic,
-      postPic: postImage.concat(PostInfo.PstPicture.name),
-      text: PostInfo.textPstText,
-      date: newDate,
-      comments: [],
-      views: 1,
-      shares: 0,
-      likers: [user.id],
-      datePosted: date,
-    };
 
-    const config = {
-      headers: {
-        "Content-Type": "multipart/form-data",
+    let link;
+    let userFeteched = localStorage.getItem("User");
+    const user = JSON.parse(userFeteched);
+    console.log(PostInfo.PstPicture);
+
+    const storageRef = projectStorage.ref(PostInfo.PstPicture.name);
+
+    const collectionRef = projectFirestore.collection("post-files");
+
+    storageRef.put(PostInfo.PstPicture).on(
+      "state_changed",
+      (snap) => {
+        let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        console.log(percentage);
       },
-    };
-
-    const configuration = {
-      headers: {
-        "Content-Type": "application/json",
+      (err) => {
+        console.log(err);
       },
-    };
+      async () => {
+        link = await storageRef.getDownloadURL();
 
-    const data = new FormData();
+        const newPost = {
+          id: PostID,
+          status: "friends",
+          Poster: user.id,
+          PosterName: user.nickname,
+          PosterPic: user.profilePic,
+          postPic: link,
+          text: PostInfo.PstText,
+          date: newDate,
+          comments: [],
+          views: 1,
+          shares: 0,
+          likers: [user.id],
+          datePosted: date,
+        };
+        setPosts([...posts, newPost]);
+        console.log(posts);
 
-    data.append("file", PostInfo.PstPicture.name);
-    const body = newPost;
+        const createdAt = timestamp();
+        collectionRef.add({
+          link,
+          createdAt,
+        });
+      }
+    );
 
-    try {
-      const res = await axios.post(
-        "http://localhost:8080/posts/upload",
-        data,
-        config
-      );
-      const response = await axios.post(
-        "http://localhost:8080/posts/create",
-        body,
-        configuration
-      );
-      var addPosts = posts.push(newPost);
-      setPosts(addPosts);
-      console.log("post sent, filename:", PostInfo.PstPicture.name);
-    } catch (error) {
-      // console.log(error);
-      // const res = await axios.post(
-      //   "http://deercoded.herokuapp.com/upload",
-      //   data,
-      //   config
-      // );
-      // const response = await axios.post(
-      //   "http://deercoded.herokuapp.com/create",
-      //   body,
-      //   configuration
-      // );
-
-      // setPosts(res.data);
-      // console.log("new post was successful", response);
-      console.log(error);
-    }
+    // console.log("new post was created", PostInfo);
   };
+
   const UpdateViews = (id) => {
     setPosts(
       posts.map((post) =>
@@ -205,7 +188,7 @@ export const usePosts = () => {
     setPosts,
     friendsPosts,
     TrendingPosts,
-    CreatePosts,
+    createPosts,
     UpdatePostLikes,
     currentPost,
     setCurrentPost,

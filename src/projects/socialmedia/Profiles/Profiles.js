@@ -58,7 +58,6 @@ export const Profiles = () => {
                   // filter("followers", user);
                   setParamater(2);
                   filter("followers", user);
-                  console.log(profiles);
                 }}
               >
                 Followers
@@ -69,7 +68,6 @@ export const Profiles = () => {
                   // filter("following");
                   setParamater(3);
                   filter("following", user);
-                  console.log(profiles);
                 }}
               >
                 Following

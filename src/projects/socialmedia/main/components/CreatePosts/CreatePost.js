@@ -3,8 +3,10 @@ import "./CreatePost.css";
 import pic from "./blank-avatar.png";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
+import useDatabase from "../../../common/hooks/UseDataBase";
 export const CreatePost = () => {
   const [alert, setAlert] = useState(false);
+  const { createPosts } = useContext(UserContext);
 
   // console.log(posts); // why does this get called every time I type
   // Also why does the alert happen no matter what?
@@ -12,7 +14,6 @@ export const CreatePost = () => {
     PstText: "",
     PstPicture: "",
   });
-  const { CreatePosts } = useContext(UserContext);
 
   const onPostBoxChange = (e) => {
     setPostBox({ ...postBox, PstText: e.target.value });
@@ -23,7 +24,7 @@ export const CreatePost = () => {
     if (postBox.PstText === "") {
       setAlert(true);
     } else {
-      CreatePosts(postBox);
+      createPosts(postBox);
       setPostBox({
         ...postBox,
         PstText: "",

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import "./PostsFeed.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
+import { motion } from "framer-motion";
 
 export const PostFeedComments = ({ showComment, PostId }) => {
   const { user, createComment } = useContext(UserContext);
@@ -28,7 +29,12 @@ export const PostFeedComments = ({ showComment, PostId }) => {
   // },[])
 
   return (
-    <div className="post-feed-comment">
+    <motion.div
+      className="post-feed-comment"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.2 }}
+    >
       <div className="post-feed-comment-post">
         <img src={user.profilePic} alt="" />
         <input
@@ -59,6 +65,6 @@ export const PostFeedComments = ({ showComment, PostId }) => {
           Cancel
         </button>
       </div>
-    </div>
+    </motion.div>
   );
 };
