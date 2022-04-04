@@ -99,7 +99,7 @@ export const useComments = ({ setPosts }) => {
 
   const createCommentList = (postId) => {
     const newCommentList = {
-      PostId: 1,
+      PostId: postId,
       commentList: [],
     };
     setComments(newCommentList);
