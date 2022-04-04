@@ -24,11 +24,15 @@ const getAllPosts = () => {
     if (JSON.parse(localStorage.getItem("Posts")) !== []) {
       AllPosts = JSON.parse(localStorage.getItem("Posts"));
     } else {
-      AllPosts = mock_posts;
+      AllPosts = mock_posts.sort(function (a, b) {
+        return new Date(b.datePosted) - new Date(a.datePosted);
+      });
       localStorage.setItem("Posts", JSON.stringify(mock_posts));
     }
   } else {
-    AllPosts = mock_posts;
+    AllPosts = mock_posts.sort(function (a, b) {
+      return new Date(b.datePosted) - new Date(a.datePosted);
+    });
     localStorage.setItem("Posts", JSON.stringify(mock_posts));
   }
   return AllPosts;
@@ -60,7 +64,11 @@ export const usePosts = () => {
 
   var friendsPosts = useMemo(
     function getFriendPosts() {
-      return posts.filter((post) => post.status === "friends");
+      const fetchedPosts = posts.filter((post) => post.status === "friends");
+
+      return fetchedPosts.sort(function (a, b) {
+        return new Date(b.datePosted) - new Date(a.datePosted);
+      });
     },
     [posts]
   );
@@ -74,6 +82,8 @@ export const usePosts = () => {
   );
 
   const createPosts = async (PostInfo, PostID) => {
+    console.log(PostInfo.PstPicture.type);
+
     var CurrentDate = new Date();
     var day = JSON.stringify(days[CurrentDate.getDay()]);
     var month = JSON.stringify(months[CurrentDate.getMonth()]);
@@ -96,48 +106,92 @@ export const usePosts = () => {
     let userFeteched = localStorage.getItem("User");
     const user = JSON.parse(userFeteched);
     console.log(PostInfo.PstPicture);
+    if (PostInfo.PstPicture) {
+      const storageRef = projectStorage.ref(PostInfo.PstPicture.name);
 
-    const storageRef = projectStorage.ref(PostInfo.PstPicture.name);
+      const collectionRef = projectFirestore.collection("post-files");
 
-    const collectionRef = projectFirestore.collection("post-files");
+      storageRef.put(PostInfo.PstPicture).on(
+        "state_changed",
+        (snap) => {
+          let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+        },
+        (err) => {
+          console.log(err);
+        },
+        async () => {
+          link = await storageRef.getDownloadURL();
+          let newPost;
+          if (PostInfo.PstPicture.type === "video/mp4") {
+            newPost = {
+              id: PostID,
+              status: "friends",
+              Poster: user.id,
+              PosterName: user.nickname,
+              PosterPic: user.profilePic,
+              postVideo: link,
+              text: PostInfo.PstText,
+              date: newDate,
+              comments: [],
+              views: 1,
+              shares: 0,
+              likers: [user.id],
+              datePosted: date,
+            };
+          } else {
+            newPost = {
+              id: PostID,
+              status: "friends",
+              Poster: user.id,
+              PosterName: user.nickname,
+              PosterPic: user.profilePic,
+              postPic: link,
+              text: PostInfo.PstText,
+              date: newDate,
+              comments: [],
+              views: 1,
+              shares: 0,
+              likers: [user.id],
+              datePosted: date,
+            };
+          }
 
-    storageRef.put(PostInfo.PstPicture).on(
-      "state_changed",
-      (snap) => {
-        let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
-        console.log(percentage);
-      },
-      (err) => {
-        console.log(err);
-      },
-      async () => {
-        link = await storageRef.getDownloadURL();
+          const newPosts = [...posts, newPost];
+          const arrangedPosts = newPosts.sort(function (a, b) {
+            return new Date(b.datePosted) - new Date(a.datePosted);
+          });
 
-        const newPost = {
-          id: PostID,
-          status: "friends",
-          Poster: user.id,
-          PosterName: user.nickname,
-          PosterPic: user.profilePic,
-          postPic: link,
-          text: PostInfo.PstText,
-          date: newDate,
-          comments: [],
-          views: 1,
-          shares: 0,
-          likers: [user.id],
-          datePosted: date,
-        };
-        setPosts([...posts, newPost]);
-        console.log(posts);
+          setPosts(arrangedPosts);
 
-        const createdAt = timestamp();
-        collectionRef.add({
-          link,
-          createdAt,
-        });
-      }
-    );
+          const createdAt = timestamp();
+          collectionRef.add({
+            link,
+            createdAt,
+          });
+        }
+      );
+    } else {
+      const newPost = {
+        id: PostID,
+        status: "friends",
+        Poster: user.id,
+        PosterName: user.nickname,
+        PosterPic: user.profilePic,
+        text: PostInfo.PstText,
+        date: newDate,
+        comments: [],
+        views: 1,
+        shares: 0,
+        likers: [user.id],
+        datePosted: date,
+      };
+      const newPosts = [...posts, newPost];
+      const arrangedPosts = newPosts.sort(function (a, b) {
+        return new Date(b.datePosted) - new Date(a.datePosted);
+      });
+      console.log(arrangedPosts);
+      setPosts(arrangedPosts);
+    }
 
     // console.log("new post was created", PostInfo);
   };

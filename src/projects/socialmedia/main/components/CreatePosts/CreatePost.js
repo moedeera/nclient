@@ -81,14 +81,22 @@ export const CreatePost = () => {
                 setPostBox({ ...postBox, PstPicture: e.target.files[0] });
               }}
             />
-            <label htmlFor="file-input" type="submit">
+            <label
+              htmlFor="file-input"
+              type="submit"
+              style={{ margin: "0", border: "none" }}
+            >
               <i className="fas fa-image"></i>
             </label>
           </div>
 
-          <i className="fas fa-video"></i>
-
-          <i className="fas fa-music fa"></i>
+          <label
+            htmlFor="file-input"
+            type="submit"
+            style={{ margin: "0", border: "none" }}
+          >
+            <i className="fas fa-video"></i>
+          </label>
 
           <button
             className="btn btn-social-primary"

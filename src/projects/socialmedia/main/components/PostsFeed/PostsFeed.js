@@ -16,7 +16,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
     profiles,
   } = useContext(UserContext);
   const [commentBox, showCommentBox] = useState(false);
-
+  const [show, setShow] = useState(false);
   const [postId, setPostId] = useState(0);
 
   const CommentBoxToggle = () => {
@@ -39,6 +39,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               >
                 <img src={Post.PosterPic} alt="" />
               </Link>
+
               <Link
                 onClick={() => {
                   setViewedProfile(
@@ -62,10 +63,19 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               }}
               to={Page === "main" ? "posts" : "../posts"}
             >
-              <div className="postFeed-post-image">
-                {" "}
-                <img src={Post.postPic} alt="" />
-              </div>
+              {Post.postVideo && (
+                <div className="postFeed-post-image">
+                  <video
+                    controls
+                    src="https://firebasestorage.googleapis.com/v0/b/gallery-ed7f7.appspot.com/o/Epidural%20Stimulation%20-%20The%20Breakthrough%20Procedure%20for%20Spinal%20Cord%20Injury%20patients.mp4?alt=media&token=a203c85a-7b76-4e2d-954c-2e5623bebd0d"
+                  />
+                </div>
+              )}
+              {Post.postPic && (
+                <div className="postFeed-post-image">
+                  <img src={Post.postPic} alt="" />
+                </div>
+              )}
             </Link>
 
             <div className="postFeed-post-stats">

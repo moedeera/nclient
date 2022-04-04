@@ -43,6 +43,10 @@
   display: flex;
   cursor: pointer;
 }
+.postFeed-post-image video {
+  width: 100%;
+  max-width: 800px;
+}
 .postFeed-post-stats {
   display: flex;
   justify-content: center;

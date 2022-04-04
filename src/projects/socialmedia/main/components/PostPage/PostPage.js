@@ -28,7 +28,7 @@ export const PostPage = () => {
     user,
     createComment,
   } = useContext(UserContext);
-  console.log(comments);
+
   // console.log(comments[0].commentList);
   if (page === "main") {
     Posts = friendsPosts;
@@ -101,7 +101,10 @@ export const PostPage = () => {
       >
         <div className="PostCard-Post">
           <div className="PostCard-Post-image">
-            <img src={currentPost.postPic} alt="" />
+            {currentPost.postPic && <img src={currentPost.postPic} alt="" />}
+            {currentPost.postVideo && (
+              <video controls src={currentPost.postVideo} alt="" />
+            )}
 
             <div className="PostCard-arrow sm-l">
               <i
