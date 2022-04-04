@@ -73,8 +73,7 @@ export const usePosts = () => {
     [posts]
   );
 
-  const createPosts = async (PostInfo) => {
-    var PostID = Math.floor(Math.random() * 1000 + 1);
+  const createPosts = async (PostInfo, PostID) => {
     var CurrentDate = new Date();
     var day = JSON.stringify(days[CurrentDate.getDay()]);
     var month = JSON.stringify(months[CurrentDate.getMonth()]);

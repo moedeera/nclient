@@ -97,10 +97,24 @@ export const useComments = ({ setPosts }) => {
     setPosts(newPosts);
   };
 
+  const createCommentList = (postId) => {
+    const newCommentList = {
+      PostId: 1,
+      commentList: [],
+    };
+    setComments(newCommentList);
+    let Comments = JSON.parse(localStorage.getItem("Comments-all"));
+
+    const newComments = [...Comments, newCommentList];
+
+    localStorage.setItem("Comments-all", JSON.stringify(newComments));
+  };
+
   return {
     getComments,
     comments,
     setComments,
     createComment,
+    createCommentList,
   };
 };

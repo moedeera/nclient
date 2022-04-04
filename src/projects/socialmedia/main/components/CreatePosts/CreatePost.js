@@ -6,7 +6,8 @@ import { UserContext } from "../../../../../Context/Context";
 import useDatabase from "../../../common/hooks/UseDataBase";
 export const CreatePost = () => {
   const [alert, setAlert] = useState(false);
-  const { createPosts } = useContext(UserContext);
+  const { createPosts, setComments, createCommentList } =
+    useContext(UserContext);
 
   // console.log(posts); // why does this get called every time I type
   // Also why does the alert happen no matter what?
@@ -24,7 +25,10 @@ export const CreatePost = () => {
     if (postBox.PstText === "") {
       setAlert(true);
     } else {
-      createPosts(postBox);
+      var PostID = Math.floor(Math.random() * 1000 + 1);
+      createPosts(postBox, PostID);
+      createCommentList(PostID);
+      setComments([{ PostId: PostID, commentList: [] }]);
       setPostBox({
         ...postBox,
         PstText: "",

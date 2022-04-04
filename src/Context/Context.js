@@ -130,7 +130,13 @@ export const UserContextProvider = ({ children }) => {
     setCurrentPost,
     UpdateViews,
   } = usePosts();
-  const { getComments, comments, setComments, createComment } = useComments({
+  const {
+    getComments,
+    comments,
+    setComments,
+    createComment,
+    createCommentList,
+  } = useComments({
     setPosts,
   });
 
@@ -202,6 +208,7 @@ export const UserContextProvider = ({ children }) => {
         progress,
         url,
         error,
+        createCommentList,
       }}
     >
       {children}
