@@ -4,9 +4,10 @@
   /* Add the blur effect */
   margin-top: 0px;
   width: 100vw;
+  max-height: 1500px;
 
-  height: 100vh;
-
+  height: 100%;
+  
   backdrop-filter: blur(15px);
   color: black;
   z-index: 5;
@@ -41,19 +42,22 @@
   background: rgba(255, 255, 255, 0.473);
 
   height: 100%;
-  max-height: fit-content;
+
   padding: 0;
   color: white;
   border: 1px solid grey;
 }
+.PostCard-Post-image{
 
+  background-color:var(--color-secondary-social);
+}
 .PostCard-Post-details {
   width: 100%;
   display: grid;
   background-color: #154c7988;
   grid-template-rows: 2fr 3fr 1fr 8fr 3.15fr;
 
-  height: auto;
+  height: 800px;
   padding-bottom: 20px;
   /* max-height: 840px; */
 }
