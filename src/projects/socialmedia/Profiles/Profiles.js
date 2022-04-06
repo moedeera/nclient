@@ -16,7 +16,19 @@ export const Profiles = () => {
   }
 
   return (
-    <div className="ConnectMain">
+<div>
+    <div className="MainGrid"> 
+      
+      <div className="filterBar">
+
+<div className="filter-upper"></div>
+
+<div className="filter-ads"></div>
+
+
+      </div>
+      
+      <div className="ConnectMain">
       <div className="UpperConnect">
         <div className="LeftUC">
           <div className="UCSearch">
@@ -90,5 +102,10 @@ export const Profiles = () => {
         ))}
       </div>
     </div>
+    
+    
+    
+    </div>
+   </div>
   );
 };

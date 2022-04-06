@@ -32,6 +32,7 @@ export const SocialMedia = () => {
             <NavRight status={log} />
           </>
         )}
+        
       </div>
       <div>
         {log ? "You are logged in" : <>Please Log in</>}
