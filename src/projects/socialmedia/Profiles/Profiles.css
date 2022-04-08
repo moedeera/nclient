@@ -3,15 +3,23 @@
   max-width: 1300px;
   height: 100vh;
   padding-top: 80px;
-  top: 40px;
+  top: 0px;
 
   color: black;
   display: grid;
   grid-template-columns: 1fr 3fr;
-
+  gap: 10px;
   margin: 0 auto;
 }
+.newCM {
+  height: 830px;
 
+  width: 100%;
+  max-width: 900px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  border: 1px solid rgba(128, 128, 128, 0.637);
+}
 .ConnectMain {
   background-color: white;
 }
@@ -24,6 +32,7 @@
 
 .UpperConnect {
   background-color: var(--color-primary-social);
+
   display: grid;
   grid-template-columns: 2fr 3fr;
   width: 100%;
@@ -76,6 +85,8 @@
 
 .LowerConnect {
   display: grid;
+  height: 720px;
+  overflow-y: scroll;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
   margin: 40px auto;
@@ -116,17 +127,10 @@
   flex-direction: column;
   gap: 10px;
 }
-.newCM {
-  height: 900px;
-  width: 100%;
-  max-width: 800px;
-  overflow-x: hidden;
-  background: var(--color-primary-social);
-  border: 1px solid rgba(128, 128, 128, 0.637);
-}
+
 /* Filter bar */
 .filterBar {
-  height: 900px;
+  height: 800px;
   width: 100%;
   max-width: 300px;
   border: 1px solid rgba(128, 128, 128, 0.568);
@@ -136,10 +140,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid grey;
 }
 .fb-options {
-  height: 500px;
+  height: 400px;
 }
 .fb-options > div {
   margin-top: 10px;

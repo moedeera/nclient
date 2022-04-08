@@ -55,6 +55,15 @@ export const Profiles = () => {
                   <span class="slider round"></span>
                 </label>
               </div>
+
+              <div className="fb-Option">
+                By City
+                <label class="switch">
+                  <input type="checkbox" />
+                  <span class="slider round"></span>
+                </label>
+              </div>
+
               <div className="fb-Option">
                 By City
                 <label class="switch">
@@ -65,7 +74,10 @@ export const Profiles = () => {
             </div>
           </div>
 
-          <div className="filter-ads"></div>
+          <div className="nav-right-ads">
+            <h3>Ad</h3>
+            <i className="fas fa-ellipsis-v"></i>
+          </div>
         </div>
         <div className="newCM">
           <div className="ConnectMain">
