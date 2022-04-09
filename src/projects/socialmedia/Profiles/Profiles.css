@@ -1,7 +1,9 @@
 .MainGrid {
+  position: sticky;
   width: 100%;
   max-width: 1300px;
   height: 100vh;
+  overflow-y: scroll;
   padding-top: 80px;
   top: 0px;
 
@@ -32,10 +34,11 @@
 
 .UpperConnect {
   background-color: var(--color-primary-social);
-
   display: grid;
   grid-template-columns: 2fr 3fr;
   width: 100%;
+  height: 100px;
+  align-items: center;
 }
 .LeftUC {
   display: grid;
@@ -89,7 +92,7 @@
   overflow-y: scroll;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 10px;
-  margin: 40px auto;
+  margin: 5px auto;
   padding: 0 10px;
 }
 .CProfile {
@@ -100,6 +103,7 @@
   justify-content: space-evenly;
   align-items: center;
   height: 300px;
+  padding: 0 5px;
 }
 .PSelected {
   border: 1px solid #2038649f;
@@ -133,16 +137,22 @@
   height: 800px;
   width: 100%;
   max-width: 300px;
-  border: 1px solid rgba(128, 128, 128, 0.568);
+
   background: white;
+  display: grid;
+  grid-gap: 10px;
+}
+.filterBar > div {
 }
 .filter-upper {
   display: flex;
   flex-direction: column;
   gap: 10px;
+
+  border: 1px solid rgba(128, 128, 128, 0.568);
 }
 .fb-options {
-  height: 400px;
+  height: 350px;
 }
 .fb-options > div {
   margin-top: 10px;

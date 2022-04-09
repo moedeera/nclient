@@ -3,9 +3,10 @@ import "./Profiles.css";
 import { useState, useContext } from "react";
 import { UserContext } from "../../../Context/Context";
 import { SearchProfile } from "./SearchProfile";
+import SearchBar from "./Searchbar";
 
 export const Profiles = () => {
-  const { profiles, filter, filteredProfiles, user, setPage } =
+  const { profiles, filter, filteredProfiles, setProfiles, user, setPage } =
     useContext(UserContext);
   const [selected, setSelected] = useState(0);
   const [paramater, setParamater] = useState(1);
@@ -26,49 +27,49 @@ export const Profiles = () => {
             <div className="fb-options">
               <div className="fb-Option">
                 By Age
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </div>
 
               <div className="fb-Option">
                 By Gender
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </div>
 
               <div className="fb-Option">
                 By Location
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </div>
 
               <div className="fb-Option">
                 By Education
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </div>
 
               <div className="fb-Option">
                 By City
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </div>
 
               <div className="fb-Option">
-                By City
-                <label class="switch">
+                Only People
+                <label className="switch">
                   <input type="checkbox" />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </div>
             </div>
@@ -82,15 +83,7 @@ export const Profiles = () => {
         <div className="newCM">
           <div className="ConnectMain">
             <div className="UpperConnect">
-              <div className="LeftUC">
-                <div className="UCSearch">
-                  <input
-                    type="text"
-                    placeholder="&#x1F50D; Search for people"
-                    name="text"
-                  />
-                </div>
-              </div>
+              <SearchBar setProfiles={setProfiles} />
               <div className="RightUC">
                 <div className="UCList">
                   <ul>
@@ -140,6 +133,7 @@ export const Profiles = () => {
                 </div>
               </div>
             </div>
+
             <div className="LowerConnect">
               {profiles.map((profile, index) => (
                 <div key={profile.id}>

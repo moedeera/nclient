@@ -107,6 +107,7 @@ export const UserContextProvider = ({ children }) => {
   const { progress, url, error } = useDatabase();
   const {
     profiles,
+    setProfiles,
     suggestedProfiles,
     friendProfiles,
     GetSuggestedProfiles,
@@ -197,6 +198,7 @@ export const UserContextProvider = ({ children }) => {
         postIndex,
         setPostIndex,
         profiles,
+        setProfiles,
         suggestedProfiles,
         friendProfiles,
         viewedProfile,

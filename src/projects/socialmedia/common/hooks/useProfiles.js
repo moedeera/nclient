@@ -121,6 +121,7 @@ export const useProfiles = () => {
 
   return {
     profiles,
+    setProfiles,
     suggestedProfiles,
     friendProfiles,
     GetSuggestedProfiles,

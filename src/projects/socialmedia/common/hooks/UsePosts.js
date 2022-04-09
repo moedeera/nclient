@@ -99,7 +99,7 @@ export const usePosts = () => {
       " " +
       "at" +
       " " +
-      time.substring(3, 10);
+      time.substring(3, 11);
     var date = new Date();
 
     let link;
