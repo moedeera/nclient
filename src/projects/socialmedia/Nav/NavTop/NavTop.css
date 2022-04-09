@@ -96,23 +96,98 @@ a:visited,
 a {
   color: white;
 }
-.drop-down {
-  background: blue;
-  height: 300px;
-  width: 200px;
+.new-searchBar {
+  background-color: aliceblue;
+  height: 500px;
+  border: 3px solid red;
+  width: 400px;
+}
+.dropDown {
+  position: absolute;
+  right: 20px;
+  top: 55px;
+  background: whitesmoke;
+  border: 2px solid rgba(128, 128, 128, 0.5);
+  border-radius: 5px;
+  min-height: 600px;
+  width: 325px;
+}
+.dropDown-Notifications {
+  color: black;
+}
+.dropDown-Notifications h2 {
+  font-weight: 700;
+  color: var(--color-secondary-social);
+  padding: 10px;
 }
 
+.notification-select {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+}
+.notification-select > div {
+  color: white;
+  background-color: var(--color-secondary-social);
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+.notice-select {
+  color: var(--color-secondary-social) !important;
+  background: whitesmoke !important;
+  border: 1px solid var(--color-secondary-social);
+}
+.notification {
+  width: 100%;
+
+  display: flex;
+  gap: 15px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+.notification:hover {
+  background: rgba(128, 128, 128, 0.132);
+}
+.notification img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+.notification-details {
+  display: grid;
+  gap: 5px;
+}
 @media screen and (max-width: 1224px) {
-  .nav-lg {
-    display: none !important;
-  }
   .social-nav-top h5 {
     display: none;
   }
 }
 @media screen and (max-width: 600px) {
+  .social-nav-top {
+    padding-top: 5px;
+    padding-left: 0;
+    padding-right: 0;
+    padding-bottom: 0px;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: auto;
+  }
   .social-nav-top ul {
-    display: none;
+    background-color: whitesmoke;
+    margin-top: 5px;
+    padding: 5px;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    color: var(--color-primary-social);
+  }
+  .social-nav-top i {
+    color: var(--color-primary-social);
+  }
+  .dropDown {
+    top: 90px;
   }
   .menu-bar {
     display: flex;

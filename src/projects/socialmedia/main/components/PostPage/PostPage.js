@@ -164,10 +164,11 @@ export const PostPage = () => {
               <h4>Comments</h4>
             </div>
             <div className="PostCard-Post-details-post-comments">
-              {comments[0]?.commentList?.map((comment) => (
-                <Comments comment={comment} key={comment.id} />
-              ))}
-              {comments[0].commentList.length === 0 && (
+              {comments[0]?.commentList?.length > 0 &&
+                comments[0]?.commentList?.map((comment) => (
+                  <Comments comment={comment} key={comment.id} />
+                ))}
+              {comments[0]?.commentList.length === 0 && (
                 <div className="no-comments">
                   {" "}
                   <h3>No comments to show</h3>
