@@ -2,14 +2,17 @@ import React from "react";
 import "./ProfilePage.css";
 import pic from "./blank-avatar.png";
 import { PostsFeed } from "../PostsFeed/PostsFeed";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { UserContext } from "../../../../../Context/Context";
 import { useProfiles } from "../../../common/hooks/useProfiles";
 export const ProfilePage = () => {
   const { profiles } = useProfiles();
-  const { UpdatePostLikes, page, user, friendsPosts, viewedProfile } =
+  const { UpdatePostLikes, page, user, friendsPosts, viewedProfile, setPage } =
     useContext(UserContext);
-  console.log(viewedProfile);
+
+  useEffect(() => {
+    setPage("profile");
+  }, []);
   return (
     <div className="profile-page-main">
       <div className="profile-page-upper-new">

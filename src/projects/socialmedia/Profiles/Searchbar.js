@@ -29,7 +29,7 @@ function SearchBar({ setProfiles }) {
 
   return (
     <div className="search2">
-      <div className="searchInputs">
+      <div className="searchInputs" style={{ borderRadius: "5px" }}>
         <i className="fas fa-search"></i>
         <input
           type="text"

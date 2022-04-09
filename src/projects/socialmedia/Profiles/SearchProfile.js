@@ -1,14 +1,28 @@
 import React from "react";
 import "./Profiles.css";
+import { Link } from "react-router-dom";
 
-export const SearchProfile = ({ profile, selected, setSelected, index }) => {
+export const SearchProfile = ({
+  profile,
+  selected,
+  setSelected,
+  index,
+  setViewedProfile,
+}) => {
   return (
     <>
       <div
         className={selected ? "CProfile  PSelected" : "CProfile"}
         onClick={() => setSelected(index)}
       >
-        <img src={profile.profilePic} alt="" className="images" />
+        <Link
+          onClick={() => {
+            setViewedProfile(profile);
+          }}
+          to={"../profile"}
+        >
+          <img src={profile.profilePic} alt="" className="images" />
+        </Link>
         <div className="SB-Info" style={{ color: "black" }}>
           <h3>{profile.nickname}</h3>
           <h5 style={{ fontSize: "12px" }}>{profile.location}</h5>

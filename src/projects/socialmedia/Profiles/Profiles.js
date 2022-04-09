@@ -6,8 +6,15 @@ import { SearchProfile } from "./SearchProfile";
 import SearchBar from "./Searchbar";
 
 export const Profiles = () => {
-  const { profiles, filter, filteredProfiles, setProfiles, user, setPage } =
-    useContext(UserContext);
+  const {
+    profiles,
+    filter,
+    filteredProfiles,
+    setProfiles,
+    user,
+    setPage,
+    setViewedProfile,
+  } = useContext(UserContext);
   const [selected, setSelected] = useState(0);
   const [paramater, setParamater] = useState(1);
 
@@ -143,6 +150,7 @@ export const Profiles = () => {
                     selected={selected === index}
                     setSelected={setSelected}
                     index={index}
+                    setViewedProfile={setViewedProfile}
                   />
                 </div>
               ))}

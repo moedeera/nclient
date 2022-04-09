@@ -74,10 +74,12 @@ export const PostPage = () => {
         e.target.className === "PostPage" ||
         e.target.className === "social-nav-top"
       ) {
-        if (page === "main") {
-          navigate("../");
-        } else {
+        if (page === "trending") {
           navigate("../trending");
+        } else if (page === "profile") {
+          navigate("../profile");
+        } else {
+          navigate("../");
         }
       }
     };

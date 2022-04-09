@@ -65,10 +65,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
             >
               {Post.postVideo && (
                 <div className="postFeed-post-image">
-                  <video
-                    controls
-                    src="https://firebasestorage.googleapis.com/v0/b/gallery-ed7f7.appspot.com/o/Epidural%20Stimulation%20-%20The%20Breakthrough%20Procedure%20for%20Spinal%20Cord%20Injury%20patients.mp4?alt=media&token=a203c85a-7b76-4e2d-954c-2e5623bebd0d"
-                  />
+                  <video controls src={postId.postVideo} />
                 </div>
               )}
               {Post.postPic && (
