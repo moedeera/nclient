@@ -1,6 +1,7 @@
 import React from "react";
 import "./NavRight.css";
 import pic from "./blank-avatar.png";
+import pic0 from "./pic0.svg";
 import { useState, useEffect } from "react";
 
 export const NavRight = ({ status }) => {
