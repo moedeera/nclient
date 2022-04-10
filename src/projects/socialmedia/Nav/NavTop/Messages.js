@@ -14,7 +14,7 @@ const Messages = ({ message }) => {
             </div>
           )}
 
-          <h5>{message.date}</h5>
+          <h5>{message.Date}</h5>
         </div>
 
         <i
