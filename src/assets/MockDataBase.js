@@ -25,6 +25,7 @@ var mock_profiles = [
       {
         id: 50,
         type: "message",
+        kind: "sent",
         user: 2,
         from: "Connie",
         date: new Date("2022-03-01"),
@@ -36,6 +37,7 @@ var mock_profiles = [
       {
         id: 20,
         type: "message",
+        kind: "reply",
         user: 6,
         from: "Mitch Wiz",
         date: new Date("2022-02-25"),

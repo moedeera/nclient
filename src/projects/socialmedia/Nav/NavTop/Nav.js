@@ -5,6 +5,7 @@ import Notices from "./Notices";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../../Context/Context";
+import Messages from "./Messages";
 
 export const Nav = () => {
   const { user, setCurrentPost, UpdateViews, setPostIndex, posts, page } =
@@ -13,6 +14,10 @@ export const Nav = () => {
   const [messages, showMessages] = useState(false);
   const [noticeFilter, toggleNoticeFilter] = useState(true);
 
+  const clear = () => {
+    showMessages(false);
+    showNotices(false);
+  };
   return (
     <>
       <div className="social-nav-top ">
@@ -28,21 +33,36 @@ export const Nav = () => {
         {/* <div className="new-searchBar">Hello</div> */}
 
         <ul className="menu-items">
-          <Link to="/socialmedia">
+          <Link
+            to="/socialmedia"
+            onClick={() => {
+              clear();
+            }}
+          >
             <li>
               <i className="fas fa-home fa-2x"></i>
               <h5>Home</h5>
             </li>
           </Link>
 
-          <Link to="trending">
+          <Link
+            to="trending"
+            onClick={() => {
+              clear();
+            }}
+          >
             <li>
               <i className="fab fa-hotjar trending"></i>
               <h5>Trending</h5>
             </li>
           </Link>
 
-          <Link to="friends">
+          <Link
+            to="friends"
+            onClick={() => {
+              clear();
+            }}
+          >
             <li className="nav-lg">
               <i className="fas fa-user-friends fa-2x"></i>
               <h5>Friends</h5>
@@ -52,13 +72,19 @@ export const Nav = () => {
           <li
             onClick={() => {
               showNotices(!notices);
+              showMessages(false);
             }}
           >
             <i className="fas fa-bell fa-2x"></i>
             <h5>Notifications</h5>
           </li>
 
-          <li>
+          <li
+            onClick={() => {
+              showMessages(!messages);
+              showNotices(false);
+            }}
+          >
             {" "}
             <i className="fas fa-comment-alt fa-2x"></i>
             <h5>Inbox</h5>
@@ -124,8 +150,34 @@ export const Nav = () => {
                     )}
               </div>
             )}
-
-            <div className="Inbox"></div>
+            {messages && (
+              <div className="dropDown-Notifications">
+                <h2>Messages</h2>
+                <div className="notification-select">
+                  <div
+                    onClick={() => {
+                      toggleNoticeFilter(true);
+                    }}
+                  >
+                    all
+                  </div>
+                  <div
+                    onClick={() => {
+                      toggleNoticeFilter(false);
+                    }}
+                    className="notice-select"
+                  >
+                    unread
+                  </div>
+                </div>
+                {user.Notices.map(
+                  (notice) =>
+                    notice.type === "message" && (
+                      <Messages message={notice} key={notice.id} />
+                    )
+                )}
+              </div>
+            )}
           </div>
         ) : (
           ""
