@@ -8,8 +8,15 @@ import { UserContext } from "../../../../Context/Context";
 import Messages from "./Messages";
 
 export const Nav = () => {
-  const { user, setCurrentPost, UpdateViews, setPostIndex, posts, page } =
-    useContext(UserContext);
+  const {
+    user,
+    setCurrentPost,
+    UpdateViews,
+    setPostIndex,
+    posts,
+    page,
+    setUser,
+  } = useContext(UserContext);
   const [notices, showNotices] = useState(false);
   const [messages, showMessages] = useState(false);
   const [noticeFilter, toggleNoticeFilter] = useState(true);
@@ -104,6 +111,7 @@ export const Nav = () => {
                     onClick={() => {
                       toggleNoticeFilter(true);
                     }}
+                    className={!noticeFilter ? "notice-select" : ""}
                   >
                     all
                   </div>
@@ -111,7 +119,7 @@ export const Nav = () => {
                     onClick={() => {
                       toggleNoticeFilter(false);
                     }}
-                    className="notice-select"
+                    className={noticeFilter ? "notice-select" : ""}
                   >
                     unread
                   </div>
@@ -129,6 +137,8 @@ export const Nav = () => {
                             page={page}
                             posts={posts}
                             statusPend={noticeFilter}
+                            setUser={setUser}
+                            user={user}
                           />
                         )
                     )
@@ -143,6 +153,8 @@ export const Nav = () => {
                           page={page}
                           posts={posts}
                           statusPend={noticeFilter}
+                          setUser={setUser}
+                          user={user}
                         />
                       ) : (
                         ""
@@ -173,7 +185,7 @@ export const Nav = () => {
                 {user.Notices.map(
                   (notice) =>
                     notice.type === "message" && (
-                      <Messages message={notice} key={notice.id} />
+                      <Messages message={notice} user={user} key={notice.id} />
                     )
                 )}
               </div>

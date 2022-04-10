@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
+import ChatBox from "./ChatBox";
 
-const Messages = ({ message }) => {
+const Messages = ({ message, user }) => {
+  const [msgHistory, showMsgHistory] = useState(false);
   return (
     <>
-      <div className="notification">
+      <div
+        className="notification"
+        onClick={() => {
+          showMsgHistory(!msgHistory);
+        }}
+      >
         <img src={message.picture} alt="pic" />
         <div className="notification-details">
           {message.kind === "sent" ? (
-            <h4>{message.from} sent you a message</h4>
+            <>
+              <h4>{message.from} sent you a message</h4>
+            </>
           ) : (
             <div style={{ display: "inline-block" }}>
               <h4>{message.from} replied to you </h4>
@@ -22,6 +31,7 @@ const Messages = ({ message }) => {
           style={message.pending ? { color: "green" } : { color: "navy" }}
         ></i>
       </div>
+      {msgHistory && <ChatBox message={message} user={user} key={message.id} />}
     </>
   );
 };

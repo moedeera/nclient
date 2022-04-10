@@ -26,6 +26,7 @@ var mock_profiles = [
         id: 50,
         type: "message",
         kind: "sent",
+        previous: [],
         user: 2,
         from: "Connie",
         date: new Date("2022-03-01"),
@@ -39,6 +40,10 @@ var mock_profiles = [
         id: 20,
         type: "message",
         kind: "reply",
+        previous: [
+          { id: 1, messenger: 1, text: "hey how is it going?" },
+          { id: 2, messenger: 2, text: "Im fine, how about you?" },
+        ],
         user: 6,
         from: "Mitch Wiz",
         date: new Date("2022-02-25"),
@@ -46,6 +51,19 @@ var mock_profiles = [
         text: "Thanks for the gift yo sent!",
         picture:
           "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
+        pending: true,
+      },
+      {
+        id: 19,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 15,
+        post: 10,
+        from: "Martin Lee",
+        date: new Date("2022-04-01"),
+        Date: "April 01 2022",
+        picture: "https://pbs.twimg.com/media/FN-ucnyXIAU735X.jpg",
 
         pending: true,
       },
@@ -1096,5 +1114,7 @@ var mock_comments = [
     commentList: [],
   },
 ];
+
+var mock_messages = [{}, {}];
 
 module.exports = { mock_profiles, mock_posts, mock_comments };

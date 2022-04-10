@@ -110,6 +110,8 @@ a {
   border: 2px solid rgba(128, 128, 128, 0.5);
   border-radius: 5px;
   min-height: 600px;
+  max-height: 900px;
+  overflow-y: scroll;
   width: 325px;
 }
 .dropDown-Notifications {
@@ -142,9 +144,8 @@ a {
 .notification {
   width: 100%;
 
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
+  display: grid;
+  grid-template-columns: 1fr 3fr 0.5fr;
   align-items: center;
   padding: 10px 15px;
   cursor: pointer;
@@ -161,6 +162,53 @@ a {
   display: grid;
   gap: 5px;
   width: 100%;
+}
+.notifications-action {
+  cursor: pointer;
+  display: flex;
+  gap: 5px;
+  margin: 5px auto;
+}
+.notifications-response {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  align-items: center;
+}
+.notifications-action button {
+  height: 40px;
+  cursor: pointer;
+}
+.notice-msg-box {
+  border: 1px solid rgba(128, 128, 128, 0.521);
+}
+.notice-msg-box img {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+.messages-msg {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  align-items: center;
+  gap: 20px;
+  padding: 5px;
+}
+.message-reply {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  padding: 0 2px;
+}
+.message-reply input {
+  background-color: rgba(128, 128, 128, 0.185);
+  border: 1px solid rgba(128, 128, 128, 0.358);
+  padding: 10px 5px;
+  height: 90%;
+  border-radius: 5px;
+}
+.message-reply button {
+  height: 90%;
+  margin: 1px auto;
+  cursor: pointer;
 }
 @media screen and (max-width: 1224px) {
   .social-nav-top h5 {
