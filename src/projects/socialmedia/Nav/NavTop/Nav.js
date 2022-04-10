@@ -1,7 +1,7 @@
 import React from "react";
 import "./NavTop.css";
 import { Searchbar } from "./Searchbar.js";
-
+import Notices from "./Notices";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../../Context/Context";
@@ -11,6 +11,7 @@ export const Nav = () => {
     useContext(UserContext);
   const [notices, showNotices] = useState(false);
   const [messages, showMessages] = useState(false);
+  const [noticeFilter, toggleNoticeFilter] = useState(true);
 
   return (
     <>
@@ -73,57 +74,54 @@ export const Nav = () => {
               <div className="dropDown-Notifications">
                 <h2>Notifications</h2>
                 <div className="notification-select">
-                  <div>all</div>
-                  <div className="notice-select">unread</div>
+                  <div
+                    onClick={() => {
+                      toggleNoticeFilter(true);
+                    }}
+                  >
+                    all
+                  </div>
+                  <div
+                    onClick={() => {
+                      toggleNoticeFilter(false);
+                    }}
+                    className="notice-select"
+                  >
+                    unread
+                  </div>
                 </div>
-
-                {user.Notices.map(
-                  (notice) =>
-                    notice.type === "post" && (
-                      <Link
-                        style={{ color: "black" }}
-                        key={notice.id}
-                        onClick={() => {
-                          setCurrentPost(
-                            posts.find((Post) => Post.id === notice.post)
-                          );
-                          UpdateViews(notice.post);
-                          setPostIndex(notice.post);
-                          console.log(
-                            posts.filter((Post) => Post.id === notice.post)
-                          );
-                        }}
-                        to={page === "main" ? "posts" : "./posts"}
-                      >
-                        <div className="notification">
-                          <img src={notice.picture} alt="pic" />
-                          <div className="notification-details">
-                            {notice.kind === "posted" ? (
-                              <h4>{notice.from} made a post</h4>
-                            ) : (
-                              <div style={{ display: "inline-block" }}>
-                                <h4>
-                                  {notice.from} Shared a post by{" "}
-                                  <span style={{ color: "chocolate" }}>
-                                    {notice.share}
-                                  </span>{" "}
-                                </h4>
-                              </div>
-                            )}
-
-                            <h5>{notice.Date}</h5>
-                          </div>
-
-                          <i
-                            className="fas fa-circle"
-                            style={{
-                              color: "navy",
-                            }}
-                          ></i>
-                        </div>
-                      </Link>
+                {noticeFilter
+                  ? user.Notices.map(
+                      (notice) =>
+                        notice.type === "post" && (
+                          <Notices
+                            key={notice.id}
+                            notice={notice}
+                            setCurrentPost={setCurrentPost}
+                            UpdateViews={UpdateViews}
+                            setPostIndex={setPostIndex}
+                            page={page}
+                            posts={posts}
+                            statusPend={noticeFilter}
+                          />
+                        )
                     )
-                )}
+                  : user.Notices.map((notice) =>
+                      notice.type === "post" && notice.pending === true ? (
+                        <Notices
+                          key={notice.id}
+                          notice={notice}
+                          setCurrentPost={setCurrentPost}
+                          UpdateViews={UpdateViews}
+                          setPostIndex={setPostIndex}
+                          page={page}
+                          posts={posts}
+                          statusPend={noticeFilter}
+                        />
+                      ) : (
+                        ""
+                      )
+                    )}
               </div>
             )}
 

@@ -45,20 +45,7 @@ var mock_profiles = [
 
         pending: true,
       },
-      {
-        id: 21,
-        type: "post",
-        kind: "posted",
-        user: 2,
-        post: 10,
-        from: "Connie Williams",
-        date: new Date("2022-02-25"),
-        Date: "February 25 2022",
-        picture:
-          "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 
-        pending: true,
-      },
       {
         id: 22,
         type: "post",
@@ -87,6 +74,37 @@ var mock_profiles = [
           "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
 
         pending: false,
+      },
+      {
+        id: 21,
+        type: "post",
+        kind: "share",
+        share: "SHA",
+        user: 2,
+        post: 10,
+        from: "Connie Williams",
+        date: new Date("2022-02-25"),
+        Date: "February 25 2022",
+        picture:
+          "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+
+        pending: true,
+      },
+
+      {
+        id: 20,
+        type: "post",
+        kind: "posted",
+        share: "Mitch Wiz",
+        user: 2,
+        post: 7,
+        from: "Mitch Wiz",
+        date: new Date("2022-02-22"),
+        Date: "February 22 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
+
+        pending: true,
       },
     ],
 
