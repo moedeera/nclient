@@ -204,6 +204,10 @@
 .PostCard-buttons button {
   cursor: pointer;
 }
+.PostCard-closeBtn {
+  display: none;
+}
+
 @media screen and (min-width: 910px) {
   .PostCard-Post-details-post-comments {
     /* height: 350px; */
@@ -227,6 +231,18 @@
     grid-template-rows: 1fr 1fr;
 
     height: auto;
+  }
+  .PostCard-closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.575);
+    border-radius: 50%;
+    background: var(--color-primary-social);
+    height: 40px;
+    width: 40px;
+    color: var(--color-secondary-social);
+    cursor: pointer;
   }
   .PostCard-Post-details-post-actions {
     display: none;

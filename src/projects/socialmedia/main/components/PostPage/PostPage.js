@@ -154,6 +154,20 @@ export const PostPage = () => {
                   <h3>{currentPost.PosterName}</h3>
                   <h5>Published {currentPost.date}</h5>
                 </div>
+                <div
+                  className="PostCard-closeBtn"
+                  onClick={() => {
+                    if (page === "trending") {
+                      navigate("../trending");
+                    } else if (page === "profile") {
+                      navigate("../profile");
+                    } else {
+                      navigate("../");
+                    }
+                  }}
+                >
+                  <i className="fa fa-close fa-2x"></i>
+                </div>
               </div>
             </div>
             <div className="PostCard-Post-details-post-text">
