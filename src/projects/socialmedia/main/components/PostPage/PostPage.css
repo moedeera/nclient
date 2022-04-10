@@ -7,7 +7,7 @@
   max-height: 1500px;
 
   height: 100%;
-  
+
   backdrop-filter: blur(15px);
   color: black;
   z-index: 5;
@@ -47,9 +47,8 @@
   color: white;
   border: 1px solid grey;
 }
-.PostCard-Post-image{
-
-  background-color:var(--color-secondary-social);
+.PostCard-Post-image {
+  background-color: var(--color-secondary-social);
 }
 .PostCard-Post-details {
   width: 100%;
@@ -220,7 +219,8 @@
     overflow-y: scroll;
   }
   .PostCard {
-    height: 110vh;
+    height: 100%;
+    overflow: hidden;
   }
   .PostCard-Post {
     grid-template-columns: 1fr;
