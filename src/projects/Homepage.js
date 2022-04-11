@@ -15,10 +15,10 @@ export const Homepage = () => {
       <Header />
       <Nav />
       <Portfolio />
-      {/* <About />
+      {/* <About /> */}
 
-      <Contact /> */}
-      {/* <Footer /> */}
+      {/* <Contact /> 
+      { <Footer /> } */}
     </div>
   );
 };

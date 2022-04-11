@@ -1,11 +1,14 @@
 #portfolio {
-  height: 40vh;
 }
 .portfolio_container {
   display: grid;
   margin: 5rem auto;
   grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
+}
+.container h2 {
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 .portfolio_item {
   background: var(--color-bg-variant);
@@ -14,6 +17,9 @@
   border: 1px solid transparent;
   transition: var(--transition);
   cursor: pointer;
+}
+
+.portfolio_item.social-media-project img {
 }
 .portfolio_links {
   display: flex;
@@ -26,6 +32,11 @@
 }
 .portfolio_item h3 {
   margin: 1.2rem 0 2rem;
+  color: white;
+}
+.spacing {
+  display: flex;
+  gap: 5px;
 }
 /* .social-media-project {
   background: var(--color-primary-social);

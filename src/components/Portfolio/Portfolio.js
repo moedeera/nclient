@@ -1,6 +1,6 @@
 import React from "react";
 import "./portfolio.css";
-import social from "./social.jpg";
+import social from "./socialdemo.jpg";
 import diner from "./diner.jpg";
 import chess from "./chess.jpg";
 import elearning from "./elearning.jpg";
@@ -17,7 +17,7 @@ export const Portfolio = () => {
             <div className="portfolio_links">
               <a
                 href="https://github.com"
-                className="btn"
+                className="btn spacing"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -37,7 +37,7 @@ export const Portfolio = () => {
             <div className="portfolio_links">
               <a
                 href="https://github.com"
-                className="btn"
+                className="btn spacing"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -57,7 +57,7 @@ export const Portfolio = () => {
             <div className="portfolio_links">
               <a
                 href="https://github.com"
-                className="btn"
+                className="btn spacing"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -77,7 +77,7 @@ export const Portfolio = () => {
             <div className="portfolio_links">
               <a
                 href="https://github.com"
-                className="btn"
+                className="btn spacing"
                 target="_blank"
                 rel="noreferrer"
               >

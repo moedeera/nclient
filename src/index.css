@@ -49,7 +49,8 @@ body {
 }
 .homepage {
   background-color: var(--color-bg);
-  height: 200vh;
+
+  overflow-y: scroll;
 }
 .container {
   width: var(--container-width-lg);
