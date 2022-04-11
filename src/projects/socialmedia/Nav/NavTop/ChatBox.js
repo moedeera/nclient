@@ -1,4 +1,5 @@
 import React from "react";
+import Messages from "./Messages";
 
 const ChatBox = ({ message, user }) => {
   return (
@@ -26,6 +27,20 @@ const ChatBox = ({ message, user }) => {
               </div>
             </div>
           ))}
+
+        {message?.previous?.length === 0 && (
+          <div className="messages-msg" key={message.id}>
+            <div>
+              {" "}
+              <img src={message.picture} alt="pic" />
+              <small>{message.from}</small>
+            </div>
+
+            <div className="message-msg-text">
+              <p>{message.text}</p>
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="message-reply">

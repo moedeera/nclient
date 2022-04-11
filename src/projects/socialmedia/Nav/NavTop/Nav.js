@@ -107,22 +107,26 @@ export const Nav = () => {
               <div className="dropDown-Notifications">
                 <h2>Notifications</h2>
                 <div className="notification-select">
-                  <div
-                    onClick={() => {
-                      toggleNoticeFilter(true);
-                    }}
-                    className={!noticeFilter ? "notice-select" : ""}
-                  >
-                    all
-                  </div>
-                  <div
-                    onClick={() => {
-                      toggleNoticeFilter(false);
-                    }}
-                    className={noticeFilter ? "notice-select" : ""}
-                  >
-                    unread
-                  </div>
+                  {notices && (
+                    <>
+                      <div
+                        onClick={() => {
+                          toggleNoticeFilter(true);
+                        }}
+                        className={!noticeFilter ? "notice-select" : ""}
+                      >
+                        all
+                      </div>
+                      <div
+                        onClick={() => {
+                          toggleNoticeFilter(false);
+                        }}
+                        className={noticeFilter ? "notice-select" : ""}
+                      >
+                        unread
+                      </div>
+                    </>
+                  )}
                 </div>
                 {noticeFilter
                   ? user.Notices.map(
