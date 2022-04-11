@@ -112,7 +112,7 @@ export const NavRight = ({ status }) => {
         )}
 
         <div className="nav-right-ads">
-          <h3>Ad</h3>
+          <h5>Ad</h5>
           <i className="fas fa-ellipsis-v"></i>
         </div>
       </div>

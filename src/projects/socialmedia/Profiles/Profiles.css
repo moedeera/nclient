@@ -8,6 +8,7 @@
   width: 58vw;
   left: calc(50vw + 14vw);
   padding-top: 0;
+  height: fit-content;
 }
 .fr-search-main {
   padding-top: 10px;
@@ -34,7 +35,7 @@ h3 {
 
 .fr-request {
   padding: 0 5px;
-  border: 1px solid rgba(128, 128, 128, 0.411);
+
   min-height: 310px;
   margin: 5px 0;
 }
