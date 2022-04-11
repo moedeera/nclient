@@ -4,7 +4,7 @@ import ad1 from "./ad1.jpg";
 import ad2 from "./ad2.jpg";
 
 const FriendsNav = ({ fsSettings, setFsSettings }) => {
-  const [navOption, setNavOption] = useState("main");
+  const [navOption, setNavOption] = useState(fsSettings);
 
   const handleNavigate = (action) => {
     setFsSettings(action);
