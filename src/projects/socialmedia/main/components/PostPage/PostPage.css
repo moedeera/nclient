@@ -55,7 +55,7 @@
   display: grid;
   background-color: #154c7988;
   grid-template-rows: 2fr 3fr 1fr 8fr 3.15fr;
-
+  overflow-y: scroll;
   height: 800px;
   padding-bottom: 20px;
   /* max-height: 840px; */
@@ -217,20 +217,18 @@
 
 @media screen and (max-width: 909px) {
   .PostPage {
-    margin-top: -65px;
+    margin-top: -0px;
+    max-height: 100vh;
+    overflow-y: hidden;
   }
-  .PostCard-Post-details {
-    overflow-y: scroll;
-  }
+
   .PostCard {
     height: 100%;
-    overflow: hidden;
+    margin-top: 0;
   }
   .PostCard-Post {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-
-    height: auto;
   }
   .PostCard-closeBtn {
     display: flex;
@@ -248,10 +246,11 @@
     display: none;
   }
   .PostCard-Post-details {
-    height: 500px;
+    height: 430px;
+    overflow-y: scroll;
   }
   .PostCard-Post-image img {
-    height: 500px;
+    height: 430px;
   }
   .sm-l {
     font-size: 32px;
