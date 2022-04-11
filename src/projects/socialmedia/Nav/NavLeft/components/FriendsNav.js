@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./FriendsPage.css";
 import ad1 from "./ad1.jpg";
 import ad2 from "./ad2.jpg";
 
-const FriendsPage = () => {
+const FriendsNav = ({ fsSettings, setFsSettings }) => {
+  const [navOption, setNavOption] = useState("main");
+
+  const handleNavigate = (action) => {
+    setFsSettings(action);
+    setNavOption(action);
+  };
   return (
     <>
       <div className="fp-navigator">
@@ -12,11 +18,29 @@ const FriendsPage = () => {
           <i className="fa fa-cog" aria-hidden="true"></i>
         </h2>
         <div className="fp-navigate">
-          <div className="fp-selected">
+          <div
+            style={
+              navOption === "main"
+                ? {
+                    backgroundColor: "rgba(128, 128, 128, 0.179)",
+                  }
+                : { backgroundColor: "white" }
+            }
+            onClick={() => handleNavigate("main")}
+          >
             {" "}
             <i className="fas fa-user-circle"></i> Main
           </div>
-          <div>
+          <div
+            style={
+              navOption === "suggestions"
+                ? {
+                    backgroundColor: "rgba(128, 128, 128, 0.179)",
+                  }
+                : { backgroundColor: "white" }
+            }
+            onClick={() => handleNavigate("suggestions")}
+          >
             {" "}
             <i className="fas fa-lightbulb"></i>Suggestions
           </div>
@@ -40,4 +64,4 @@ const FriendsPage = () => {
   );
 };
 
-export default FriendsPage;
+export default FriendsNav;

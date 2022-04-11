@@ -53,6 +53,7 @@ export const UserContextProvider = ({ children }) => {
   const [file, setFile] = useState(null);
   const [postIndex, setPostIndex] = useState(0);
   const { progress, url, error } = useDatabase();
+  const [fsSettings, setFsSettings] = useState("main");
   const {
     profiles,
     setProfiles,
@@ -161,6 +162,8 @@ export const UserContextProvider = ({ children }) => {
         url,
         error,
         createCommentList,
+        fsSettings,
+        setFsSettings,
       }}
     >
       {children}
