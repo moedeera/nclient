@@ -1,6 +1,6 @@
 import React from "react";
-import { useEffect, useState, useContext } from "react";
-import { UserContext } from "../../../../Context/Context";
+import { useEffect, useState } from "react";
+
 import { mock_profiles } from "../../../../assets/MockDataBase";
 import axios from "axios";
 

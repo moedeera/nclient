@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo } from "react";
 import "./NavTop.css";
 import { Searchbar } from "./Searchbar.js";
 import Notices from "./Notices";
@@ -20,6 +20,18 @@ export const Nav = () => {
   const [notices, showNotices] = useState(false);
   const [messages, showMessages] = useState(false);
   const [noticeFilter, toggleNoticeFilter] = useState(true);
+  let noticeCount = useMemo(
+    function getNoticeCount() {
+      const fetchedNotices = user.Notices.filter(
+        (notice) => notice.type === "post"
+      );
+      let count = fetchedNotices.length;
+      return count;
+    },
+    [user]
+  );
+
+  console.log(noticeCount);
 
   const clear = () => {
     showMessages(false);
@@ -60,6 +72,7 @@ export const Nav = () => {
           >
             <li>
               <i className="fab fa-hotjar trending"></i>
+
               <h5>Trending</h5>
             </li>
           </Link>
@@ -77,6 +90,7 @@ export const Nav = () => {
           </Link>
 
           <li
+            className="notifications-icon"
             onClick={() => {
               showNotices(!notices);
               showMessages(false);
@@ -84,6 +98,7 @@ export const Nav = () => {
           >
             <i className="fas fa-bell fa-2x"></i>
             <h5>Notifications</h5>
+            <div className="notification-count">{noticeCount}</div>
           </li>
 
           <li
