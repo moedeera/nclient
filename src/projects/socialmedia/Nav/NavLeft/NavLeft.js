@@ -1,13 +1,22 @@
 import React from "react";
 import { useContext } from "react";
 import "./Navleft.css";
-import { Suggestions } from "./Suggestions";
+import { Suggestions } from "./components/Suggestions";
+import FriendsPage from "./components/FriendsPage";
 
 import { UserContext } from "../../../../Context/Context";
 
-export const NavLeft = ({ status }) => {
+export const NavLeft = ({ status, friendsPage }) => {
   const { user, suggestedProfiles, setViewedProfiles } =
     useContext(UserContext);
+
+  if (friendsPage) {
+    return (
+      <div className="nav-left">
+        <FriendsPage />
+      </div>
+    );
+  }
 
   return (
     <div className="nav-left">

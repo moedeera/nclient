@@ -1,0 +1,59 @@
+.fp-navigator {
+  border: 1px solid rgba(128, 128, 128, 0.368);
+  min-height: 400px;
+}
+.fp-navigator h2 {
+  margin: 0px auto;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--color-primary-social);
+  color: var(--color-secondary-social);
+  font-weight: 700;
+}
+.fp-navigator i {
+  color: white;
+}
+.fp-navigate {
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--color-secondary-social);
+}
+.fp-navigate i {
+  color: var(--color-primary-social);
+}
+.fp-navigate > div {
+  height: 70px;
+  display: flex;
+  gap: 25px;
+  padding: 15px;
+  cursor: pointer;
+}
+.fp-selected {
+  background-color: rgba(128, 128, 128, 0.179);
+}
+.fp-navigate > div:hover {
+  background-color: rgba(128, 128, 128, 0.179);
+}
+
+.fp-advertisement {
+  margin: 10px 0;
+  border: 1px solid rgba(128, 128, 128, 0.368);
+
+  min-height: 300px;
+  position: relative;
+  cursor: pointer;
+  transition: 400ms ease-in-out;
+}
+.fp-advertisement:hover {
+  opacity: 0.9;
+  transform: scale(1.009);
+}
+.fp-advertisement h5 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: var(--color-secondary-social);
+}

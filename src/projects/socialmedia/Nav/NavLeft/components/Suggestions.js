@@ -1,7 +1,7 @@
 import React from "react";
 import "./Suggestions.css";
 import { useState, useEffect, useContext } from "react";
-import { UserContext } from "../../../../Context/Context";
+import { UserContext } from "../../../../../Context/Context";
 import { Link } from "react-router-dom";
 
 export const Suggestions = ({ profile, onView }) => {
