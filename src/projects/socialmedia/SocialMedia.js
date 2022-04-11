@@ -28,11 +28,10 @@ export const SocialMedia = () => {
         <Nav status={log} />
         {show && (
           <>
-            {} <NavLeft status={log} />
             <NavRight status={log} />
           </>
         )}
-        
+        <NavLeft status={log} />
       </div>
       <div>
         {log ? "You are logged in" : <>Please Log in</>}

@@ -76,7 +76,6 @@ const Notices = ({
                 setCurrentPost(posts.find((Post) => Post.id === notice.post));
                 UpdateViews(notice.post);
                 setPostIndex(notice.post);
-                console.log(posts.find((Post) => Post.id === notice.post));
                 updateNotice();
               }}
               to={page === "main" ? "posts" : "./posts"}
