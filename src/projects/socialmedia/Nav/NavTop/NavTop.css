@@ -69,7 +69,8 @@
   border-radius: 50%;
 }
 .social-nav-top ul {
-  width: 30%;
+  width: 40%;
+  max-width: 600px;
 
   display: flex;
   justify-content: space-evenly;
@@ -230,6 +231,8 @@ a {
 @media screen and (max-width: 1224px) {
   .social-nav-top h5 {
     display: none;
+  }
+  .social-nav-top {
   }
 }
 @media screen and (max-width: 600px) {
