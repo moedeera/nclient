@@ -139,7 +139,7 @@
   border-radius: 5px;
   border: 1px solid rgba(128, 128, 128, 0.39);
   color: var(--color-secondary-social);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 500;
 }
 .profile-page-lower-buttons h3 {
@@ -166,9 +166,6 @@
 .header-sm {
   display: none;
 }
-#message-lg {
-  display: none;
-}
 
 .profile-page-lower-buttons > div {
   display: flex;
@@ -176,6 +173,38 @@
   justify-content: center;
   align-items: center;
 }
+
+.profile-page {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+}
+
+.profile-page-photos {
+  border: 1px solid rgba(128, 128, 128, 0.39);
+  padding-top: 10px;
+  margin-top: 5px;
+}
+.profile-page-photos h2 {
+  padding: 0 5px;
+  font-weight: 700;
+  color: var(--color-secondary-social);
+}
+.profile-photo-grid {
+  width: 100%;
+  margin: 20px 0;
+  padding: 0 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 0px;
+}
+.profile-photo {
+  padding: 1px;
+  opacity: 0.9;
+  cursor: pointer;
+  /* padding controls height, will always be perfectly square regardless of width */
+}
+
 @media screen and (min-width: 1024px) {
   .profile-page-lower {
     margin-top: 10px;
@@ -183,8 +212,7 @@
     grid-template-columns: 3fr 4fr;
     gap: 20px;
   }
-  .pro-trivia:hover {
-  }
+
   .profile-trivia :hover {
     background-color: var(--color-secondary-social);
     color: antiquewhite !important;
@@ -273,6 +301,12 @@
     align-items: center;
     margin-top: 5px;
   }
+  .profile-page:hover {
+  }
+
+  .profile-photo:hover {
+    opacity: 1;
+  }
 }
 
 @media screen and (max-width: 1024px) {
@@ -283,9 +317,7 @@
     margin-bottom: 15px;
     color: white;
   }
-  .profile-page-upper-top-name {
-    display: none;
-  }
+
   .profile-page-upper-bottom-new {
     display: grid;
     grid-template-columns: 1fr;

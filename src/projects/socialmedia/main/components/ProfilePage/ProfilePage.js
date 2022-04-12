@@ -28,13 +28,24 @@ export const ProfilePage = () => {
             </div>
             <div className="profile-page-buttons">
               <div className="profile-page-lower-btn" id="message-lg">
-                <button className="btn btn-secondary"> Follow</button>
+                <button className="btn btn-secondary profile-page">
+                  {" "}
+                  Follow
+                  <i className="fas fa-bell"></i>
+                </button>
               </div>
               <div className="profile-page-lower-btn" id="message-lg">
-                <button className="btn btn-secondary"> Message</button>
+                <button className="btn btn-secondary  profile-page">
+                  {" "}
+                  Message <i className="fas fa-comment"></i>
+                </button>
               </div>
               <div className="profile-page-lower-btn" id="message-lg">
-                <button className="btn btn-secondary"> Like</button>
+                <button className="btn btn-secondary  profile-page">
+                  {" "}
+                  Like
+                  <i className="fas fa-thumbs-up"></i>
+                </button>
               </div>
             </div>
             <div className="profile-page-lower-buttons">
@@ -65,7 +76,7 @@ export const ProfilePage = () => {
           <div className="profile-page-lower-bio">
             <ul>
               <li>
-                <h3>Bio:</h3>
+                <h3 style={{ color: "white" }}>Bio:</h3>
               </li>
               {viewedProfile.description !== "" && (
                 <li>"{viewedProfile.description}"</li>
@@ -81,7 +92,7 @@ export const ProfilePage = () => {
           </div>
 
           <div className="profile-page-lower-friends">
-            <h3>Friends</h3>
+            <h3 style={{ color: "white" }}>Friends</h3>
             <div className="profile-page-friendList">
               {profiles.map((profile) => (
                 <div key={profile.id} className="profile-page-friend">
@@ -89,6 +100,68 @@ export const ProfilePage = () => {
                   <p>{profile.name}</p>
                 </div>
               ))}
+            </div>
+          </div>
+
+          <div className="profile-page-photos">
+            <h2>{viewedProfile.nickname}'s Photos</h2>
+            <div className="profile-photo-grid">
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2022/04/06/20/30/big-ben-7116305_960_720.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_960_720.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902_960_720.jpg"
+                  alt=""
+                />
+              </div>
+
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2022/04/06/20/30/big-ben-7116305_960_720.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_960_720.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902_960_720.jpg"
+                  alt=""
+                />
+              </div>
+
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2022/04/06/20/30/big-ben-7116305_960_720.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_960_720.jpg"
+                  alt=""
+                />
+              </div>
+              <div className="profile-photo">
+                <img
+                  src="https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902_960_720.jpg"
+                  alt=""
+                />
+              </div>
             </div>
           </div>
 

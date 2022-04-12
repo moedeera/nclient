@@ -18,7 +18,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
   const [commentBox, showCommentBox] = useState(false);
   const [show, setShow] = useState(false);
   const [postId, setPostId] = useState(0);
-
+  console.log(Page);
   const CommentBoxToggle = () => {
     showCommentBox(!commentBox);
   };
@@ -35,7 +35,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                     profiles.find((person) => person.id === Post.Poster)
                   );
                 }}
-                to={"./profile"}
+                to={Page === "main" ? "/profile" : "../profile"}
               >
                 <img src={Post.PosterPic} alt="" />
               </Link>
@@ -46,7 +46,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                     profiles.find((person) => person.id === Post.Poster)
                   );
                 }}
-                to={"./profile"}
+                to={Page === "main" ? "/profile" : "../profile"}
               >
                 <div className="postFeed-post-info-stamp">
                   <h3>{Post.PosterName}</h3>
