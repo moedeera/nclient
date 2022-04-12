@@ -52,7 +52,7 @@ export const UserContextProvider = ({ children }) => {
   const [page, setPage] = useState(GetCurrentPage());
   const [file, setFile] = useState(null);
   const [postIndex, setPostIndex] = useState(0);
-  const { progress, url, error } = useDatabase();
+  const { url, error } = useDatabase();
   const [fsSettings, setFsSettings] = useState("main");
   const {
     profiles,
@@ -79,6 +79,7 @@ export const UserContextProvider = ({ children }) => {
     currentPost,
     setCurrentPost,
     UpdateViews,
+    progress,
   } = usePosts();
   const {
     getComments,

@@ -20,6 +20,7 @@ const useStorage = (file) => {
       "state_changed",
       (snap) => {
         let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+
         setProgress(percentage);
       },
       (err) => {

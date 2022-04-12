@@ -3,7 +3,7 @@ import "./CreatePost.css";
 import pic from "./blank-avatar.png";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "../../../../../Context/Context";
-import useDatabase from "../../../common/hooks/UseDataBase";
+
 export const CreatePost = () => {
   const [alert, setAlert] = useState(false);
   const { createPosts, setComments, createCommentList } =

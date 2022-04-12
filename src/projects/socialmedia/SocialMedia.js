@@ -12,6 +12,7 @@ import { useLocation } from "react-router-dom";
 export const SocialMedia = () => {
   let log = true;
   let show = true;
+  let showNavLeft = true;
   let friendsPage = false;
   const location = useLocation();
   if (location.pathname === "/socialmedia/friends") {
@@ -27,6 +28,10 @@ export const SocialMedia = () => {
     show = false;
   }
 
+  if (location.pathname === "/socialmedia/profile") {
+    showNavLeft = false;
+  }
+
   return (
     <UserContextProvider>
       {" "}
@@ -34,10 +39,11 @@ export const SocialMedia = () => {
         <Nav status={log} />
         {show && (
           <>
+            {" "}
             <NavRight status={log} />
           </>
         )}
-        <NavLeft status={log} friendsPage={friendsPage} />
+        {showNavLeft && <NavLeft status={log} friendsPage={friendsPage} />}
       </div>
       <div>
         {log ? "You are logged in" : <>Please Log in</>}

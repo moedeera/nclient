@@ -60,6 +60,7 @@ const getCurrentPost = () => {
 export const usePosts = () => {
   const { days, months } = general();
   const [posts, setPosts] = useState([]);
+  const [progress, setProgress] = useState(null);
   const [currentPost, setCurrentPost] = useState();
 
   var friendsPosts = useMemo(
@@ -89,7 +90,7 @@ export const usePosts = () => {
     var month = JSON.stringify(months[CurrentDate.getMonth()]);
     var Year = JSON.stringify(CurrentDate.getUTCFullYear());
     var time = CurrentDate.toLocaleTimeString();
-    console.log(time);
+
     const newDate =
       day.substring(1, 4) +
       " " +
@@ -115,6 +116,11 @@ export const usePosts = () => {
         "state_changed",
         (snap) => {
           let percentage = (snap.bytesTransferred / snap.totalBytes) * 100;
+          if (percentage !== 100) {
+            setProgress(percentage);
+          } else if (percentage === 100) {
+            setProgress(null);
+          }
         },
         (err) => {
           console.log(err);
@@ -246,5 +252,6 @@ export const usePosts = () => {
     currentPost,
     setCurrentPost,
     UpdateViews,
+    progress,
   };
 };

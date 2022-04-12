@@ -31,14 +31,12 @@ export const Nav = () => {
     [user]
   );
 
-  console.log(noticeCount);
-
   const clear = () => {
     showMessages(false);
     showNotices(false);
   };
   return (
-    <>
+    <div className="nav-bar-top">
       <div className="social-nav-top ">
         <div className="logo">
           <h3>
@@ -116,6 +114,7 @@ export const Nav = () => {
             <img src={user.profilePic} alt="" className="top-nav-img" />
           </li>
         </ul>
+
         {notices || messages ? (
           <div className="dropDown">
             {notices && (
@@ -214,6 +213,6 @@ export const Nav = () => {
           ""
         )}
       </div>
-    </>
+    </div>
   );
 };
