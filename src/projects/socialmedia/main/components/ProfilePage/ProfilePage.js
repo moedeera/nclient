@@ -20,46 +20,41 @@ export const ProfilePage = () => {
           <img src={viewedProfile.profilePic} alt="" />
         </div>
         <div className="profile-page-upper-bottom-new">
-          <div className="profile-page-info">
+          <div className="profile-page-info" style={{ paddingTop: "10px" }}>
             <div className="profile-name">
-              <h1>{viewedProfile.name}</h1>
+              <h1 style={{ fontWeight: "700", marginTop: "5px" }}>
+                {viewedProfile.name}
+              </h1>
             </div>
-            <div className="profile-trivia">
-              <div className="pro-trivia">
-                <i
-                  className="fa fa-music"
-                  aria-hidden="true"
-                  style={{ color: "var(--color-secondary-social)" }}
-                ></i>
+            <div className="profile-page-buttons">
+              <div className="profile-page-lower-btn" id="message-lg">
+                <button className="btn btn-secondary"> Follow</button>
               </div>
-              <div className="pro-trivia">
-                <i
-                  className="fa fa-instagram"
-                  aria-hidden="true"
-                  style={{ color: " #833AB4", fontWeight: "700" }}
-                ></i>
+              <div className="profile-page-lower-btn" id="message-lg">
+                <button className="btn btn-secondary"> Message</button>
               </div>
-
-              <div className="pro-trivia">
-                <i className="fab fa-twitch" style={{ color: "#6441a5 " }}></i>
-              </div>
-              <div className="pro-trivia">
-                <i
-                  className="fab fa-twitter-square"
-                  style={{ color: "#0099cc" }}
-                ></i>
+              <div className="profile-page-lower-btn" id="message-lg">
+                <button className="btn btn-secondary"> Like</button>
               </div>
             </div>
-          </div>
-          <div className="profile-page-buttons">
-            <div className="profile-page-lower-btn" id="message-lg">
-              <button className="btn btn-secondary"> Follow</button>
-            </div>
-            <div className="profile-page-lower-btn" id="message-lg">
-              <button className="btn btn-secondary"> Message</button>
-            </div>
-            <div className="profile-page-lower-btn" id="message-lg">
-              <button className="btn btn-secondary"> Like</button>
+            <div className="profile-page-lower-buttons">
+              <div>
+                <i className="fas fa-user-friends fa-2x"></i>
+                <h3>{viewedProfile.Friends.length}</h3>
+              </div>
+              <div>
+                <i className="fas fa-street-view fa-2x"></i>
+                <h3>{viewedProfile.followers.length}</h3>
+              </div>
+              <div>
+                {" "}
+                <i className="fas fa-eye fa-2x"></i>
+                <h3>{viewedProfile.views ? viewedProfile.views : 239}</h3>
+              </div>
+              <div>
+                <i className="fab fa-gratipay fa-2x"></i>
+                <h3>{viewedProfile.likes ? viewedProfile.likes : 113}</h3>
+              </div>
             </div>
           </div>
         </div>
@@ -67,38 +62,6 @@ export const ProfilePage = () => {
 
       <div className="profile-page-lower">
         <div className="profile-page-lower-top-side">
-          <div className="profile-page-lower-buttons">
-            <div>
-              <i
-                className="fas fa-user-friends fa-2x"
-                style={{ color: "green" }}
-              ></i>
-              <h3>{viewedProfile.Friends.length}</h3>
-            </div>
-            <div>
-              <i
-                className="fas fa-street-view fa-2x"
-                style={{ color: "var(--color-primary-social)" }}
-              ></i>
-              <h3>{viewedProfile.followers.length}</h3>
-            </div>
-            <div>
-              {" "}
-              <i
-                className="fas fa-eye fa-2x"
-                style={{ color: "var(--color-secondary-social)" }}
-              ></i>
-              <h3>{viewedProfile.views ? viewedProfile.views : 239}</h3>
-            </div>
-            <div>
-              <i
-                className="fab fa-gratipay fa-2x"
-                style={{ color: "crimson" }}
-              ></i>
-              <h3>{viewedProfile.likes ? viewedProfile.likes : 113}</h3>
-            </div>
-          </div>
-
           <div className="profile-page-lower-bio">
             <ul>
               <li>
