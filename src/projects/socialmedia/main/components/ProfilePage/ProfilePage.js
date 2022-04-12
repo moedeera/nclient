@@ -15,7 +15,15 @@ export const ProfilePage = () => {
   }, []);
   return (
     <div className="profile-page-main">
-      <div className="profile-page-upper-new">
+      <div
+        className="profile-page-upper-new"
+        style={{
+          backgroundImage: `url(${viewedProfile.banner})`,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
+        }}
+      >
         <div className="profile-page-upper-top-new">
           <img src={viewedProfile.profilePic} alt="" />
         </div>
@@ -127,38 +135,38 @@ export const ProfilePage = () => {
 
               <div className="profile-photo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2022/04/06/20/30/big-ben-7116305_960_720.jpg"
+                  src="https://cdn.pixabay.com/photo/2021/09/10/11/19/camping-6612823_960_720.jpg"
                   alt=""
                 />
               </div>
               <div className="profile-photo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_960_720.jpg"
+                  src="https://cdn.pixabay.com/photo/2021/05/31/12/47/hiking-6298742_960_720.jpg"
                   alt=""
                 />
               </div>
               <div className="profile-photo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902_960_720.jpg"
+                  src="https://cdn.pixabay.com/photo/2017/07/31/18/52/tent-2559999_960_720.jpg"
                   alt=""
                 />
               </div>
 
               <div className="profile-photo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2022/04/06/20/30/big-ben-7116305_960_720.jpg"
+                  src="https://cdn.pixabay.com/photo/2017/07/31/22/54/night-2561809_960_720.jpg"
                   alt=""
                 />
               </div>
               <div className="profile-photo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2016/11/21/15/14/camping-1845906_960_720.jpg"
+                  src="https://cdn.pixabay.com/photo/2021/11/05/17/31/oil-lamp-6771785_960_720.jpg"
                   alt=""
                 />
               </div>
               <div className="profile-photo">
                 <img
-                  src="https://cdn.pixabay.com/photo/2017/08/07/02/34/people-2598902_960_720.jpg"
+                  src="https://cdn.pixabay.com/photo/2016/02/09/16/35/night-1189929_960_720.jpg"
                   alt=""
                 />
               </div>

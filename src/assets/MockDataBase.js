@@ -18,6 +18,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://images.pexels.com/photos/1090387/pexels-photo-1090387.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    banner:
+      "https://cdn.pixabay.com/photo/2019/03/21/05/27/flower-4070280_960_720.jpg",
     followerCount: 26,
     login: false,
     Notifications: 2,
@@ -154,6 +156,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://images.pexels.com/photos/762020/pexels-photo-762020.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    banner:
+      "https://cdn.pixabay.com/photo/2017/10/05/22/35/surgeon-2821375_960_720.jpg",
     followerCount: 23,
     login: false,
     Notifications: 0,
@@ -184,6 +188,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://images.pexels.com/photos/1819483/pexels-photo-1819483.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    banner:
+      "https://cdn.pixabay.com/photo/2016/11/29/09/16/architecture-1868667_960_720.jpg",
     followerCount: 14,
     login: false,
     Notifications: 1,
@@ -223,6 +229,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    banner:
+      "https://cdn.pixabay.com/photo/2021/12/11/15/06/northern-lights-6862969_960_720.jpg",
     followerCount: 56,
     login: false,
     Notifications: 0,
@@ -253,6 +261,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://images.pexels.com/photos/1693085/pexels-photo-1693085.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    banner:
+      "https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_960_720.jpg",
     followerCount: 56,
     login: false,
     Notifications: 0,
@@ -280,6 +290,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2019/11/10/11/13/couple-4615557_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2017/03/11/13/19/oilseed-rape-2135026_960_720.jpg",
     followerCount: 6,
     login: false,
     Notifications: 0,
@@ -307,6 +319,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2021/02/09/06/45/doctor-5997504_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2020/04/28/06/57/medicine-5103043_960_720.jpg",
     followerCount: 6,
     login: false,
     Notifications: 0,
@@ -334,6 +348,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2020/11/07/20/29/injection-5722329_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2017/08/08/03/50/family-2610205_960_720.jpg",
     followerCount: 4,
     login: false,
     Notifications: 0,
@@ -361,6 +377,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2017/06/10/22/58/composing-2391033_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2019/11/08/09/27/panorama-4610864_960_720.jpg",
     followerCount: 4,
     login: false,
     Notifications: 0,
@@ -385,6 +403,8 @@ var mock_profiles = [
     Feed: [{ name: "Barbara Wiegel", type: "request", id: 12 }],
     profilePic:
       "https://s1.ticketm.net/dam/a/fc6/7f086b40-3c4e-4fdc-b98d-a4e599c13fc6_1277301_TABLET_LANDSCAPE_LARGE_16_9.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2020/05/24/08/35/f150-5213014_960_720.jpg",
     followerCount: 1,
     login: false,
     Notifications: 1,
@@ -415,7 +435,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2018/04/27/03/50/portrait-3353699_960_720.jpg",
-
+    banner:
+      "https://cdn.pixabay.com/photo/2021/08/30/21/29/port-6587129_960_720.jpg",
     followerCount: 3,
     login: false,
     Notifications: 1,
@@ -447,6 +468,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2020/08/17/12/28/woman-5495263_1280.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2021/08/30/21/29/port-6587129_960_720.jpg",
     followerCount: 3,
     login: false,
     Notifications: 1,
@@ -478,6 +501,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2017/09/01/21/53/blue-2705642_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2016/03/09/09/30/woman-1245817_960_720.jpg",
     followerCount: 3,
     login: false,
     Notifications: 1,
@@ -537,7 +562,8 @@ var mock_profiles = [
       },
     ],
     profilePic: "https://pbs.twimg.com/media/FN-ucnyXIAU735X.jpg",
-
+    banner:
+      "https://cdn.pixabay.com/photo/2016/02/09/16/35/night-1189929_960_720.jpg",
     login: false,
     Notifications: 1,
     Notices: [],
@@ -567,6 +593,8 @@ var mock_profiles = [
     ],
     profilePic:
       "https://cdn.pixabay.com/photo/2021/07/18/14/59/family-6475821_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2016/02/09/16/35/night-1189929_960_720.jpg",
 
     login: false,
     Notifications: 1,
