@@ -79,6 +79,7 @@
 
 .profile-page-info {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   padding: 5px 10px;
@@ -86,15 +87,33 @@
   color: white;
   font-family: "Noto Serif", serif;
   line-height: 1.6em;
+  gap: 25px;
 }
 .profile-name {
   display: flex;
   justify-content: center;
   align-items: center;
 }
+.profile-trivia {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding: 5px;
+  font-size: 28px;
+}
+.pro-trivia {
+  padding: 10px 12px;
+  border-radius: 5px;
+  background: rgba(245, 245, 245, 0.5);
+  transition: 500ms ease-in-out;
+}
+.profile-trivia i {
+  cursor: pointer;
+  transition: 500ms ease-in-out;
+}
+
 .profile-about {
   width: 80%;
-
   padding: 3px;
   line-height: 1.6em;
 }
@@ -180,12 +199,25 @@
 #message-lg {
   display: none;
 }
+
+.profile-page-lower-buttons > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @media screen and (min-width: 1024px) {
   .profile-page-lower {
     margin-top: 10px;
     display: grid;
     grid-template-columns: 3fr 4fr;
     gap: 20px;
+  }
+  .pro-trivia:hover {
+  }
+  .profile-trivia :hover {
+    background-color: var(--color-secondary-social);
+    color: antiquewhite !important;
   }
   .profile-page-lower-buttons {
     flex-direction: row;
@@ -282,6 +314,13 @@
     color: white;
   }
   .profile-page-upper-top-name {
+    display: none;
+  }
+  .profile-page-upper-bottom-new {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+  .profile-page-buttons {
     display: none;
   }
 }

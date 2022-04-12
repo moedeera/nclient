@@ -106,7 +106,7 @@ export const usePosts = () => {
     let link;
     let userFeteched = localStorage.getItem("User");
     const user = JSON.parse(userFeteched);
-    console.log(PostInfo.PstPicture);
+
     if (PostInfo.PstPicture) {
       const storageRef = projectStorage.ref(PostInfo.PstPicture.name);
 

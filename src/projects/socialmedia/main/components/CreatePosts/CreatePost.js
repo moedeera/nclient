@@ -44,70 +44,81 @@ export const CreatePost = () => {
   }, [alert]);
 
   return (
-    <div className="CreatePost">
-      <img src={pic} alt="new" />
-      <div className="MCpost">
-        <div className="MCPostbox">
-          <textarea
-            type="textarea"
-            className="textarea"
-            placeholder="Share a Post"
-            value={postBox.PstText}
-            onChange={(e) => {
-              onPostBoxChange(e);
-            }}
-          />
-        </div>
-        {jet ? (
-          <textarea className="urlTextArea" placeholder="Enter image URL" />
-        ) : (
-          ""
-        )}
-        {alert ? (
-          <p style={{ color: "crimson", padding: "10px 0" }}>
-            Please Enter a Post
-          </p>
-        ) : (
-          ""
-        )}
-
-        <div className="MCbuttons">
-          <div>
-            <input
-              style={{ display: "none" }}
-              id="file-input"
-              type="file"
+    <div style={{ margin: "0px 0 10px" }}>
+      <div
+        className={
+          postBox.PstPicture === "" ? "CreatePost" : "CreatePost no-bottom"
+        }
+      >
+        <img src={pic} alt="new" />
+        <div className="MCpost">
+          <div className="MCPostbox">
+            <textarea
+              type="textarea"
+              className="textarea"
+              placeholder="Share a Post"
+              value={postBox.PstText}
               onChange={(e) => {
-                setPostBox({ ...postBox, PstPicture: e.target.files[0] });
+                onPostBoxChange(e);
               }}
             />
+          </div>
+          {jet ? (
+            <textarea className="urlTextArea" placeholder="Enter image URL" />
+          ) : (
+            ""
+          )}
+          {alert ? (
+            <p style={{ color: "crimson", padding: "10px 0" }}>
+              Please Enter a Post
+            </p>
+          ) : (
+            ""
+          )}
+
+          <div className="MCbuttons">
+            <div>
+              <input
+                style={{ display: "none" }}
+                id="file-input"
+                type="file"
+                onChange={(e) => {
+                  setPostBox({ ...postBox, PstPicture: e.target.files[0] });
+                }}
+              />
+              <label
+                htmlFor="file-input"
+                type="submit"
+                style={{ margin: "0", border: "none" }}
+              >
+                <i className="fas fa-image"></i>
+              </label>
+            </div>
+
             <label
               htmlFor="file-input"
               type="submit"
               style={{ margin: "0", border: "none" }}
             >
-              <i className="fas fa-image"></i>
+              <i className="fas fa-video"></i>
             </label>
+
+            <button
+              className="btn btn-social-primary"
+              onClick={(e) => {
+                onPostSubmission(postBox.PstText);
+              }}
+            >
+              Post
+            </button>
           </div>
-
-          <label
-            htmlFor="file-input"
-            type="submit"
-            style={{ margin: "0", border: "none" }}
-          >
-            <i className="fas fa-video"></i>
-          </label>
-
-          <button
-            className="btn btn-social-primary"
-            onClick={(e) => {
-              onPostSubmission(postBox.PstText);
-            }}
-          >
-            Post
-          </button>
         </div>
       </div>
+      {postBox.PstPicture !== "" && (
+        <div className="createPost-file">
+          <p>Upload file :{postBox.PstPicture.name}</p>
+        </div>
+      )}
     </div>
   );
 };

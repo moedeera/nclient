@@ -4,7 +4,7 @@
   border: 1px solid rgba(128, 128, 128, 0.616);
   width: 100%;
   margin: 0 auto;
-  margin-bottom: 20px;
+
   padding: 5px 10px;
   border-radius: 5px;
   background: whitesmoke;
@@ -12,6 +12,9 @@
   display: grid;
   grid-template-columns: 1fr 5fr;
   align-items: center;
+}
+.no-bottom {
+  border-bottom: none;
 }
 .MCpost {
   border: none;
@@ -66,6 +69,21 @@
 
 .image-upload > input {
   display: none;
+}
+
+.createPost-file {
+  border: 1px solid rgba(128, 128, 128, 0.603);
+  background: whitesmoke;
+  border-top: none;
+  text-align: center;
+  padding: 0 10px 10px;
+  width: 100%;
+  margin: 0 auto 10px;
+  color: var(--color-secondary-social);
+  font-weight: 700;
+}
+.createPost-file p {
+  padding: 10px 0;
 }
 
 @media only screen and (max-width: 768px) {

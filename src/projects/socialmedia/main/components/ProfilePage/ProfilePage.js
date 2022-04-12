@@ -24,6 +24,32 @@ export const ProfilePage = () => {
             <div className="profile-name">
               <h1>{viewedProfile.name}</h1>
             </div>
+            <div className="profile-trivia">
+              <div className="pro-trivia">
+                <i
+                  className="fa fa-music"
+                  aria-hidden="true"
+                  style={{ color: "var(--color-secondary-social)" }}
+                ></i>
+              </div>
+              <div className="pro-trivia">
+                <i
+                  className="fa fa-instagram"
+                  aria-hidden="true"
+                  style={{ color: " #833AB4", fontWeight: "700" }}
+                ></i>
+              </div>
+
+              <div className="pro-trivia">
+                <i className="fab fa-twitch" style={{ color: "#6441a5 " }}></i>
+              </div>
+              <div className="pro-trivia">
+                <i
+                  className="fab fa-twitter-square"
+                  style={{ color: "#0099cc" }}
+                ></i>
+              </div>
+            </div>
           </div>
           <div className="profile-page-buttons">
             <div className="profile-page-lower-btn" id="message-lg">
