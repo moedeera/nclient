@@ -1,26 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Roboto:wght@100;400;700;900&display=swap");
-.nav-bar-top {
+.social-nav-top {
   position: fixed;
   top: 0;
   height: 60px;
   width: 100%;
+
   z-index: 5;
   background: var(--color-primary-social);
-}
-
-.social-nav-top {
-  height: 100%;
-  width: 100%;
-  max-width: 1600px;
-  margin: 0 auto;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 0px 20px;
   font-family: "Poppins", sans-serif;
   font-family: "Roboto", sans-serif;
   transition: all 300ms smooth;
-  /* border-bottom: 1px solid rgba(128, 128, 128, 0.385); */
+  border-bottom: 1px solid rgba(128, 128, 128, 0.385);
 }
 
 .logo {
