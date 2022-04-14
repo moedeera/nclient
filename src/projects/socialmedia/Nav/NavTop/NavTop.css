@@ -1,18 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&family=Roboto:wght@100;400;700;900&display=swap");
 .nav-top-container {
+}
+
+.social-nav-top {
   position: fixed;
   top: 0;
   height: 60px;
   width: 100%;
   z-index: 5;
   background: var(--color-primary-social);
-}
-
-.social-nav-top {
-  width: 100%;
-  max-width: 1175px;
-  margin: 0 auto;
-  position: relative;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -25,7 +21,7 @@
 
 .logo {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 2rem;
 
