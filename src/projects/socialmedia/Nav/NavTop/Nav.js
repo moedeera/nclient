@@ -36,7 +36,7 @@ export const Nav = () => {
     showNotices(false);
   };
   return (
-    <>
+    <div className="nav-top-container">
       <div className="social-nav-top ">
         <div className="logo">
           <h3>
@@ -213,6 +213,6 @@ export const Nav = () => {
           ""
         )}
       </div>
-    </>
+    </div>
   );
 };
