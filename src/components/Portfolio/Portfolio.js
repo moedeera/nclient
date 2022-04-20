@@ -23,7 +23,7 @@ export const Portfolio = () => {
 
             <div className="portfolio_links">
               <a
-                href="https://github.com"
+                href="https://github.com/moedeera/nclient/tree/main/src/projects/socialmedia"
                 className="btn spacing"
                 target="_blank"
                 rel="noreferrer"
@@ -107,7 +107,7 @@ export const Portfolio = () => {
             </div>
             <div className="portfolio_links">
               <a
-                href="https://github.com"
+                href="https://github.com/moedeera/FED-HT-website-design"
                 className="btn spacing"
                 target="_blank"
                 rel="noreferrer"
@@ -115,7 +115,7 @@ export const Portfolio = () => {
                 Repository
                 <i class="fa fa-github" aria-hidden="true"></i>
               </a>
-              <a href="https://github.com" className="btn btn-primary">
+              <a href="https://deercoded.com" className="btn btn-primary">
                 Live Demo
               </a>
             </div>
