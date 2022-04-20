@@ -18,8 +18,15 @@
   transition: var(--transition);
   cursor: pointer;
 }
+.portfolio_info {
+  display: flex;
+  flex-direction: column;
 
-.portfolio_item.social-media-project img {
+  line-height: 1.6em;
+  letter-spacing: 1.5px;
+  padding: 2px;
+}
+.portfolio_info .portfolio_item.social-media-project img {
 }
 .portfolio_links {
   display: flex;
@@ -31,7 +38,6 @@
   background: transparent;
 }
 .portfolio_item h3 {
-  margin: 1.2rem 0 2rem;
   color: white;
 }
 .spacing {
@@ -47,9 +53,13 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
   }
-  @media screen and (max-width: 600px) {
-    .portfolio_container {
-      grid-template-columns: 1fr;
-    }
+}
+@media screen and (max-width: 600px) {
+  .portfolio_container {
+    grid-template-columns: 1fr;
+  }
+  .portfolio_item {
+    padding: 1.2rem 0.8rem;
+    margin: 0 auto;
   }
 }
