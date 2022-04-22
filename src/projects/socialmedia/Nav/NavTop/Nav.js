@@ -1,11 +1,12 @@
 import React, { useMemo } from "react";
 import "./NavTop.css";
 import { Searchbar } from "./Searchbar.js";
+import Messages from "./Messages";
 import Notices from "./Notices";
+import Settings from "./Settings";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../../Context/Context";
-import Messages from "./Messages";
 
 export const Nav = () => {
   const {
@@ -19,6 +20,7 @@ export const Nav = () => {
   } = useContext(UserContext);
   const [notices, showNotices] = useState(false);
   const [messages, showMessages] = useState(false);
+  const [settings, showSettings] = useState(false);
   const [noticeFilter, toggleNoticeFilter] = useState(true);
   let noticeCount = useMemo(
     function getNoticeCount() {
@@ -92,6 +94,7 @@ export const Nav = () => {
             onClick={() => {
               showNotices(!notices);
               showMessages(false);
+              showSettings(false);
             }}
           >
             <i className="fas fa-bell fa-2x"></i>
@@ -103,6 +106,7 @@ export const Nav = () => {
             onClick={() => {
               showMessages(!messages);
               showNotices(false);
+              showSettings(false);
             }}
           >
             {" "}
@@ -110,12 +114,18 @@ export const Nav = () => {
             <h5>Inbox</h5>
           </li>
 
-          <li>
+          <li
+            onClick={() => {
+              showSettings(!settings);
+              showMessages(false);
+              showNotices(false);
+            }}
+          >
             <img src={user.profilePic} alt="" className="top-nav-img" />
           </li>
         </ul>
 
-        {notices || messages ? (
+        {notices || messages || settings ? (
           <div className="dropDown">
             {notices && (
               <div className="dropDown-Notifications">
@@ -206,6 +216,25 @@ export const Nav = () => {
                       <Messages message={notice} user={user} key={notice.id} />
                     )
                 )}
+              </div>
+            )}
+
+            {settings && (
+              <div className="dropDown-Notifications">
+                <h2>Profile</h2>
+                <div style={{ padding: "0 20px 0 5px" }}>
+                  {" "}
+                  <h3
+                    style={{
+                      color: "grey",
+                      borderBottom: "2px solid grey",
+                    }}
+                  >
+                    {user.name}
+                  </h3>
+                </div>
+
+                <Settings />
               </div>
             )}
           </div>

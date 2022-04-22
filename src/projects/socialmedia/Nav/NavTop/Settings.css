@@ -1,0 +1,45 @@
+.settings {
+  color: black;
+  position: relative;
+}
+.settings ul {
+  height: 250px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.settings li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  width: 100%;
+}
+.settings-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+.settings-title i {
+  color: var(--color-primary-social);
+  background-color: var(--color-secondary-social);
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.settings-show {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: green;
+  top: 0;
+  transition: 800ms ease-in-out;
+}
