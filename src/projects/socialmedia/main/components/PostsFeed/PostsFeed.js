@@ -53,6 +53,8 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                   <h5 style={{ color: "black" }}>Published {Post.date}</h5>
                 </div>
               </Link>
+
+              {/* <i class="fas fa-ellipsis-h"></i> */}
             </div>
 
             <Link
@@ -99,7 +101,6 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
             <div className="postFeed-post-text">{Post.text}</div>
             <div className="post-feed-action">
               <div
-                style={{ color: "var(--color-primary-social)" }}
                 onClick={() => {
                   LikeCounter(Post.id);
                 }}
@@ -107,7 +108,6 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
                 <i className="fas fa-thumbs-up "></i>
               </div>
               <div
-                style={{ color: "var(--color-primary-social)" }}
                 onClick={() => {
                   if (postId !== Post.id) {
                     showCommentBox(true);

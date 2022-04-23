@@ -31,7 +31,7 @@
 .postFeed-post-info-stamp {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0;
 }
 .postFeed-post-info-stamp h3 {
   color: var(--color-secondary-social);
@@ -82,6 +82,9 @@
   padding: 5px;
   border-radius: 5px;
   font-size: 21px;
+  background-color: none;
+
+  color: steelblue;
 }
 .post-feed-action {
   cursor: pointer;
@@ -123,7 +126,7 @@
 }
 @media screen and (min-width: 1024px) {
   .post-feed-action > div:hover {
-    background-color: var(--color-secondary-social);
-    color: var(--color-primary-social);
+    background-color: var(--color-primary-social);
+    color: var(--color-secondary-social);
   }
 }
