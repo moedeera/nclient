@@ -39,7 +39,24 @@
   position: absolute;
   height: 100%;
   width: 100%;
-  background-color: green;
+  background-color: whitesmoke;
   top: 0;
   transition: 800ms ease-in-out;
+}
+.settings-show ul {
+  height: 200px;
+}
+.settings-ul li > div {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.settings-show-title {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.settings-show-title i {
+  cursor: pointer;
 }

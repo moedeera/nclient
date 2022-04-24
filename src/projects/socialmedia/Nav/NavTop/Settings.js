@@ -12,21 +12,22 @@ const Settings = () => {
         <ul>
           <li>
             <div className="settings-title">
-              <i class="fas fa-cog"></i> Settings{" "}
+              <i className="fas fa-cog"></i> Settings{" "}
             </div>{" "}
             <i
-              class="fas fa-chevron-right"
+              className="fas fa-chevron-right"
               onClick={() => {
                 showCard(!card);
+                setTitle("Settings");
               }}
             ></i>
           </li>
           <li>
             <div className="settings-title">
-              <i class="fas fa-phone-alt"></i> Support-line{" "}
+              <i className="fas fa-phone-alt"></i> Support-line{" "}
             </div>
             <i
-              class="fas fa-chevron-right"
+              className="fas fa-chevron-right"
               onClick={() => {
                 showCard(!card);
                 setTitle("Support");
@@ -36,7 +37,7 @@ const Settings = () => {
           <li>
             {" "}
             <div className="settings-title">
-              <i class="fas fa-sign-out-alt"></i> Logout{" "}
+              <i className="fas fa-sign-out-alt"></i> Logout{" "}
             </div>
           </li>
         </ul>
@@ -46,13 +47,58 @@ const Settings = () => {
         className="settings-show"
         style={card ? { left: "0" } : { left: "100%" }}
       >
-        <i
-          class="fas fa-chevron-left fa-2x"
-          onClick={() => {
-            showCard(!card);
-          }}
-        ></i>
-        <h3>{title}</h3>
+        <div className="settings-show-title">
+          {" "}
+          <i
+            className="fas fa-chevron-left fa-2x"
+            onClick={() => {
+              showCard(!card);
+            }}
+          ></i>
+          <h3>{title}</h3>
+        </div>
+        {title === "Settings" && (
+          <ul className="settings-ul">
+            <li>
+              <div>
+                <i className="fas fa-cog"></i> Settings
+              </div>
+            </li>
+            <li>
+              {" "}
+              <div>
+                <i className="fas fa-lock"></i>Privacy
+              </div>
+            </li>
+            <li>
+              <div>
+                {" "}
+                <i className="fas fa-globe"></i>Language
+              </div>
+            </li>
+          </ul>
+        )}
+        {title === "Support" && (
+          <ul className="settings-ul">
+            <li>
+              <div>
+                <i className="fas fa-life-ring"></i> Report Harrassment
+              </div>
+            </li>
+            <li>
+              {" "}
+              <div>
+                <i className="fas fa-user-secret"></i>Privacy
+              </div>
+            </li>
+            <li>
+              <div>
+                {" "}
+                <i className="fas fa-key"></i>Password Reset
+              </div>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
