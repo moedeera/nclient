@@ -1,9 +1,17 @@
 import React from "react";
 import "./Login.css";
+import axios from "axios";
 
 export const Login = () => {
+  try {
+    var res = axios.get("http://localhost:5000");
+    console.log(res);
+  } catch (error) {
+    console.log(error);
+  }
+
   return (
-    <div className="content login">
+    <div className="login">
       <div className="main-login">
         <div className="main-login-form">
           <h1>Login</h1>
@@ -21,7 +29,7 @@ export const Login = () => {
           <button type="submit">Login</button>
         </div>
         <div className="main-login-picture">
-          <i class="fab fa-pied-piper"></i>
+          <i className="fab fa-pied-piper-alt"></i>
         </div>
       </div>
     </div>

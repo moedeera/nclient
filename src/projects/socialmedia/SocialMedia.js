@@ -31,12 +31,18 @@ export const SocialMedia = () => {
   if (location.pathname === "/socialmedia/profile") {
     showNavLeft = false;
   }
+  if (location.pathname === "/socialmedia/login") {
+    log = false;
+    showNavLeft = false;
+    show = false;
+  }
 
   return (
     <UserContextProvider>
       {" "}
       <div className="nav">
-        <Nav status={log} />
+        {log && <Nav status={log} />}
+
         {show && (
           <>
             {" "}

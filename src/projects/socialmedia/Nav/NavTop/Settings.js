@@ -1,5 +1,6 @@
 import { shallowCopy } from "ejs/lib/utils";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./NavTop.css";
 import "./Settings.css";
 
@@ -37,7 +38,10 @@ const Settings = () => {
           <li>
             {" "}
             <div className="settings-title">
-              <i className="fas fa-sign-out-alt"></i> Logout{" "}
+              <i className="fas fa-sign-out-alt"></i>
+              <Link to="./login" style={{ color: "black" }}>
+                Logout{" "}
+              </Link>
             </div>
           </li>
         </ul>
