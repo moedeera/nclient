@@ -5,6 +5,7 @@ import { useComments } from "../projects/socialmedia/common/hooks/UseComments";
 import { useProfiles } from "../projects/socialmedia/common/hooks/useProfiles";
 import useDatabase from "../projects/socialmedia/common/hooks/UseDataBase";
 import { mock_profiles } from "../assets/MockDataBase";
+import axios from "axios";
 export const UserContext = createContext({});
 
 //GetDemoStatus
@@ -17,7 +18,33 @@ const getDemoStatus = () => {
 };
 
 //LoadUser
-const LoadUser = () => {
+const LoadUser = async () => {
+  if (localStorage.getItem("Token")) {
+    let Token = JSON.parse(localStorage.getItem("Token"));
+    try {
+      const config = {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      };
+
+      const res = await axios.get(
+        "http://localhost:5000/api/profiles",
+        { headers: { Authorization: `Bearer ${Token}` } },
+
+        config
+      );
+      var Profile = res.data[0].profile;
+      console.log(Profile, typeof res.data[0].profile);
+      // console.log(JSON.parse(res.data[0].profile));
+
+      // retrieve
+      // redirect to main page
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   if (localStorage.getItem("token")) {
     return null;
   } else {
@@ -67,7 +94,7 @@ export const UserContextProvider = ({ children }) => {
     filteredProfiles,
   } = useProfiles();
 
-  const [user, setUser] = useState(LoadUser());
+  const [user, setUser] = useState(null);
 
   const {
     posts,
@@ -92,7 +119,17 @@ export const UserContextProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    localStorage.setItem("User", JSON.stringify(user));
+    const getUser = async () => {
+      const newUser = await LoadUser();
+      setUser(newUser);
+    };
+    getUser().catch(console.error);
+  }, []);
+
+  useEffect(() => {
+    if (user) {
+      localStorage.setItem("User", JSON.stringify(user));
+    }
   }, [user]);
 
   useEffect(() => {
@@ -125,7 +162,7 @@ export const UserContextProvider = ({ children }) => {
     GetSuggestedProfiles(user);
     GetFriendsProfiles(user);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [user]);
 
   return (
     <UserContext.Provider

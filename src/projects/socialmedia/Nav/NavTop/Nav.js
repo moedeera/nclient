@@ -24,9 +24,8 @@ export const Nav = () => {
   const [noticeFilter, toggleNoticeFilter] = useState(true);
   let noticeCount = useMemo(
     function getNoticeCount() {
-      const fetchedNotices = user.Notices.filter(
-        (notice) => notice.type === "post"
-      );
+      const fetchedNotices =
+        user?.Notices?.filter((notice) => notice.type === "post") ?? [];
       let count = fetchedNotices.length;
       return count;
     },
@@ -37,6 +36,10 @@ export const Nav = () => {
     showMessages(false);
     showNotices(false);
   };
+
+  if (!user) {
+    return null;
+  }
   return (
     <div className="nav-top-container">
       <div className="social-nav-top ">

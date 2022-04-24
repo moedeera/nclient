@@ -42,6 +42,9 @@ export const useProfiles = () => {
 
   const GetFriendsProfiles = (user) => {
     let fetched = mock_profiles;
+    if (!user) {
+      return;
+    }
 
     // If it is in demoState get data from mock dataBase
     if (demo) {
@@ -54,6 +57,9 @@ export const useProfiles = () => {
   };
 
   const GetSuggestedProfiles = (user) => {
+    if (!user) {
+      return;
+    }
     if (demo) {
       //Exclude Own Profile
       var profileSet = mock_profiles.filter(
@@ -74,45 +80,21 @@ export const useProfiles = () => {
   };
 
   const filter = (filter, user) => {
-    var method;
     if (filter === "friends") {
       setProfiles(
         mock_profiles.filter((person) => user.Friends.includes(person.id))
       );
-      // method = user.Friends;
     } else if (filter === "following") {
       setProfiles(
         mock_profiles.filter((person) => user.following.includes(person.id))
       );
-      // method = user.following;
     } else if (filter === "followers") {
       setProfiles(
         mock_profiles.filter((person) => user.followers.includes(person.id))
       );
-      // method = user.followers;
     } else if (filter === "all") {
       setProfiles(mock_profiles);
-      // function onlyUnique(value, index, self) {
-      //   return self.indexOf(value) === index;
-      // }
     }
-
-    //   var all = [...user.Friends, ...user.followers, ...user.following];
-    //   method = all.filter(onlyUnique);
-    // }
-    // console.log(filter, method, profiles);
-    // var matches = [];
-
-    // for (var j = 0; j < profiles.length; j++) {
-    //   for (var k = 0; k < method.length; k++) {
-    //     if (profiles[j].id === method[k]) {
-    //       matches.push(profiles[j]);
-    //     }
-    //   }
-    // }
-
-    // setProfiles(matches);
-    // console.log(matches, filteredProfiles);
   };
 
   useEffect(() => {

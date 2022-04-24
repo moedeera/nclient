@@ -69,6 +69,66 @@ var mock_profiles = [
 
         pending: true,
       },
+      {
+        id: 319,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 320,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 26,
+        post: 1,
+        from: "Nolan Smithson",
+        date: new Date("2022-04-19"),
+        Date: "April 19 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/10/06/05/19/couple-1718244_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 321,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 27,
+        post: 1,
+        from: "Stacey Baker",
+        date: new Date("2022-04-21"),
+        Date: "April 21 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2017/11/29/09/15/paint-2985569_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 322,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
 
       {
         id: 22,
@@ -132,6 +192,39 @@ var mock_profiles = [
       },
     ],
 
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [2, 3, 4, 6, 11],
     followers: [5, 6, 9],
     following: [5, 7, 9],
@@ -162,6 +255,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [1, 3, 5],
     followers: [1, 2],
     following: [5],
@@ -203,6 +329,39 @@ var mock_profiles = [
         text: "Hey are you in town tomorrow?",
       },
     ],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [1, 2, 5],
     followers: [2],
     following: [1],
@@ -235,6 +394,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [1, 4],
     followers: [2, 3],
     following: [1],
@@ -267,6 +459,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [1, 2, 3],
     followers: [2, 1],
     following: [1],
@@ -296,6 +521,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [1, 2, 3, 4],
     followers: [1, 3],
     following: [7],
@@ -325,6 +583,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [1, 2, 3, 4],
     followers: [1, 3],
     following: [1],
@@ -354,6 +645,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [7],
     followers: [2, 5, 6, 7],
     following: [7],
@@ -383,6 +707,39 @@ var mock_profiles = [
     login: false,
     Notifications: 0,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [7],
     followers: [1, 2, 3, 4],
     following: [1],
@@ -441,6 +798,39 @@ var mock_profiles = [
     login: false,
     Notifications: 1,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [10, 11],
     followers: [2],
     following: [2],
@@ -474,6 +864,39 @@ var mock_profiles = [
     login: false,
     Notifications: 1,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [10],
     followers: [2],
     following: [2],
@@ -507,6 +930,39 @@ var mock_profiles = [
     login: false,
     Notifications: 1,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [10, 11, 12],
     followers: [8, 9, 10],
     following: [7],
@@ -537,6 +993,39 @@ var mock_profiles = [
     login: false,
     Notifications: 1,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [10],
     followers: [8],
     following: [7],
@@ -599,6 +1088,39 @@ var mock_profiles = [
     login: false,
     Notifications: 1,
     Notices: [],
+    Requests: [
+      {
+        id: 419,
+        type: "post",
+        kind: "follow",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 319,
+        type: "post",
+        kind: "friend",
+        share: "none",
+        user: 25,
+        post: 1,
+        from: "James Vitto",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+    ],
+
     Friends: [10],
     followers: [8],
     following: [7],

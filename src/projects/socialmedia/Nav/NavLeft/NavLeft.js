@@ -22,7 +22,10 @@ export const NavLeft = ({ status, friendsPage }) => {
       </div>
     );
   }
-
+  console.log(user);
+  if (!user) {
+    return null;
+  }
   return (
     <div className="nav-left">
       <div className="nav-left-profile">

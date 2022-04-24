@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./Login.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -26,8 +28,10 @@ export const Login = () => {
         body,
         config
       );
-      console.log(res.data);
-      //save the token
+      console.log(res.data.token);
+      navigate("../");
+      localStorage.setItem("Token", JSON.stringify(res.data.token));
+      // retrieve
       // redirect to main page
     } catch (error) {}
   };
