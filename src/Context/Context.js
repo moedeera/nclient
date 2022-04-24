@@ -34,8 +34,8 @@ const LoadUser = async () => {
 
         config
       );
-      var Profile = res.data[0].profile;
-      console.log(Profile, typeof res.data[0].profile);
+
+      console.log(JSON.parse(res.data[0].profile));
       // console.log(JSON.parse(res.data[0].profile));
 
       // retrieve
