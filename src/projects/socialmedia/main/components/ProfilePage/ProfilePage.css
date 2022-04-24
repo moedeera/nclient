@@ -12,10 +12,13 @@
 }
 
 .profile-page-upper-new {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr;
   border-radius: 10px;
+  background-color: var(--color-secondary-social);
 }
+
 .profile-page-upper-top-new {
   position: relative;
 
