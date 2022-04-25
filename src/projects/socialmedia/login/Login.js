@@ -38,7 +38,7 @@ export const Login = () => {
     }
   };
 
-  const fetchData = async () => {s
+  const fetchData = async () => {
     try {
       const config = {
         headers: {
