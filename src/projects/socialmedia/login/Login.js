@@ -29,14 +29,16 @@ export const Login = () => {
         config
       );
       console.log(res.data.token);
-      navigate("../");
+      navigate("./socialmedia");
       localStorage.setItem("Token", JSON.stringify(res.data.token));
       // retrieve
       // redirect to main page
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const fetchData = async () => {
+  const fetchData = async () => {s
     try {
       const config = {
         headers: {
@@ -58,46 +60,106 @@ export const Login = () => {
   }, []);
 
   return (
-    <div className="login">
-      <div className="main-login">
-        <div className="main-login-form">
-          <h1>Login</h1>
-          <div>
-            <h3>Email</h3>
-            <input
-              type="email"
-              placeholder="Enter email"
-              name="email"
-              value={email}
-              onChange={(e) => onChange(e)}
-            />
-          </div>
+    <div className="parent clearfix">
+      <div className="bg-illustration">
+        <i className="fab fa-pied-piper-alt fa-5x"></i>
+        <h1>PiperSocial</h1>
 
-          <div>
-            {" "}
-            <h3>Password</h3>
-            <input
-              type="password"
-              placeholder="Enter password"
-              name="password"
-              value={password}
-              onChange={(e) => onChange(e)}
-            />
-          </div>
-
-          <button
-            type="submit"
-            onClick={() => {
-              onSubmit(email, password);
-            }}
-          >
-            Login
-          </button>
+        <div className="burger-btn">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
-        <div className="main-login-picture">
-          <i className="fab fa-pied-piper-alt"></i>
+      </div>
+
+      <div className="login">
+        <div className="container">
+          <h1>
+            Login to access to
+            <br />
+            your account
+          </h1>
+          <div className="login-form">
+            <form>
+              <input
+                input
+                type="email"
+                placeholder="Enter Email Address"
+                name="email"
+                value={email}
+                onChange={(e) => onChange(e)}
+              />
+              <input
+                type="password"
+                placeholder="Enter password"
+                name="password"
+                value={password}
+                onChange={(e) => onChange(e)}
+              />
+              <div className="login-options">
+                <div className="remember-form">
+                  <input type="checkbox" />
+                  <span>Remember me</span>
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                onClick={() => {
+                  onSubmit(email, password);
+                }}
+              >
+                LOG-IN
+              </button>
+            </form>
+          </div>
         </div>
       </div>
     </div>
+
+    // <div className="login">
+    //   <div className="main-login">
+    //     <div className="main-login-form">
+    //       <h1>Login</h1>
+    //       <div>
+    //         <h3>Email</h3>
+    //         <input
+    //           type="email"
+    //           placeholder="Enter email"
+    //           name="email"
+    //           value={email}
+    //           onChange={(e) => onChange(e)}
+    //         />
+    //       </div>
+
+    //       <div>
+    //         {" "}
+    //         <h3>Password</h3>
+    //         <input
+    //           type="password"
+    //           placeholder="Enter password"
+    //           name="password"
+    //           value={password}
+    //           onChange={(e) => onChange(e)}
+    //         />
+    //       </div>
+
+    //       <button
+    //         type="submit"
+    //         onClick={() => {
+    //           onSubmit(email, password);
+    //         }}
+    //       >
+    //         Login
+    //       </button>
+    //     </div>
+    //     <div className="main-login-picture">
+    //       <div>
+    //         <i className="fab fa-pied-piper-alt"></i>
+    //         <h1>PiperSocial</h1>
+    //       </div>
+    //     </div>
+    //   </div>
+    // </div>
   );
 };
