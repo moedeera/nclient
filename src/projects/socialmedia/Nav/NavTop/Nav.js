@@ -19,6 +19,8 @@ export const Nav = () => {
     page,
     setUser,
     setProfiles,
+    setViewedProfile,
+    profiles,
   } = useContext(UserContext);
   const [notices, showNotices] = useState(false);
   const [messages, showMessages] = useState(false);
@@ -63,7 +65,12 @@ export const Nav = () => {
         </div>
 
         <div className="nav-top-sb1">
-          <SearchBar1 setProfiles={setProfiles} />
+          <SearchBar1
+            setProfiles={setProfiles}
+            setViewedProfile={setViewedProfile}
+            profiles={profiles}
+            page={page}
+          />
           {/* <i
             className="fa fa-search fa-2x"
             style={{

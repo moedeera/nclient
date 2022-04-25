@@ -19,31 +19,31 @@ const getDemoStatus = () => {
 
 //LoadUser
 const LoadUser = async () => {
-  if (localStorage.getItem("Token")) {
-    let Token = JSON.parse(localStorage.getItem("Token"));
-    try {
-      const config = {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      };
+  // if (localStorage.getItem("Token")) {
+  //   let Token = JSON.parse(localStorage.getItem("Token"));
+  //   try {
+  //     const config = {
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     };
 
-      const res = await axios.get(
-        "http://localhost:5000/api/profiles",
-        { headers: { Authorization: `Bearer ${Token}` } },
+  //     const res = await axios.get(
+  //       "http://localhost:5000/api/profiles",
+  //       { headers: { Authorization: `Bearer ${Token}` } },
 
-        config
-      );
+  //       config
+  //     );
 
-      console.log(JSON.parse(res.data[0].profile));
-      // console.log(JSON.parse(res.data[0].profile));
+  //     console.log(JSON.parse(res.data[0].profile));
+  //     // console.log(JSON.parse(res.data[0].profile));
 
-      // retrieve
-      // redirect to main page
-    } catch (error) {
-      console.log(error);
-    }
-  }
+  //     // retrieve
+  //     // redirect to main page
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
 
   if (localStorage.getItem("token")) {
     return null;

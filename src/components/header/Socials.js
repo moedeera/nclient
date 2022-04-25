@@ -13,7 +13,7 @@ export const Socials = () => {
       </a>
 
       <a href="/">
-        <i class="fa fa-twitter fa-2x" aria-hidden="true"></i>
+        <i className="fa fa-twitter fa-2x" aria-hidden="true"></i>
       </a>
     </div>
   );
