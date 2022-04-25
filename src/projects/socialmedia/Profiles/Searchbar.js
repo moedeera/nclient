@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Searchbar.css";
 import { mock_profiles } from "../../../assets/MockDataBase";
 
-function SearchBar({ setProfiles }) {
+function SearchBar1({ setProfiles }) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
 
@@ -60,4 +60,4 @@ function SearchBar({ setProfiles }) {
   );
 }
 
-export default SearchBar;
+export default SearchBar1;

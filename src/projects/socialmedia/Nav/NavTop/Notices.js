@@ -168,6 +168,73 @@ const Notices = ({
                 </>
               )}
             </div>
+          ) : notice.kind === "friend" ? (
+            <div
+              style={{ display: "inline-block" }}
+              onClick={() => {
+                showActions(true);
+              }}
+            >
+              <h4>{notice.from} made a friend request </h4>
+              {actions && (
+                <>
+                  {buttons && (
+                    <div className="notifications-action">
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => actionHandler("accept")}
+                      >
+                        Accept
+                      </button>
+                      <button
+                        className="btn btn-secondary"
+                        onClick={() => actionHandler("reject")}
+                      >
+                        Reject
+                      </button>
+                    </div>
+                  )}
+
+                  {request && (
+                    <div className="notifications-response">
+                      <div>
+                        <p style={{ color: "green", fontWeight: "500" }}>
+                          Request approved
+                        </p>
+                      </div>
+
+                      <div className="animation-check">
+                        <svg
+                          version="1.1"
+                          xmlns="http://www.w3.org/2000/svg"
+                          viewBox="0 0 130.2 130.2"
+                        >
+                          <circle
+                            className="path circle"
+                            fill="none"
+                            stroke="#73AF55"
+                            strokeWidth="6"
+                            strokeMiterlimit="10"
+                            cx="65.1"
+                            cy="65.1"
+                            r="62.1"
+                          />
+                          <polyline
+                            className="path check"
+                            fill="none"
+                            stroke="#73AF55"
+                            strokeWidth="6"
+                            strokeLinecap="round"
+                            strokeMiterlimit="10"
+                            points="100.2,40.2 51.5,88.8 29.8,67.5 "
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
           ) : (
             ""
           )}

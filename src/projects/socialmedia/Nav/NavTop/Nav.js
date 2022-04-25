@@ -4,6 +4,7 @@ import { Searchbar } from "./Searchbar.js";
 import Messages from "./Messages";
 import Notices from "./Notices";
 import Settings from "./Settings";
+import SearchBar1 from "../../Profiles/Searchbar";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../../Context/Context";
@@ -17,6 +18,7 @@ export const Nav = () => {
     posts,
     page,
     setUser,
+    setProfiles,
   } = useContext(UserContext);
   const [notices, showNotices] = useState(false);
   const [messages, showMessages] = useState(false);
@@ -49,9 +51,27 @@ export const Nav = () => {
           </h3>
           <i className="fab fa-pied-piper-alt fa-2x sm-icon"></i>
 
-          <Searchbar />
+          <h2
+            style={{
+              color: " var(--color-secondary-social)",
+              fontSize: "25px",
+              fontWeight: "700",
+            }}
+          >
+            PiperSocial
+          </h2>
         </div>
 
+        <div className="nav-top-sb1">
+          <SearchBar1 setProfiles={setProfiles} />
+          {/* <i
+            className="fa fa-search fa-2x"
+            style={{
+              color: " var(--color-secondary-social)",
+              fontSize: "25px",
+            }}
+          ></i> */}
+        </div>
         {/* <div className="new-searchBar">Hello</div> */}
 
         <ul className="menu-items">
