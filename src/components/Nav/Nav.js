@@ -6,7 +6,7 @@ export const Nav = () => {
   const [active, setActive] = useState(1);
 
   return (
-    <nav>
+    <nav className="main-nav">
       <a
         href="#home"
         onClick={() => {

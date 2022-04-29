@@ -1,9 +1,10 @@
 import React from "react";
 import "./portfolio.css";
-import social from "./Socialpic1.jpg";
-import diner from "./diner.jpg";
-import bootcamp from "./deerCoded.jpg";
-import elearning from "./Elearner.jpg";
+import social from "./SocialPic1.svg";
+import diner from "./diner.svg";
+import bootcamp from "./deerCoded.svg";
+import elearning from "./Elearner.svg";
+import old from "./old.svg";
 
 export const Portfolio = () => {
   return (
@@ -11,7 +12,7 @@ export const Portfolio = () => {
       <h2>Portfolio</h2>
       <div className="portfolio_container">
         <article className="portfolio_item social-media-project">
-          <img src={social} alt="" />
+          <img src={social} alt="" className="portfolio_image" />
           <div className="portfolio_item_image ">
             <div className="portfolio_info">
               <h3>Social Media website</h3>
@@ -38,7 +39,7 @@ export const Portfolio = () => {
           </div>
         </article>
         <article className="portfolio_item">
-          <img src={diner} alt="" />
+          <img src={diner} alt="" className="portfolio_image" />
           <div className="portfolio_item_image">
             <div className="portfolio_info">
               {" "}
@@ -66,7 +67,7 @@ export const Portfolio = () => {
           </div>
         </article>
         <article className="portfolio_item">
-          <img src={elearning} alt="" />
+          <img src={elearning} alt="" className="portfolio_image" />
           <div className="portfolio_item_image">
             <div className="portfolio_info">
               {" "}
@@ -122,9 +123,15 @@ export const Portfolio = () => {
           </div>
         </article>
         <article className="portfolio_item">
-          <img src={bootcamp} alt="" />
+          <img src={old} alt="" />
           <div className="portfolio_item_image">
-            <h3>Old Portfolio Website</h3>
+            <div className="portfolio_info">
+              <h3>Old Portfolio Website</h3>
+              <p>
+                This was started around 2020 and was my first attempt to create
+                a portfolio website.
+              </p>
+            </div>
             <div className="portfolio_links">
               <a
                 href="https://github.com"
