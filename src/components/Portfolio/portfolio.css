@@ -41,7 +41,7 @@
   gap: 1rem;
 }
 .portfolio_item:hover {
-  border-color: var(--color-primary-variant);
+  border-color: var(--color-primary-variant) !important;
   background: transparent;
 }
 .portfolio_item h3 {
