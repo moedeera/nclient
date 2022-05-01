@@ -50,14 +50,17 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               >
                 <div className="postFeed-post-info-stamp">
                   <h3>{Post.PosterName}</h3>
-                  {/* <h4 style={{ color: "black" }}> Amazing day with wifey</h4> */}
+
                   <h5 style={{ color: "black" }}>Published {Post.date}</h5>
+                  {/* <h4 style={{ color: "black" }}> Amazing day with wifey</h4> */}
                 </div>
               </Link>
 
               {/* <i class="fas fa-ellipsis-h"></i> */}
             </div>
-
+            {/* <div className="postFeed-post-text pfp-p">
+              {Post.PosterName} made a post
+            </div> */}
             <Link
               onClick={() => {
                 setCurrentPost(Post);
