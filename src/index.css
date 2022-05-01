@@ -28,7 +28,7 @@ html {
   --container-width-md: 86%;
   --container-width-ms: 90%;
   /*Social media*/
-  --color-primary-social: rgb(226, 135, 67);
+  --color-primary-social: #e28743;
   --color-secondary-social: #154c79;
 }
 code {

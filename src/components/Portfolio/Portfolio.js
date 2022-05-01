@@ -17,7 +17,7 @@ export const Portfolio = () => {
       text: "A mock full stack social media website designed using ReactJSand a Firebase backend",
       repo: "https://github.com/moedeera/nclient/tree/main/src/projects/socialmedia",
       live: "/socialmedia",
-      color: "#003B36",
+      color: "#e28743",
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ export const Portfolio = () => {
       text: "  A mock coding Boot camp website built with CSS, HTML and JavaScript.It also can connect to a backend for process registration.",
       live: "https://deercoded.com",
       repo: "https://github.com/moedeera/FED-HT-website-design",
-      color: "#9A031E",
+      color: "#5448C8",
     },
     {
       id: 3,
@@ -35,7 +35,7 @@ export const Portfolio = () => {
       text: "  A dining website for a local business in Saskatoon, This was created using CSS,JavaScript and googleMaps.",
       live: "https://super-donair.com",
       repo: "https://github.com/moedeera/SuperDoniar",
-      color: "steelblue",
+      color: "#9A031E",
     },
     {
       id: 4,
@@ -62,7 +62,7 @@ export const Portfolio = () => {
       text: "This was started around 2020 and was my first attempt to create a portfolio website.",
       live: "www.deeracode.com",
       repo: "https://github.com/moedeera/Login-Practice",
-      color: "#5448C8",
+      color: "#003B36 ",
     },
   ];
   console.log(data);

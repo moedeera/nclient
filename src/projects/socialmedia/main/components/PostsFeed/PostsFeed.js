@@ -50,6 +50,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               >
                 <div className="postFeed-post-info-stamp">
                   <h3>{Post.PosterName}</h3>
+                  {/* <h4 style={{ color: "black" }}> Amazing day with wifey</h4> */}
                   <h5 style={{ color: "black" }}>Published {Post.date}</h5>
                 </div>
               </Link>

@@ -88,6 +88,7 @@
 
 @media only screen and (max-width: 768px) {
   .CreatePost {
+    margin-top: 35px;
     grid-template-columns: 1fr;
   }
   .CreatePost img {
