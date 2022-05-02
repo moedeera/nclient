@@ -23,7 +23,7 @@ export const Portfolio = () => {
       id: 2,
       img: bootcamp,
       header: "Coding Bootcamp site",
-      text: "  A mock coding Boot camp website built with CSS, HTML and JavaScript.It also can connect to a backend for process registration.",
+      text: "  A mock coding Boot camp website built with CSS, HTML and JavaScript.It also can connect to a backend via form.",
       live: "https://deercoded.com",
       repo: "https://github.com/moedeera/FED-HT-website-design",
       color: "#5448C8",

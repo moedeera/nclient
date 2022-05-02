@@ -6,7 +6,7 @@ import { Nav } from "../components/Nav/Nav";
 import { Portfolio } from "../components/Portfolio/Portfolio";
 import { About } from "../components/About/About";
 // import { Footer } from "../components/Footer/Footer";
-// import { Contact } from "../components/Contact/Contact";
+import { Contact } from "../components/Contact/Contact";
 import "../index.css";
 
 export const Homepage = () => {
@@ -20,8 +20,8 @@ export const Homepage = () => {
       <Portfolio />
       <About />
 
-      {/* <Contact /> 
-      { <Footer /> } */}
+      <Contact />
+      {/* <Footer />  */}
     </div>
   );
 };

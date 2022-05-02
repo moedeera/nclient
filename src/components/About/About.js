@@ -10,9 +10,9 @@ export const About = () => {
         learned multiple skills during that time-frame. The coding industry
         appeals to me because it always encourages learning and keeping up to
         date with new trends and technologies. I truly enjoy discovering new
-        languages building new projects. If you are interested in partnering up
-        or recruitment just send me a message and I will respond as soon as
-        possible.
+        languages and building new projects. If you are interested in partnering
+        up or for hiring purposes, just send me a message and I will respond as
+        soon as possible.
       </p>
     </section>
   );
