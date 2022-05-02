@@ -75,12 +75,6 @@ export const Portfolio = () => {
           <article
             key={project.id}
             className="portfolio_item social-media-project"
-            style={{
-              backgroundColor: project.color,
-              "&:hover": {
-                backgroundColor: "black",
-              },
-            }}
           >
             <img src={project.img} alt="" className="portfolio_image" />
             <div className="portfolio_item_image ">
