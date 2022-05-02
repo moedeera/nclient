@@ -13,7 +13,7 @@
 }
 #about h1 {
   font-size: 28px;
-  margin: 10px auto;
+  margin: 10px auto 20px;
   font-weight: 700;
 }
 #about p {
@@ -21,6 +21,11 @@
   padding: 10px;
   line-height: 1.6em;
   letter-spacing: 1.5px;
+}
+#about ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
 }
 @media screen and (max-width: 1024px) {
   #about {
