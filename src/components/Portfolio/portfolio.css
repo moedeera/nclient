@@ -36,7 +36,9 @@
   min-height: 300px;
   /* background-color: steelblue; */
 }
-
+.portfolio_image img {
+  width: 100%;
+}
 .portfolio_links {
   display: flex;
   margin: 10px auto;
@@ -62,6 +64,9 @@
     grid-template-columns: 1fr 1fr;
     gap: 1.2rem;
   }
+  .portfolio_image {
+    min-height: 150px;
+  }
 }
 @media screen and (max-width: 600px) {
   .portfolio_container {
@@ -70,5 +75,8 @@
   .portfolio_item {
     padding: 1.2rem 0.8rem;
     margin: 0 auto;
+  }
+  .portfolio_image {
+    min-height: 100px;
   }
 }
