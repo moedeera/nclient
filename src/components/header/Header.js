@@ -11,7 +11,7 @@ export const Header = () => {
       <div className="container header_container">
         {/* <h5></h5> */}
         <h1>Deeracode</h1>
-        <h5 className="text-light">Full Stack Development</h5>
+        <h3 className="text-light ">Full Stack Development</h3>
         <CTA />
         <Socials />
         <div className="me">
