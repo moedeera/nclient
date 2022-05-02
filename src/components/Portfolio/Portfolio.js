@@ -37,15 +37,15 @@ export const Portfolio = () => {
       repo: "https://github.com/moedeera/SuperDoniar",
       color: "#9A031E",
     },
-    {
-      id: 4,
-      img: elearning,
-      header: "E-learning website",
-      text: " A full stack E-learning website built using JavaScript, Node and Express.",
-      live: "https://www.deeracode.com/Projects/profile",
-      repo: "https://github.com/moedeera/Login-Practice",
-      color: "#0E6BA8",
-    },
+    // {
+    //   id: 4,
+    //   img: elearning,
+    //   header: "E-learning website",
+    //   text: " A full stack E-learning website built using JavaScript, Node and Express.",
+    //   live: "https://www.deeracode.com/Projects/profile",
+    //   repo: "https://github.com/moedeera/Login-Practice",
+    //   color: "#0E6BA8",
+    // },
     {
       id: 5,
       img: old,
@@ -55,15 +55,15 @@ export const Portfolio = () => {
       repo: "https://github.com/moedeera/Login-Practice",
       color: "#E98A15",
     },
-    {
-      id: 6,
-      img: old,
-      header: "Old Portfolio Website",
-      text: "This was started around 2020 and was my first attempt to create a portfolio website.",
-      live: "www.deeracode.com",
-      repo: "https://github.com/moedeera/Login-Practice",
-      color: "#003B36 ",
-    },
+    // {
+    //   id: 6,
+    //   img: old,
+    //   header: "Old Portfolio Website",
+    //   text: "This was started around 2020 and was my first attempt to create a portfolio website.",
+    //   live: "www.deeracode.com",
+    //   repo: "https://github.com/moedeera/Login-Practice",
+    //   color: "#003B36 ",
+    // },
   ];
   console.log(data);
   return (
