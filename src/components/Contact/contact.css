@@ -37,17 +37,19 @@
 }
 #contact input {
   width: 70%;
+  min-width: 17rem;
   height: 3.5rem;
-  padding: 10px;
+  padding: 10px 7px;
   border-radius: 5px;
   font-size: 18px;
   text-align: center;
 }
 #contact textarea {
   width: 100%;
+  min-width: 17rem;
   height: 13rem;
   margin-bottom: 10px;
-  padding: 10px;
+  padding: 10px 7px;
   font-size: 18px;
   border-radius: 5px;
 }
