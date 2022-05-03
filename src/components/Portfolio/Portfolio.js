@@ -14,7 +14,7 @@ export const Portfolio = () => {
       id: 1,
       img: social,
       header: "Social Media Network",
-      text: "A mock full stack social media website designed using ReactJSand a Firebase backend",
+      text: "A mock full stack social media website designed using ReactJS and a Firebase backend",
       repo: "https://github.com/moedeera/nclient/tree/main/src/projects/socialmedia",
       live: "/socialmedia",
       color: "#e28743",
