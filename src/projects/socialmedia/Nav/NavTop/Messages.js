@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import ChatBox from "./ChatBox";
+import { motion } from "framer-motion";
 
 const Messages = ({ message, user }) => {
   const [msgHistory, showMsgHistory] = useState(false);
   return (
     <>
-      <div
+      <motion.div
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
         className="notification"
         onClick={() => {
           showMsgHistory(!msgHistory);
@@ -30,7 +33,7 @@ const Messages = ({ message, user }) => {
           className="fas fa-circle"
           style={message.pending ? { color: "green" } : { color: "navy" }}
         ></i>
-      </div>
+      </motion.div>
       {msgHistory && <ChatBox message={message} user={user} key={message.id} />}
     </>
   );

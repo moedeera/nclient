@@ -1,6 +1,7 @@
 import userEvent from "@testing-library/user-event";
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./NavTop.css";
 
 const Notices = ({
@@ -65,7 +66,11 @@ const Notices = ({
 
   return (
     <>
-      <div className="notification">
+      <motion.div
+        initial={{ y: "-100vh" }}
+        animate={{ y: 0 }}
+        className="notification"
+      >
         <img src={notice.picture} alt="pic" />
         <div className="notification-details">
           {notice.kind === "posted" ? (
@@ -246,7 +251,7 @@ const Notices = ({
           className="fas fa-circle"
           style={notice.pending ? { color: "green" } : { color: "navy" }}
         ></i>
-      </div>
+      </motion.div>
     </>
   );
 };

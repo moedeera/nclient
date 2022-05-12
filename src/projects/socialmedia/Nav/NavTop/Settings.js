@@ -1,6 +1,7 @@
 import { shallowCopy } from "ejs/lib/utils";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./NavTop.css";
 import "./Settings.css";
 
@@ -8,7 +9,11 @@ const Settings = () => {
   const [card, showCard] = useState(false);
   const [title, setTitle] = useState("Settings");
   return (
-    <div className="settings">
+    <motion.div
+      initial={{ y: "-100vh" }}
+      animate={{ y: 0 }}
+      className="settings"
+    >
       <div className="settings-select">
         <ul>
           <li>
@@ -104,7 +109,7 @@ const Settings = () => {
           </ul>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
