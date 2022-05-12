@@ -56,23 +56,47 @@ export const ProfilePage = () => {
                 </button>
               </div>
             </div>
-            <div className="profile-page-lower-buttons">
-              <div>
-                <i className="fas fa-user-friends fa-2x"></i>
-                <h3>{viewedProfile.Friends.length}</h3>
+            <div className="profile-page-lower-options">
+              <div className="profile-page-lower-buttons">
+                <div>
+                  <i className="fas fa-user-friends fa-2x"></i>
+                  <h3>{viewedProfile.Friends.length}</h3>
+                </div>
+                <div>
+                  <i className="fas fa-street-view fa-2x"></i>
+                  <h3>{viewedProfile.followers.length}</h3>
+                </div>
+                <div>
+                  {" "}
+                  <i className="fas fa-eye fa-2x"></i>
+                  <h3>{viewedProfile.views ? viewedProfile.views : 239}</h3>
+                </div>
+                <div>
+                  <i className="fab fa-gratipay fa-2x"></i>
+                  <h3>{viewedProfile.likes ? viewedProfile.likes : 113}</h3>
+                </div>
               </div>
-              <div>
-                <i className="fas fa-street-view fa-2x"></i>
-                <h3>{viewedProfile.followers.length}</h3>
-              </div>
-              <div>
-                {" "}
-                <i className="fas fa-eye fa-2x"></i>
-                <h3>{viewedProfile.views ? viewedProfile.views : 239}</h3>
-              </div>
-              <div>
-                <i className="fab fa-gratipay fa-2x"></i>
-                <h3>{viewedProfile.likes ? viewedProfile.likes : 113}</h3>
+              <div
+                className="profile-page-lower-buttons"
+                style={{
+                  background: "white",
+                  cursor: "pointer",
+                  color: "var(--color-primary-social)",
+                }}
+              >
+                <div>
+                  <i className="fab fa-google-plus-square fa-3x"></i>
+                </div>
+                <div>
+                  <i className="fab fa-twitter-square fa-3x"></i>
+                </div>
+                <div>
+                  {" "}
+                  <i className="fab fa-instagram-square fa-3x"></i>
+                </div>
+                <div>
+                  <i className="fab fa-linkedin fa-3x"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -91,10 +115,11 @@ export const ProfilePage = () => {
               )}
               {viewedProfile.header !== "" && <li>'{viewedProfile.header}'</li>}
               <li>
-                <i className="fas fa-map-pin"></i> Toronto Ontario
+                <i className="fas fa-map-pin"></i> {viewedProfile.location}
               </li>
               <li>
-                <i className="fab fa-pagelines"></i>25 years old
+                <i className="fab fa-pagelines"></i>
+                {viewedProfile.age}
               </li>
             </ul>
           </div>
