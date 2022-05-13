@@ -128,6 +128,9 @@ a {
 }
 .dropDown-Notifications {
   color: black;
+  width: 300px;
+
+  overflow-x: hidden;
 }
 .dropDown-Notifications h2 {
   font-weight: 700;
@@ -279,6 +282,8 @@ a {
   }
   .dropDown {
     top: 90px;
+    right: 10px;
+    width: 300px;
   }
   .menu-bar {
     display: flex;

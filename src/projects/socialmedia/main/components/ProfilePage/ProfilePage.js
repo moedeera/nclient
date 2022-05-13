@@ -20,8 +20,8 @@ export const ProfilePage = () => {
         style={{
           backgroundImage: `url(${viewedProfile.banner})`,
           backgroundSize: "cover",
-          // backgroundRepeat: "no-repeat",
-          // backgroundPosition: "center",
+          backgroundRepeat: "repeat",
+          backgroundPosition: "center",
         }}
       >
         <div className="profile-page-upper-top-new">

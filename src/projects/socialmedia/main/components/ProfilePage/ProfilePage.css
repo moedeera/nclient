@@ -31,6 +31,14 @@
 }
 .profile-banner-image {
 }
+.profile-page-upper-top-new {
+  width: 100%;
+
+  /* border: 3px solid crimson; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .profile-page-upper-top-new img {
   height: 310px;
   width: 310px;
@@ -43,6 +51,7 @@
 }
 
 .profile-page-info {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,6 +67,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  /* border: 3px solid green; */
 }
 .profile-trivia {
   display: flex;
@@ -342,4 +352,9 @@
 #msg :hover,
 #message-lg :hover {
   background: green;
+}
+@media screen and (max-width: 600px) {
+  .profile-page-info {
+    width: 100vw;
+  }
 }
