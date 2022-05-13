@@ -10,6 +10,8 @@
   background-color: white;
   display: flex;
   align-items: center;
+
+  width: 400px;
 }
 .searchInputs i {
   display: flex;
@@ -25,7 +27,7 @@
   font-size: 14px;
   padding: 20px;
   height: 35px;
-  width: 350px;
+  width: 100%;
 }
 
 .searchIcon {
@@ -85,4 +87,9 @@ a {
 #clearBtn,
 .dataItem {
   cursor: pointer;
+}
+@media screen and (max-width: 600px) {
+  .searchInputs {
+    width: 300px;
+  }
 }
