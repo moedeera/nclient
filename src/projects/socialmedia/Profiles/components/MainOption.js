@@ -16,7 +16,12 @@ const MainOption = ({ pic1 }) => {
                   <img src={request.picture} alt="" />
                   <h5>{request.from}</h5>
                   <div className="fr-action">
-                    <button className="btn btn-secondary">Accept</button>
+                    <button
+                      className="btn btn-secondary"
+                      style={{ backgroundColor: "green" }}
+                    >
+                      Accept
+                    </button>
                     <button className="btn btn-secondary">Decline</button>
                   </div>
                 </div>
@@ -35,7 +40,12 @@ const MainOption = ({ pic1 }) => {
                   <img src={request.picture} alt="" />
                   <h5>{request.from}</h5>
                   <div className="fr-action">
-                    <button className="btn btn-secondary">Accept</button>
+                    <button
+                      className="btn btn-secondary"
+                      style={{ backgroundColor: "green" }}
+                    >
+                      Accept
+                    </button>
                     <button className="btn btn-secondary">Decline</button>
                   </div>
                 </div>
@@ -54,7 +64,12 @@ const MainOption = ({ pic1 }) => {
                   <img src={request.picture} alt="" />
                   <h5>{request.from}</h5>
                   <div className="fr-action">
-                    <button className="btn btn-secondary">Accept</button>
+                    <button
+                      className="btn btn-secondary"
+                      style={{ backgroundColor: "green" }}
+                    >
+                      Accept
+                    </button>
                     <button className="btn btn-secondary">Decline</button>
                   </div>
                 </div>
@@ -73,7 +88,12 @@ const MainOption = ({ pic1 }) => {
                   <img src={request.picture} alt="" />
                   <h5>{request.from}</h5>
                   <div className="fr-action">
-                    <button className="btn btn-secondary">Accept</button>
+                    <button
+                      className="btn btn-secondary"
+                      style={{ backgroundColor: "green" }}
+                    >
+                      Accept
+                    </button>
                     <button className="btn btn-secondary">Decline</button>
                   </div>
                 </div>
