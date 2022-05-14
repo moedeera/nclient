@@ -104,13 +104,13 @@ var mock_profiles = [
         type: "post",
         kind: "follow",
         share: "none",
-        user: 27,
+        user: 19,
         post: 1,
         from: "Stacey Baker",
         date: new Date("2022-04-21"),
         Date: "April 21 2022",
         picture:
-          "https://cdn.pixabay.com/photo/2017/11/29/09/15/paint-2985569_960_720.jpg",
+          "https://cdn.pixabay.com/photo/2015/01/15/16/17/hands-600497_960_720.jpg",
 
         pending: true,
       },
@@ -119,7 +119,7 @@ var mock_profiles = [
         type: "post",
         kind: "friend",
         share: "none",
-        user: 25,
+        user: 17,
         post: 1,
         from: "James Vitto",
         date: new Date("2022-04-09"),
@@ -195,10 +195,10 @@ var mock_profiles = [
     Requests: [
       {
         id: 419,
-        type: "post",
+
         kind: "follow",
         share: "none",
-        user: 25,
+        user: 17,
         post: 1,
         from: "James Vitto",
         date: new Date("2022-04-09"),
@@ -210,16 +210,46 @@ var mock_profiles = [
       },
       {
         id: 319,
-        type: "post",
+
         kind: "friend",
         share: "none",
-        user: 25,
+        user: 17,
         post: 1,
         from: "James Vitto",
         date: new Date("2022-04-09"),
         Date: "April 09 2022",
         picture:
           "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 320,
+
+        kind: "follow",
+        share: "none",
+        user: 19,
+        post: 1,
+        from: "Andreas Kollman",
+        date: new Date("2022-04-09"),
+        Date: "April 09 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2020/02/29/04/45/german-shepherd-4889095_960_720.jpg",
+
+        pending: true,
+      },
+      {
+        id: 321,
+
+        kind: "follow",
+        share: "none",
+        user: 18,
+        post: 1,
+        from: "Stacey Baker",
+        date: new Date("2022-04-21"),
+        Date: "April 21 2022",
+        picture:
+          "https://cdn.pixabay.com/photo/2015/01/15/16/17/hands-600497_960_720.jpg",
 
         pending: true,
       },
@@ -1069,7 +1099,7 @@ var mock_profiles = [
     location: "Edmonton, Alberta",
     description: "ERT",
     age: 36,
-    scores: [4, 3, 12],
+    scores: [4, 4, 12],
     header: "Mom to two lovely gals and a hockey husband",
     about: "#Pray for Ukraine, ukrainecrisis.org",
 
@@ -1121,9 +1151,93 @@ var mock_profiles = [
       },
     ],
 
-    Friends: [10],
-    followers: [8],
-    following: [7],
+    Friends: [10, 17, 18, 19],
+    followers: [8, 17, 18, 19],
+    following: [7, 17, 18, 19],
+    Posts: [8, 7],
+  },
+  {
+    id: 17,
+    status: "public",
+    name: "James Vitto",
+    nickname: "James Vitto",
+    location: "Okotoks, Alberta",
+    description: "Software Developer",
+    age: 41,
+    scores: [3, 3, 3],
+    header: "Living the geek life",
+    about: "Lacrosse Enthusiasts, Rush Fan for life",
+
+    Feed: [],
+    profilePic:
+      "https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2013/07/20/15/11/lacrosse-165576_960_720.jpg",
+
+    login: false,
+    Notifications: 1,
+    Notices: [],
+    Requests: [],
+
+    Friends: [16, 18, 19],
+    followers: [16, 18, 19],
+    following: [16, 18, 19],
+    Posts: [8, 7],
+  },
+  {
+    id: 18,
+    status: "public",
+    name: "Stacey Baker",
+    nickname: "Stacey Ann",
+    location: "Saskatoon, Saskatchewan",
+    description: "Dental Hygienist",
+    age: 24,
+    scores: [3, 3, 3],
+    header: "Travel-a-holic",
+    about: "Been to 39 countries, plan to get to 100 before turning 30",
+
+    Feed: [],
+    profilePic:
+      "https://cdn.pixabay.com/photo/2015/01/15/16/17/hands-600497_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2017/12/15/13/51/polynesia-3021072_960_720.jpg",
+
+    login: false,
+    Notifications: 1,
+    Notices: [],
+    Requests: [],
+
+    Friends: [16, 17, 19],
+    followers: [16, 17, 19],
+    following: [16, 17, 19],
+    Posts: [8, 7],
+  },
+  {
+    id: 19,
+    status: "public",
+    name: "Andreas Kollman",
+    nickname: "Anders Koll",
+    location: "Nuremberg, Germany",
+    description: "Lehrer",
+    age: 24,
+    scores: [2, 2, 2],
+    header: "Lebe, liebe und sei frei",
+    about: "#stop the spread",
+
+    Feed: [],
+    profilePic:
+      "https://cdn.pixabay.com/photo/2020/02/29/04/45/german-shepherd-4889095_960_720.jpg",
+    banner:
+      "https://cdn.pixabay.com/photo/2016/05/27/19/10/football-accessory-1420473_960_720.jpg",
+
+    login: false,
+    Notifications: 1,
+    Notices: [],
+    Requests: [],
+
+    Friends: [16, 17, 18],
+    followers: [16, 17, 18],
+    following: [16, 17, 18],
     Posts: [8, 7],
   },
 ];

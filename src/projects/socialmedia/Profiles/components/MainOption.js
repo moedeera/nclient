@@ -1,88 +1,84 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../../../Context/Context";
 
 const MainOption = ({ pic1 }) => {
+  const { user } = useContext(UserContext);
+  // console.log(user.Requests);
   return (
     <div className="fr-search-grid">
       <div className="fr-request">
         <h3>Follow requests</h3>
         <div className="fr-request-list">
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>James Vitto</h5>
-            <div className="fr-action">
-              <button className="btn btn-secondary">Accept</button>
-              <button className="btn btn-secondary">Decline</button>
-            </div>
-          </div>
-
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>Stacey Baker</h5>
-            <div className="fr-action">
-              <button className="btn btn-secondary">Accept</button>
-              <button className="btn btn-secondary">Decline</button>
-            </div>
-          </div>
-
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>Stacey Baker</h5>
-            <div className="fr-action">
-              <button className="btn btn-secondary">Accept</button>
-              <button className="btn btn-secondary">Decline</button>
-            </div>
-          </div>
-
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>Nolan Smithson</h5>
-            <div className="fr-action">
-              <button className="btn btn-secondary">Accept</button>
-              <button className="btn btn-secondary">Decline</button>
-            </div>
-          </div>
+          {user?.Requests?.map(
+            (request) =>
+              request.kind === "follow" && (
+                <div className="fr-request-profile" key={request.id}>
+                  <img src={request.picture} alt="" />
+                  <h5>{request.from}</h5>
+                  <div className="fr-action">
+                    <button className="btn btn-secondary">Accept</button>
+                    <button className="btn btn-secondary">Decline</button>
+                  </div>
+                </div>
+              )
+          )}
         </div>
       </div>
 
       <div className="fr-request">
         <h3>Friend requests</h3>
         <div className="fr-request-list">
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>James Vitto</h5>
-            <div className="fr-action">
-              <button className="btn btn-secondary">Accept</button>
-              <button className="btn btn-secondary">Decline</button>
-            </div>
-          </div>
+          {user?.Requests?.map(
+            (request) =>
+              request.kind === "friend" && (
+                <div className="fr-request-profile" key={request.id}>
+                  <img src={request.picture} alt="" />
+                  <h5>{request.from}</h5>
+                  <div className="fr-action">
+                    <button className="btn btn-secondary">Accept</button>
+                    <button className="btn btn-secondary">Decline</button>
+                  </div>
+                </div>
+              )
+          )}
         </div>
       </div>
 
       <div className="fr-request">
         <h3>Your friend requests</h3>
         <div className="fr-request-list">
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>James Vitto</h5>
-            <div className="fr-action">
-              <h3>Pending</h3>
-              <button className="btn btn-secondary">Cancel</button>
-            </div>
-          </div>
+          {user?.Requests?.map(
+            (request) =>
+              request.kind === "friend" && (
+                <div className="fr-request-profile" key={request.id}>
+                  <img src={request.picture} alt="" />
+                  <h5>{request.from}</h5>
+                  <div className="fr-action">
+                    <button className="btn btn-secondary">Accept</button>
+                    <button className="btn btn-secondary">Decline</button>
+                  </div>
+                </div>
+              )
+          )}
         </div>
       </div>
 
       <div className="fr-request">
         <h3>Your follow requests</h3>
         <div className="fr-request-list">
-          <div className="fr-request-profile">
-            <img src={pic1} alt="" />
-            <h5>James Vitto</h5>
-            <div className="fr-action">
-              <h3>Pending</h3>
-              <button className="btn btn-secondary">Cancel</button>
-            </div>
-          </div>
+          {user?.Requests?.map(
+            (request) =>
+              request.kind === "friend" && (
+                <div className="fr-request-profile" key={request.id}>
+                  <img src={request.picture} alt="" />
+                  <h5>{request.from}</h5>
+                  <div className="fr-action">
+                    <button className="btn btn-secondary">Accept</button>
+                    <button className="btn btn-secondary">Decline</button>
+                  </div>
+                </div>
+              )
+          )}
         </div>
       </div>
     </div>

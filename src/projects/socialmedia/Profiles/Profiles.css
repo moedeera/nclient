@@ -6,10 +6,11 @@
 }
 .content.friendsSearch {
   top: 80px;
-  width: 58vw;
-  left: calc(50vw + 14vw);
+  width: 30vw;
+  left: 50%;
   padding-top: 0;
   height: fit-content;
+  border: 1px solid rgba(128, 128, 128, 0.562);
 }
 .fr-search-main {
   padding-top: 10px;
@@ -28,8 +29,8 @@ h3 {
 }
 
 .fr-search-main img {
-  width: 95px;
-  height: 95px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   border: 1px solid rgba(128, 128, 128, 0.327);
 }
@@ -42,13 +43,13 @@ h3 {
 }
 .fr-request-list {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 10px;
 }
 .fr-request-profile {
   border: 1px solid rgba(128, 128, 128, 0.5);
   display: flex;
-
+  background-color: whitesmoke;
   height: 250px;
   flex-direction: column;
   justify-content: space-evenly;
@@ -60,14 +61,13 @@ h3 {
 }
 .fr-action {
   display: flex;
-  gap: 10px;
+  gap: 5px;
 }
 .fr-action button {
   width: 100%;
-  min-width: 4rem;
-  max-width: 10rem;
-  font-size: 12px;
-  padding: 10px;
+  width: 3.5rem;
+  font-size: 13px;
+  padding: 7px;
   cursor: pointer;
 }
 
@@ -85,7 +85,7 @@ h3 {
 @media screen and (max-width: 768px) {
   .content.friendsSearch {
     width: calc(100vw - 6px);
-
+    top: 100px;
     left: 3px;
   }
   .fr-request-list {

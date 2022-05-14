@@ -43,12 +43,11 @@ export const SocialMedia = () => {
       <div className="nav">
         {log && <Nav status={log} />}
 
-        {show && (
-          <>
-            {" "}
-            <NavRight status={log} />
-          </>
-        )}
+        <>
+          {" "}
+          <NavRight status={log} />
+        </>
+
         {showNavLeft && <NavLeft status={log} friendsPage={friendsPage} />}
       </div>
       <div>
