@@ -27,6 +27,7 @@ function App() {
             <Route path="friends" element={<Profiles />} />
             <Route path="posts" element={<PostPage />} />
             <Route path="profile" element={<ProfilePage />} />
+            <Route path="*" element={<ProfilePage />} />
           </Route>
         </Routes>
       </Router>

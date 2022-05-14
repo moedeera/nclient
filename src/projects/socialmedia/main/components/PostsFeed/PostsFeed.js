@@ -28,36 +28,31 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
       <div className="Post-Feed">
         {Posts.map((Post, index) => (
           <div className="postFeed-post" key={Post.id}>
-            <div className="postFeed-post-info">
-              <Link
-                onClick={() => {
-                  setViewedProfile(
-                    profiles.find((person) => person.id === Post.Poster)
-                  );
-                }}
-                to={Page === "main" ? "./profile" : "../profile"}
-              >
-                <img src={Post.PosterPic} alt="" />
-              </Link>
-
-              <Link
-                onClick={() => {
-                  setViewedProfile(
-                    profiles.find((person) => person.id === Post.Poster)
-                  );
-                }}
-                to={Page === "main" ? "./profile" : "../profile"}
-              >
-                <div className="postFeed-post-info-stamp">
+            <div className="postFeed-post-info2">
+              <div className="postFeed-post-image2">
+                <Link
+                  onClick={() => {
+                    setViewedProfile(
+                      profiles.find((person) => person.id === Post.Poster)
+                    );
+                  }}
+                  to={Page === "main" ? "./profile" : "../profile"}
+                >
+                  <img src={Post.PosterPic} alt="" />
+                </Link>
+              </div>
+              <div className="postFeed-post-published">
+                <div className="postFeed-post-published-information">
                   <h3>{Post.PosterName}</h3>
-
-                  <h5 style={{ color: "black" }}>Published {Post.date}</h5>
-                  {/* <h4 style={{ color: "black" }}> Amazing day with wifey</h4> */}
+                  <h5>Published {Post.date}</h5>
                 </div>
-              </Link>
-
-              {/* <i class="fas fa-ellipsis-h"></i> */}
+                <div className="postFeed-post-published-actions">
+                  {" "}
+                  <i className="fa fa-ellipsis-v"></i>
+                </div>
+              </div>
             </div>
+
             {/* <div className="postFeed-post-text pfp-p">
               {Post.PosterName} made a post
             </div> */}
