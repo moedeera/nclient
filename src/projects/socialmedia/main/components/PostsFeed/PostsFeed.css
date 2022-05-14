@@ -14,7 +14,15 @@
 .postFeed-post:hover {
   background-color: rgba(128, 128, 128, 0.106);
 }
-
+.postFeed-post-info {
+  display: flex;
+  justify-content: space-around;
+}
+.postFeed-post-info img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
 .postFeed-post-info2 {
   display: grid;
   grid-template-columns: 1fr 8fr;
