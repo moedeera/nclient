@@ -61,11 +61,13 @@ h3 {
 }
 .fr-action {
   display: flex;
+  flex-direction: column;
   gap: 5px;
 }
 .fr-action button {
   width: 100%;
-  width: 3.5rem;
+  width: 7rem;
+  gap: 5px;
   font-size: 13px;
   padding: 7px;
   cursor: pointer;
