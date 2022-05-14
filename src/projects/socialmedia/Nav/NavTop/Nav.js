@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import "./NavTop.css";
 import OutsideClickHandler from "react-outside-click-handler";
+import icon from "./icon.png";
 import Messages from "./Messages";
 import Notices from "./Notices";
 import Settings from "./Settings";
@@ -55,9 +56,9 @@ export const Nav = () => {
         <div className="social-nav-top ">
           <div className="logo">
             <h3>
-              <i className="fab fa-pied-piper-alt fa-2x"></i>
+              {/* <i className="fab fa-pied-piper-alt fa-2x"></i> */}
+              <img src={icon} alt="" style={{ width: "50px" }} />
             </h3>
-            <i className="fab fa-pied-piper-alt fa-2x sm-icon"></i>
 
             <h2
               style={{
@@ -66,7 +67,7 @@ export const Nav = () => {
                 fontWeight: "700",
               }}
             >
-              PiperSocial
+              PandaSocial
             </h2>
           </div>
 

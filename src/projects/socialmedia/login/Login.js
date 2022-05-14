@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Login.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import icon from "../Nav/NavTop/icon.png";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -62,9 +63,14 @@ export const Login = () => {
   return (
     <div className="parent clearfix">
       <div className="bg-illustration">
-        <i className="fab fa-pied-piper-alt fa-5x"></i>
-        <h1>PiperSocial</h1>
+        {/* <i className="fab fa-pied-piper-alt fa-5x"></i> */}
 
+        <h1 style={{ paddingTop: "30px", paddingLeft: "20px" }}>PandaSocial</h1>
+        {/* <img
+          src={icon}
+          alt=""
+          style={{ width: "100px", alignItems: "center" }}
+        /> */}
         <div className="burger-btn">
           <span></span>
           <span></span>
