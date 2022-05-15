@@ -1387,7 +1387,7 @@ var mock_posts = [
     text: "Help Ukrainian refugees by donating to one of the following charities for as little as a dollar; UNICEF, UNESCO, WHO organization, Doctors without Borders, and Plan Canada, clink on the link for more info www.ukrainecrisis.org",
     date: "Feb 2 2022 at 8:45pm",
     comments: [21, 27, 28],
-    views: 322,
+    views: 1322,
     shares: 51,
     likers: [1, 2, 3, 4, 5, 10, 11, 12, 13],
     datePosted: new Date("2022-03-17"),
@@ -1431,6 +1431,24 @@ var mock_posts = [
     datePosted: new Date("2022-03-17"),
     url: true,
   },
+  { id: 11,
+    status: "public",
+    Poster: 15,
+    PosterName: "Uber eats",
+    PosterPic:
+      "https://9to5mac.com/wp-content/uploads/sites/6/2019/04/UE-FB-Post.png",
+    postPic:
+      "https://pics.paypal.com/00/c/gifts/us/uber_eats.jpg",
+    text: "Enter SocialPanda to get 20% discount on your first order when you sign up today!",
+    date: "March 14 2022 at 11:20am",
+    comments: [],
+    views: 1143,
+    shares: 151,
+    likers: [
+      1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
+    ],
+    datePosted: new Date("2022-01-17"),
+    url: true,}
 ];
 
 var mock_comments = [
