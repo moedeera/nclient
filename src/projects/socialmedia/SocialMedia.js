@@ -21,10 +21,7 @@ export const SocialMedia = () => {
     friendsPage = false;
   }
 
-  if (
-    location.pathname === "/socialmedia/profile" ||
-    location.pathname === "/socialmedia/friends"
-  ) {
+  if (location.pathname === "/socialmedia/profile") {
     show = false;
   }
 
@@ -43,10 +40,7 @@ export const SocialMedia = () => {
       <div className="nav">
         {log && <Nav status={log} />}
 
-        <>
-          {" "}
-          <NavRight status={log} />
-        </>
+        <> {show && <NavRight status={log} />}</>
 
         {showNavLeft && <NavLeft status={log} friendsPage={friendsPage} />}
       </div>
