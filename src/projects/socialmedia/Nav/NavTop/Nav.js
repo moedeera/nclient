@@ -67,7 +67,7 @@ export const Nav = () => {
                 fontWeight: "700",
               }}
             >
-              PandaSocial
+              BlueBear
             </h2>
           </div>
 

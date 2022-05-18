@@ -65,7 +65,7 @@ export const Login = () => {
       <div className="bg-illustration">
         {/* <i className="fab fa-pied-piper-alt fa-5x"></i> */}
 
-        <h1 style={{ paddingTop: "30px", paddingLeft: "20px" }}>PandaSocial</h1>
+        <h1 style={{ paddingTop: "30px", paddingLeft: "20px" }}>BlueBear</h1>
         {/* <img
           src={icon}
           alt=""
