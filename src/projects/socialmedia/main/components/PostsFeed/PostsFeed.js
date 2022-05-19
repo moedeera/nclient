@@ -5,19 +5,21 @@ import { UserContext } from "../../../../../Context/Context";
 import { PostFeedComments } from "./PostFeedComments";
 
 import "./PostsFeed.css";
+import userEvent from "@testing-library/user-event";
 
 export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
   const {
     setCurrentPost,
     UpdateViews,
     setPostIndex,
-
+    user,
     setViewedProfile,
     profiles,
   } = useContext(UserContext);
   const [commentBox, showCommentBox] = useState(false);
   const [show, setShow] = useState(false);
   const [postId, setPostId] = useState(0);
+  const [listedComments, setListedComments] = useState([]);
 
   const CommentBoxToggle = () => {
     showCommentBox(!commentBox);
@@ -128,12 +130,26 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
               <PostFeedComments
                 showComment={CommentBoxToggle}
                 PostId={Post.id}
+                setListedComments={setListedComments}
+                listedComments={listedComments}
               />
             ) : (
               ""
             )}
+            {/* <div className="latest-comment-list">
+              <h4>View all Comments</h4>
+              <div className="post-feed-latest-comment">
+                {" "}
+                <img src={user.profilePic} alt="" />
+                <div className="latest-comment-info">
+                  <h5>You just posted</h5>
+                  <p> Hello</p>
+                </div>
+              </div>
+            </div> */}
           </div>
         ))}
+        {/* <div className="new"></div> */}
       </div>
     </div>
   );
