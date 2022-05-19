@@ -18,7 +18,7 @@ export const PostsFeed = ({ Posts, LikeCounter, Page }) => {
   const [commentBox, showCommentBox] = useState(false);
   const [show, setShow] = useState(false);
   const [postId, setPostId] = useState(0);
-  console.log(Page);
+
   const CommentBoxToggle = () => {
     showCommentBox(!commentBox);
   };

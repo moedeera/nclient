@@ -164,6 +164,93 @@
   grid-template-columns: 1fr 10fr;
   grid-gap: 10px;
 }
+.request-submission {
+  display: grid;
+  grid-template-columns: 1fr 7fr;
+  justify-content: center;
+  align-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+.request-submission h4 {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  color: var(--color-secondary-social);
+  text-align: center;
+}
+.animation-check {
+  padding: 10px 0;
+}
+
+svg {
+  width: 30px;
+  font-weight: 500;
+  display: block;
+  margin: 0px auto 0;
+}
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0;
+}
+.path.circle {
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out;
+}
+.path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards;
+}
+.path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards;
+}
+.animation-check p {
+  text-align: center;
+  margin: 20px 0 60px;
+  font-size: 1.25em;
+}
+.animation-check.success p {
+  color: #73af55;
+}
+.animation-check.error p {
+  color: #d06079;
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100;
+  }
+  100% {
+    stroke-dashoffset: 900;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .post-feed-action > div:hover {
     background-color: var(--color-primary-social);
