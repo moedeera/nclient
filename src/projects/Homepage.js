@@ -15,7 +15,7 @@ export const Homepage = () => {
       <div className="homepage-overlay">
         <img src={banner} alt="" />
       </div>
-      <Showcase />
+      {/* <Showcase /> */}
       <Header />
       <Nav />
       <Portfolio />
