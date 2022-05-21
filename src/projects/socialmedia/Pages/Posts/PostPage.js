@@ -1,13 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./PostPage.css";
 import { useContext } from "react";
-import { UserContext } from "../../../../../Context/Context";
 import { Comments } from "./Comments";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 
-// import { Link } from "react-router-dom";
-// import { Navigate } from "react-router-dom";
+import { UserContext } from "../../../../Context/Context";
 
 export const PostPage = () => {
   const [formComment, setFormComment] = useState([]);

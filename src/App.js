@@ -2,14 +2,13 @@ import "./index.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import { Homepage } from "./PortfolioPage/Homepage";
-
-import { Mainpage } from "./projects/socialmedia/Pages/Main/Mainpage";
-import { Login } from "./projects/socialmedia/login/Login";
-
-import { Trending } from "./projects/socialmedia/Pages/Trending/Trending";
 import { SocialMedia } from "./projects/socialmedia/SocialMedia";
-import { Profiles } from "./projects/socialmedia/Profiles/Profiles";
-import { PostPage } from "./projects/socialmedia/main/components/PostPage/PostPage";
+import { Mainpage } from "./projects/socialmedia/Pages/Main/Mainpage";
+import { Trending } from "./projects/socialmedia/Pages/Trending/Trending";
+import { PostPage } from "./projects/socialmedia/Pages/Posts/PostPage";
+import { Login } from "./projects/socialmedia/Pages/Login/Login";
+import { Profiles } from "./projects/socialmedia/Pages/Profiles/Profiles";
+
 import { Gallery } from "./projects/Gallery/Gallery";
 
 import { ProfilePage } from "./projects/socialmedia/main/components/ProfilePage/ProfilePage";

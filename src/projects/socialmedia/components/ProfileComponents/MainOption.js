@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../../../Context/Context";
-
 const MainOption = ({ pic1 }) => {
   const { user } = useContext(UserContext);
   // console.log(user.Requests);

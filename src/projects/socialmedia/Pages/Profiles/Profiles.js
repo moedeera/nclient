@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import "./Profiles.css";
 import { useContext } from "react";
-import { UserContext } from "../../../Context/Context";
-// import { SearchProfile } from "./SearchProfile";
-// import SearchBar from "./Searchbar";
-import MainOption from "./components/MainOption";
-import SuggestionsOption from "./components/SuggestionsOption";
+
+import { UserContext } from "../../../../Context/Context";
+
+import MainOption from "../../components/ProfileComponents/MainOption";
+import SuggestionsOption from "../../components/ProfileComponents/SuggestionsOption";
+
 import pic1 from "./blank-avatar.png";
 
 export const Profiles = () => {

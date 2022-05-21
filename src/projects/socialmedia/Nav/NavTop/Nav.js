@@ -5,7 +5,7 @@ import icon from "./icon.png";
 import Messages from "./Messages";
 import Notices from "./Notices";
 import Settings from "./Settings";
-import SearchBar1 from "../../Profiles/Searchbar";
+import SearchBar1 from "../../Pages/Profiles/Searchbar";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { UserContext } from "../../../../Context/Context";

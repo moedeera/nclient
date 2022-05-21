@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Searchbar.css";
-import { mock_profiles } from "../../../assets/MockDataBase";
+import { mock_profiles } from "../../../../assets/MockDataBase";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
