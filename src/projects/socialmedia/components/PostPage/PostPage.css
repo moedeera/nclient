@@ -1,0 +1,284 @@
+.PostPage {
+  position: absolute;
+  top: 0;
+  /* Add the blur effect */
+  margin-top: 0px;
+  width: 100vw;
+  max-height: 1500px;
+
+  height: 100%;
+
+  backdrop-filter: blur(15px);
+  color: black;
+  z-index: 5;
+}
+.PostCard {
+  width: 100%;
+
+  max-width: 1500px;
+
+  margin: 0 auto;
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr;
+  backdrop-filter: blur(15px);
+  height: fit-content;
+  overflow-y: scroll;
+  border: 1px solid grey;
+}
+.PostCard > div {
+}
+.PostCard-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.PostCard-Post {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  grid-column-gap: 0;
+  background-color: rgba(210, 105, 30, 0.386);
+  background: rgba(255, 255, 255, 0.473);
+
+  height: 100%;
+
+  padding: 0;
+  color: white;
+  border: 1px solid grey;
+}
+.PostCard-Post-image {
+  background-color: var(--color-secondary-social);
+}
+.PostCard-Post-details {
+  width: 100%;
+  display: grid;
+  background-color: #154c7988;
+  grid-template-rows: 2fr 3fr 1fr 8fr 3.15fr;
+  overflow-y: scroll;
+  height: 800px;
+  padding-bottom: 20px;
+  /* max-height: 840px; */
+}
+.PostCard-Post-details-poster {
+  padding: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.PostCard-Post-details-post-text {
+  letter-spacing: 0.05em;
+  line-height: 1.4em;
+  font-size: 18px;
+  border: 2px solid var(--color-primary-social);
+  background-color: var(--color-secondary-social);
+  padding: 10px;
+  margin: 0 5px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+}
+.PostCard-Post-details-post-commentsHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: navy;
+  margin: 0px auto;
+}
+
+.PostCard-Post-details-post-comments h3 {
+  color: white;
+  font-weight: 500;
+}
+.PostCard-Post-details-post-comments {
+  height: 350px;
+}
+.PostCard-Post-comment {
+  padding: 5px 2px 10px;
+  font-size: 13px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+.no-comments {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.PostCard-Post-comment-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.PostCard-Post-comment img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid var(--color-secondary-social);
+}
+
+.PostCard-Post-comment-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  background-color: var(--color-primary-social);
+  padding: 5px;
+  border-radius: 5px;
+  color: aliceblue;
+  width: 95%;
+  max-width: 600px;
+}
+.PostCard-Post-comment-interactions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.PostCard-Post-details-post-actions {
+  display: flex;
+  justify-content: space-around;
+  color: var(--color-primary-social);
+  align-items: center;
+
+  height: 50px;
+  margin: 5px auto;
+  border-radius: 5px;
+}
+.PostCard-arrow {
+  cursor: pointer;
+  font-size: 35px;
+  color: var(--color-primary-social);
+}
+.PostCard-Post-image {
+  position: relative;
+}
+.PostCard-Post-image img {
+  height: 100%;
+  max-height: 700px;
+}
+.PostCard-Post-image video {
+  width: 100%;
+  height: 100%;
+  max-height: 700px;
+  object-fit: cover;
+}
+.PostCard-Post-details-post-make-comment {
+  width: 100%;
+  padding-top: 5px;
+  margin: 5px auto 0;
+}
+
+.PostCard-Post-details-post-make-comment input {
+  width: 100%;
+  padding: 0 2rem;
+  height: 2rem;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 5px;
+}
+.PostCard-Post-details-post-make-comment > div {
+  margin: 5px auto;
+}
+.PostCard-Post-details-make-comment-input {
+  width: 80%;
+  margin: 10px auto;
+}
+.sm-l,
+.sm-r {
+  display: none;
+}
+#comment {
+  display: flex;
+  width: 80%;
+}
+#comment > div {
+  background-color: var(--color-secondary-social);
+  padding: 7px;
+  border-radius: 5px;
+}
+.PostCard-buttons {
+  width: 80%;
+  display: flex;
+  justify-content: flex-end;
+}
+.PostCard-buttons button {
+  cursor: pointer;
+}
+.PostCard-closeBtn {
+  display: none;
+}
+
+@media screen and (min-width: 910px) {
+  .PostCard-Post-details-post-comments {
+    /* height: 350px; */
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (max-width: 909px) {
+  .PostPage {
+    margin-top: -0px;
+    height: 100vh;
+    overflow-y: hidden;
+  }
+
+  .PostCard {
+    height: 99vh;
+    margin-top: 0;
+  }
+  .PostCard-Post {
+    grid-template-columns: 1fr;
+    grid-template-rows: 2fr 3fr;
+
+    overflow-y: hidden;
+  }
+  .PostCard-closeBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(128, 128, 128, 0.575);
+    border-radius: 50%;
+    background: var(--color-primary-social);
+    height: 40px;
+    width: 40px;
+    color: var(--color-secondary-social);
+    cursor: pointer;
+  }
+  .PostCard-Post-details-post-actions {
+    display: none;
+  }
+  .PostCard-Post-details {
+    /* height: 430px; */
+    overflow-y: scroll;
+    height: 100%;
+  }
+  .PostCard-Post-details h3,
+  .PostCard-Post-details h5 {
+    margin: 2px;
+  }
+  .PostCard-Post-image img {
+    height: 100%;
+  }
+  .sm-l {
+    font-size: 32px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+  }
+  .sm-r {
+    font-size: 32px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 0%;
+    transform: translate(-50%, -50%);
+  }
+  .PostCard-Post-details-post-comments {
+    height: 150px;
+    overflow-y: scroll;
+
+    background-color: rgba(240, 248, 255, 0.425);
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./PostsFeed.css";
 import { useState, useContext } from "react";
-import { UserContext } from "../../../../../Context/Context";
+import { UserContext } from "../../../../Context/Context";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 

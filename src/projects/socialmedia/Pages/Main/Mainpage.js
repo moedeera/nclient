@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
 import { useContext } from "react";
-import { CreatePost } from "./components/CreatePosts/CreatePost";
-import { PostsFeed } from "./components/PostsFeed/PostsFeed";
-import { motion } from "framer-motion";
 
-import { UserContext } from "../../../Context/Context";
+import { UserContext } from "../../../../Context/Context";
+
+import { CreatePost } from "../../components/CreatePosts/CreatePost";
+import { PostsFeed } from "../../components/PostsFeed/PostsFeed";
 
 import "./MainPage.css";
 

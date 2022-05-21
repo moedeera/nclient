@@ -1,0 +1,97 @@
+.CreatePost {
+  background-color: var(--color-primary-social);
+
+  border: 1px solid rgba(128, 128, 128, 0.616);
+  width: 100%;
+  margin: 0 auto;
+
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: whitesmoke;
+  color: #282c34;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  align-items: center;
+}
+.no-bottom {
+  border-bottom: none;
+}
+.MCpost {
+  border: none;
+}
+.MCPostbox {
+  border: none;
+}
+
+.textarea {
+  background-color: white;
+  color: grey;
+  padding: 1em;
+  border: 1px solid transparent;
+  outline: none;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  line-height: 1.4em;
+  height: 100px;
+  width: 100%;
+  transition: all 0.2s;
+}
+.urlTextArea {
+  background-color: white;
+  color: grey;
+  padding: 1em;
+  border: 1px solid transparent;
+  outline: none;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  line-height: 1em;
+  height: 40px;
+  width: 100%;
+  transition: all 0.2s;
+}
+.CreatePost img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.MCbuttons {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  border: 1px solid rgba(128, 128, 128, 0.471);
+  background-color: white;
+  padding: 5px 0;
+  align-items: center;
+  border-radius: 5px;
+
+  width: 100%;
+}
+
+.image-upload > input {
+  display: none;
+}
+
+.createPost-file {
+  border: 1px solid rgba(128, 128, 128, 0.603);
+  background: whitesmoke;
+  border-top: none;
+  text-align: center;
+  padding: 0 10px 10px;
+  width: 100%;
+  margin: 0 auto 10px;
+  color: var(--color-secondary-social);
+  font-weight: 700;
+}
+.createPost-file p {
+  padding: 10px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  .CreatePost {
+    margin-top: 35px;
+    grid-template-columns: 1fr;
+  }
+  .CreatePost img {
+    display: none;
+  }
+}

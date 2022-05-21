@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
-import { UserContext } from "../../../../../Context/Context";
+import { UserContext } from "../../../../Context/Context";
 import { PostFeedComments } from "./PostFeedComments";
 
 import "./PostsFeed.css";

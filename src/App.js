@@ -1,15 +1,17 @@
 import "./index.css";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
-import { Homepage } from "./projects/Homepage";
+import { Homepage } from "./PortfolioPage/Homepage";
 
-import { Mainpage } from "./projects/socialmedia/main/Mainpage";
+import { Mainpage } from "./projects/socialmedia/Pages/Main/Mainpage";
 import { Login } from "./projects/socialmedia/login/Login";
-import { Trending } from "./projects/socialmedia/Trending/Trending";
+
+import { Trending } from "./projects/socialmedia/Pages/Trending/Trending";
 import { SocialMedia } from "./projects/socialmedia/SocialMedia";
 import { Profiles } from "./projects/socialmedia/Profiles/Profiles";
 import { PostPage } from "./projects/socialmedia/main/components/PostPage/PostPage";
 import { Gallery } from "./projects/Gallery/Gallery";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import { ProfilePage } from "./projects/socialmedia/main/components/ProfilePage/ProfilePage";
 
 function App() {
