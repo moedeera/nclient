@@ -1,0 +1,104 @@
+.navbar-container {
+  display: flex;
+
+  justify-content: space-between;
+  font-family: "Lato", sans-serif;
+  width: 100%;
+  max-width: 1300px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+.logo {
+  display: flex;
+
+  align-items: center;
+  justify-content: flex-start;
+  gap: -10px;
+}
+.logo h2 {
+  font-weight: 700;
+  font-family: "Fira Sans", sans-serif;
+  font-size: auto;
+}
+.logo img {
+  width: 70px;
+}
+.navbar-menu ul {
+  padding: 0;
+  list-style: none;
+  display: flex;
+
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  text-align: center;
+  color: black;
+}
+.navbar-menu li {
+  display: table-cell;
+  position: relative;
+  padding: 15px 0;
+}
+.navbar-menu a {
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+  color: white;
+  font-weight: 700;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+a:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: var(--color-primary1);
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+.navbar-container-sm {
+  display: none;
+}
+
+@media only screen and (max-width: 900px) {
+  a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+  .navbar-container {
+    display: none;
+  }
+  .navbar-container-sm {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  .logo {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .logo h2 {
+    font-weight: 700;
+    font-family: "Fira Sans", sans-serif;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: underline;
+  }
+  .logo img {
+    width: 40px;
+  }
+}
+@media only screen and (min-width: 900px) {
+  a:hover:after {
+    width: 100%;
+    left: 0;
+  }
+}

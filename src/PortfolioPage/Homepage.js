@@ -7,6 +7,7 @@ import { About } from "../components/About/About";
 import { Showcase } from "../components/Showcase/Showcase";
 // import { Footer } from "../components/Footer/Footer";
 import { Contact } from "../components/Contact/Contact";
+import { AppHeader } from "../components/AppHeader/AppHeader";
 import "../index.css";
 
 export const Homepage = () => {
@@ -15,8 +16,9 @@ export const Homepage = () => {
       <div className="homepage-overlay">
         <img src={banner} alt="" />
       </div>
-      {/* <Showcase /> */}
-      <Header />
+      <AppHeader />
+      <Showcase />
+      {/* <Header /> */}
       <Nav />
       <Portfolio />
       <About />
