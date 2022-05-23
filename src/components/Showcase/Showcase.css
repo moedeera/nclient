@@ -23,6 +23,8 @@
   letter-spacing: 1.25px;
   line-height: 1.4em;
   padding: 5px;
+  color: white;
+  font-weight: 700;
 }
 .showcase-info-section {
   /* border: 2px solid green; */
