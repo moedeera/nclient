@@ -16,7 +16,7 @@ html {
 
 :root {
   /* --color-bg: #1f1f38; */
-  --color-bg: #080f0fa2;
+  --color-bg: #080f0fd7;
   /* --color-bg-variant: #2c2c6c; */
   --color-bg-variant: #36486b;
   --color-primary1: #256eff;
@@ -50,6 +50,7 @@ body {
 }
 .homepage {
   background-color: var(--color-bg);
+  /* background-color: white; */
 
   overflow-y: scroll;
 }
