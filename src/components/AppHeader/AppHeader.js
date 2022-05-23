@@ -5,7 +5,7 @@ export const AppHeader = () => {
   return (
     <div className="container">
       <div className="navbar-container">
-        <div className="logo">
+        <div className="logo-m">
           {/* <img src={icon} alt="" /> */}
           <h2>
             DeeraCode<span style={{ color: "goldenrod" }}>.dev</span>
@@ -31,15 +31,6 @@ export const AppHeader = () => {
               <button className="btn btn-primary">Login</button>
             </li> */}
           </ul>
-        </div>
-      </div>
-      <div className="navbar-container-sm">
-        <div className="logo">
-          {/* <img src={icon} alt="" /> */}
-          {/* <h2>
-            DeeraCode<span style={{ color: "goldenrod" }}>.dev</span>
-          </h2> */}
-          {/* <i className="fa fa-bars fa-2x" aria-hidden="true" ></i> */}
         </div>
       </div>
     </div>
