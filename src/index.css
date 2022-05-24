@@ -127,7 +127,7 @@ a:hover {
 }
 
 .btn-secondary:hover {
-  background-color: var(--color-secondary-social);
+  /* background-color: var(--color-secondary-social); */
   color: white;
 }
 img {
