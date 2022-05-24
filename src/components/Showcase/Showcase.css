@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  animation: transition1 1200ms ease-in-out;
 }
 .showcase-info {
   width: 100%;
@@ -96,13 +97,13 @@
   transform: translateX(0%);
   animation: js-show 12s infinite linear;
 }
-#Vector_21 {
+#react-icon-1 {
   animation: react-show 12s infinite linear;
 }
 #node-js-1 {
   animation: nodejs-show 12s infinite linear;
 }
-#Group {
+#mongo-db-1 {
   opacity: 1;
   animation: mongo-show 12s infinite linear;
 }
@@ -114,11 +115,11 @@
   opacity: 1;
   transform: translateX(-5%);
 } */
-#hand-2,
+/* #hand-2,
 #hand-1,
 #shirt-1 {
   animation: shake 8s infinite linear;
-}
+} */
 .btn a:after {
   background-color: none;
 }
@@ -138,6 +139,7 @@
   }
   .showcase-info-image-lg {
     display: block;
+    animation: transition2 1200ms ease-in-out;
     /* border: 2px solid crimson; */
   }
   .showcase-info-image-lg img {
@@ -221,7 +223,7 @@
     opacity: 0;
   }
 }
-@keyframes shake {
+/* @keyframes shake {
   0% {
     transform: translate(1px, 0.75px) rotate(0deg);
   }
@@ -255,7 +257,7 @@
   100% {
     transform: translate(1px, -1.5px) rotate(-1deg);
   }
-}
+} */
 
 @keyframes js-show {
   0% {
@@ -331,5 +333,23 @@
   }
   100% {
     opacity: 0;
+  }
+}
+
+@keyframes transition1 {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes transition2 {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
   }
 }
