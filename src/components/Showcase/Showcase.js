@@ -14,6 +14,7 @@ export const Showcase = () => {
             <h1>
               {" "}
               <span
+                id="creative-text"
                 style={{
                   color: "goldenrod",
                   fontWeight: "bold",
@@ -33,10 +34,10 @@ export const Showcase = () => {
             </h1>
 
             <p>
-              Hello, I am a full stack developer mainly specializing in the MERN
-              stack with SQL databases. Websites are my main area but I also
-              build web applications and set up servers. Get into contact with
-              me if you are interested.
+              Hello, My name is Moe. I am a full stack developer specializing in
+              the MERN stack with SQL databases. Websites are my main area but I
+              also build web applications and set up servers. Get into contact
+              with me if you are interested.
             </p>
           </div>
           <div className="showcase-CTA">
