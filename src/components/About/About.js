@@ -17,16 +17,16 @@ export const About = () => {
       <h1>Skills</h1>
       <ul>
         <li>
-          <i className="fab fa-css3-alt fa-3x"></i>
+          <i className="fab fa-css3-alt fa-4x" style={{ color: "#256eff" }}></i>
         </li>
         <li>
-          <i className="fab fa-js fa-3x"></i>
+          <i className="fab fa-js fa-4x" style={{ color: "goldenrod" }}></i>
         </li>
         <li>
-          <i className="fab fa-react fa-3x"></i>
+          <i className="fab fa-react fa-4x" style={{ color: "#4DB5FF" }}></i>
         </li>
         <li>
-          <i className="fab fa-node fa-3x"></i>
+          <i className="fab fa-node fa-4x" style={{ color: "green" }}></i>
         </li>
       </ul>
     </section>

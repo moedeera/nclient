@@ -31,7 +31,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  animation: transition1 1200ms ease-in-out;
+  animation: transition1 1000ms ease-in-out;
 }
 .showcase-info {
   width: 100%;
@@ -123,6 +123,21 @@
 .btn a:after {
   background-color: none;
 }
+#creative-text {
+  transition: 800ms ease-in-out;
+  animation: transition-a 3.5s;
+}
+
+#stack-development {
+  transition: 1200ms ease-in-out;
+  animation: transition-b 3.5s;
+}
+
+#modern-web {
+  transition: 1200ms ease-in-out;
+  animation: transition-c 3.5s;
+}
+
 @media screen and (min-width: 900px) {
   .showcase-container {
     display: grid;
@@ -351,5 +366,58 @@
   }
   100% {
     transform: translateX(0);
+  }
+}
+
+@keyframes transition-a {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes transition-b {
+  0% {
+    transform: translateY(75%);
+    opacity: 0;
+  }
+
+  50% {
+    transform: translateY(75%);
+
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes transition-c {
+  0% {
+    transform: translateY(75%);
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

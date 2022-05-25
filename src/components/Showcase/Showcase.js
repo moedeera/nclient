@@ -22,8 +22,9 @@ export const Showcase = () => {
               >
                 Creative
               </span>{" "}
-              Full Stack Development{" "}
+              <span id="stack-development">Full Stack Development </span>
               <span
+                id="modern-web"
                 style={{
                   color: "goldenrod",
                   fontWeight: "bold",
@@ -41,13 +42,17 @@ export const Showcase = () => {
             </p>
           </div>
           <div className="showcase-CTA">
-            <button className="btn btn-alternate" id="portfolio-btn">
+            <button
+              className="btn btn-alternate"
+              id="portfolio-btn"
+              style={{ backgroundColor: "steelblue" }}
+            >
               <a href="#portfolio">Portfolio</a>
             </button>
             <button
               className="btn btn-alternate"
               id="contact-btn"
-              style={{ backgroundColor: "crimson" }}
+              style={{ backgroundColor: "goldenrod" }}
             >
               <a href="#contact" id="contact-a">
                 Contact
