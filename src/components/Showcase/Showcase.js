@@ -20,24 +20,24 @@ export const Showcase = () => {
                   fontWeight: "bold",
                 }}
               >
-                Creative
+                Professional
               </span>{" "}
-              <span id="stack-development">Full Stack Development </span>
+              <span id="stack-development">Full Stack </span>
               <span
                 id="modern-web"
                 style={{
-                  color: "goldenrod",
+                  color: "white",
                   fontWeight: "bold",
                 }}
               >
-                for the modern web
+                Web development
               </span>{" "}
             </h1>
 
             <p>
               Hello, My name is Moe. I am a full stack developer specializing in
-              the MERN stack with SQL databases. Websites are my main area but I
-              also build web applications and set up servers. Get into contact
+              the MERN stack with noSQL databases. Websites are my main area but
+              I also build web applications and set up servers. Get into contact
               with me if you are interested.
             </p>
           </div>
