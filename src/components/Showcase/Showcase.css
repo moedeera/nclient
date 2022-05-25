@@ -120,7 +120,8 @@
 #shirt-1 {
   animation: shake 8s infinite linear;
 } */
-.btn a:after {
+.btn a:after,
+.live-demo a:after {
   background-color: none;
 }
 #creative-text {

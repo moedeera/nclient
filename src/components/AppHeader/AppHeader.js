@@ -13,7 +13,7 @@ export const AppHeader = () => {
         </div>
         <div className="navbar-menu">
           <ul>
-            <li>
+            <li className="btn-underline">
               <a href="https://github.com/moedeera">
                 Github
                 <i className="fa fa-github" aria-hidden="true"></i>
@@ -22,7 +22,7 @@ export const AppHeader = () => {
             {/* <li>
               <a href="#portfolio">Portfolio</a>
             </li> */}
-            <li>
+            <li className="btn-underline">
               <a href="#portfolio" className="menu-md">
                 Portfolio
               </a>

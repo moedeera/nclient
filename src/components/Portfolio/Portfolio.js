@@ -89,11 +89,16 @@ export const Portfolio = () => {
                   className="btn spacing"
                   target="_blank"
                   rel="noreferrer"
+                  id="live-repo"
                 >
                   Repository
                   <i className="fa fa-github" aria-hidden="true"></i>
                 </a>
-                <a href={project.live} className="btn btn-primary">
+                <a
+                  href={project.live}
+                  className="btn btn-primary live-demo"
+                  id="live-demo"
+                >
                   Live Demo
                 </a>
               </div>
