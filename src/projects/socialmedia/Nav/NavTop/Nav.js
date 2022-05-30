@@ -57,7 +57,11 @@ export const Nav = () => {
           <div className="logo">
             <h3>
               {/* <i className="fab fa-pied-piper-alt fa-2x"></i> */}
-              <img src={icon} alt="" style={{ width: "50px" }} />
+              <img
+                src={icon}
+                alt=""
+                style={{ width: "50px", margin: "0 15px" }}
+              />
             </h3>
 
             <h2
