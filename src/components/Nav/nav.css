@@ -1,5 +1,5 @@
 .main-nav {
-  background-color: rgba(0, 0, 0, 0.329);
+  background-color: rgba(255, 217, 0, 0.699);
 
   padding: 0.7rem 2.5rem;
   z-index: 2;
@@ -8,7 +8,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
-
+  width: 80%;
+  max-width: 600px;
   bottom: 2rem;
   display: flex;
 
@@ -23,7 +24,7 @@ nav a {
   padding: 0.9rem 1rem;
   border-radius: 50%;
   display: flex;
-  color: var(--color--light);
+  color: black;
   font-size: 1.1rem;
 }
 nav a:hover {
@@ -33,6 +34,7 @@ nav a:hover {
 .active {
   background-color: rgba(255, 255, 255, 0.234);
   color: white;
+  border: 2px solid black;
 }
 
 /* nav::after {

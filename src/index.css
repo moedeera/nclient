@@ -49,7 +49,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 .homepage {
-  background-color: var(--color-bg);
+  background-color: black;
   /* background-color: white; */
 
   overflow-y: scroll;

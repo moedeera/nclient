@@ -13,9 +13,9 @@ import "../index.css";
 export const Homepage = () => {
   return (
     <div className="homepage">
-      <div className="homepage-overlay">
+      {/* <div className="homepage-overlay">
         <img src={banner} alt="" />
-      </div>
+      </div> */}
       <AppHeader />
       <Showcase />
       {/* <Header /> */}
