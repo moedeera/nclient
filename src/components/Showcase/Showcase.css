@@ -35,7 +35,7 @@
 }
 .showcase-info {
   width: 100%;
-  /* max-width: 400px; */
+  max-width: 500px;
 }
 .showcase-CTA {
   padding: 5px;
@@ -47,7 +47,9 @@
   align-items: center;
 }
 .showcase-info-image {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 5px;
 }
 .showcase-info-image img {
@@ -142,7 +144,7 @@
 @media screen and (min-width: 900px) {
   .showcase-container {
     display: grid;
-    grid-template-columns: 2fr 1.65fr;
+    grid-template-columns: 1fr 1.5fr;
     margin: 50px auto 100px;
   }
   .showcase-container p {
