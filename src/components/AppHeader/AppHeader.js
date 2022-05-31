@@ -1,5 +1,6 @@
 import React from "react";
 import "./AppHeader.css";
+import logo from "./site-logo.png";
 
 export const AppHeader = () => {
   return (
@@ -8,7 +9,8 @@ export const AppHeader = () => {
         <div className="logo-m">
           {/* <img src={icon} alt="" /> */}
           <h2>
-            DeeraCode<span style={{ color: "goldenrod" }}>.dev</span>
+            {/* DeeraCode<span style={{ color: "goldenrod" }}>.dev</span> */}
+            <img src={logo} alt="" />
           </h2>
         </div>
         <div className="navbar-menu">
