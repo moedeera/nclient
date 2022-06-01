@@ -24,11 +24,11 @@ export const AppHeader = () => {
             {/* <li>
               <a href="#portfolio">Portfolio</a>
             </li> */}
-            <li className="btn-underline">
+            {/* <li className="btn-underline">
               <a href="#portfolio" className="menu-md">
                 Portfolio
               </a>
-            </li>
+            </li> */}
             {/* <li>
               <button className="btn btn-primary">Login</button>
             </li> */}
