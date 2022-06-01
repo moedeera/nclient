@@ -21,6 +21,15 @@ export const Portfolio = () => {
     },
     {
       id: 2,
+      img: elearning,
+      header: "E-Reader website",
+      text: "A freelance project I am doing for a client who is building a cross platform reader application .",
+      live: "https://librumreader.netlify.app/",
+      repo: "https://github.com/moedeera/ereader",
+      color: "steelblue",
+    },
+    {
+      id: 3,
       img: bootcamp,
       header: "Coding Bootcamp site",
       text: "  A mock coding Boot camp website built with CSS, HTML and JavaScript.It also can connect to a backend via form.",
@@ -29,7 +38,7 @@ export const Portfolio = () => {
       color: "#5448C8",
     },
     {
-      id: 3,
+      id: 4,
       img: diner,
       header: "Dining site",
       text: "  A dining website for a local business in Saskatoon, This was created using CSS,JavaScript and googleMaps.",
@@ -37,15 +46,7 @@ export const Portfolio = () => {
       repo: "https://github.com/moedeera/SuperDoniar",
       color: "#9A031E",
     },
-    // {
-    //   id: 4,
-    //   img: elearning,
-    //   header: "E-learning website",
-    //   text: " A full stack E-learning website built using JavaScript, Node and Express.",
-    //   live: "https://www.deeracode.com/Projects/profile",
-    //   repo: "https://github.com/moedeera/Login-Practice",
-    //   color: "#0E6BA8",
-    // },
+
     {
       id: 5,
       img: old,
@@ -85,6 +86,13 @@ export const Portfolio = () => {
 
               <div className="portfolio_links">
                 <a
+                  href={project.live}
+                  className="btn btn-primary live-demo"
+                  id="live-demo"
+                >
+                  Live Demo
+                </a>
+                <a
                   href={project.repo}
                   className="btn spacing"
                   target="_blank"
@@ -93,13 +101,6 @@ export const Portfolio = () => {
                 >
                   Repository
                   <i className="fa fa-github" aria-hidden="true"></i>
-                </a>
-                <a
-                  href={project.live}
-                  className="btn btn-primary live-demo"
-                  id="live-demo"
-                >
-                  Live Demo
                 </a>
               </div>
             </div>

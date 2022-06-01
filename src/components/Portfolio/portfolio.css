@@ -29,11 +29,28 @@
   background-color: #e28843ad;
 }
 .portfolio_item:nth-child(2) {
-  background-color: #5448c8ad;
+  background-color: white;
+  color: #946bde;
+}
+.portfolio_item:nth-child(2) h3 {
+  color: #946bde;
+  border-bottom: 1px solid #946bde;
+}
+
+.portfolio_item:nth-child(2) a:nth-child(even) {
+  background-color: transparent;
+  color: #946bde;
+}
+.portfolio_item:nth-child(2) a:nth-child(even):hover {
+  background-color: white;
 }
 .portfolio_item:nth-child(3) {
+  background-color: #5448c8ad;
+}
+.portfolio_item:nth-child(4) {
   background-color: #9a031ead;
 }
+
 .portfolio_item:nth-child(4) {
   background-color: #e98a15ad;
 }
