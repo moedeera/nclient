@@ -51,7 +51,7 @@ export const Portfolio = () => {
       id: 5,
       img: old,
       header: "Old Portfolio Website",
-      text: "This was started around 2020 and was my first attempt to create a portfolio website.",
+      text: "This was started around 2020 and was my first attempt to create a portfolio website. It reminds me of the improvements I have made.",
       live: "https://www.deeracode.com",
       repo: "https://github.com/moedeera/Login-Practice",
       color: "#E98A15",
