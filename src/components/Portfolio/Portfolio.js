@@ -5,6 +5,7 @@ import diner from "./diner.svg";
 import bootcamp from "./deerCoded.svg";
 import elearning from "./Elearner.svg";
 import old from "./old.svg";
+import wp from "./wp.svg";
 
 export const Portfolio = () => {
   const [hover, setHover] = useState(false);
@@ -49,22 +50,22 @@ export const Portfolio = () => {
 
     {
       id: 5,
-      img: old,
-      header: "Old Portfolio Website",
-      text: "This was started around 2020 and was my first attempt to create a portfolio website. It reminds me of the improvements I have made.",
-      live: "https://www.deeracode.com",
-      repo: "https://github.com/moedeera/Login-Practice",
+      img: wp,
+      header: "Wordpress Website",
+      text: "A simple but elegant WordPress site for my personal portfolio. Designed to show my skills on the platform. These skills include use of custom themes, plugins, and builders.",
+      live: "https://www.deeracode.ca",
+      repo: "https://www.deeracode.ca",
       color: "#E98A15",
     },
-    // {
-    //   id: 6,
-    //   img: old,
-    //   header: "Old Portfolio Website",
-    //   text: "This was started around 2020 and was my first attempt to create a portfolio website.",
-    //   live: "www.deeracode.com",
-    //   repo: "https://github.com/moedeera/Login-Practice",
-    //   color: "#003B36 ",
-    // },
+    {
+      id: 6,
+      img: old,
+      header: "Old Portfolio Website",
+      text: "This was started around 2020 and was my first attempt to create a portfolio website.",
+      live: "www.deeracode.com",
+      repo: "https://github.com/moedeera/Login-Practice",
+      color: "#003B36 ",
+    },
   ];
   console.log(data);
   return (
