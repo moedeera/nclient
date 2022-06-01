@@ -16,7 +16,7 @@ export const Showcase = () => {
               <span
                 id="creative-text"
                 style={{
-                  color: "gold",
+                  color: "white",
                   fontWeight: "bold",
                 }}
               >
@@ -26,7 +26,7 @@ export const Showcase = () => {
               <span
                 id="modern-web"
                 style={{
-                  color: "white",
+                  color: "gold",
                   fontWeight: "bold",
                 }}
               >
