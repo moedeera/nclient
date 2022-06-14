@@ -35,7 +35,7 @@ export const Portfolio = () => {
       img: elearning,
       header: "E-Reader website",
       text: "A freelance project I am doing for a client who is building a cross platform reader application .",
-      live: "https://librumreader.netlify.app/",
+      live: "https://www.librum-reader.com/",
       repo: "https://github.com/moedeera/ereader",
       color: "steelblue",
     },
