@@ -43,10 +43,6 @@ const LoadUser = async () => {
     } catch (error) {
       console.log(error);
     }
-  }
-
-  if (localStorage.getItem("token")) {
-    return null;
   } else {
     var DemoUser = mock_profiles[0];
     let User;
@@ -123,6 +119,7 @@ export const UserContextProvider = ({ children }) => {
       const newUser = await LoadUser();
       setUser(newUser);
     };
+
     getUser().catch(console.error);
   }, []);
 

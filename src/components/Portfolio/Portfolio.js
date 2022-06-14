@@ -20,15 +20,7 @@ export const Portfolio = () => {
       live: "/socialmedia",
       color: "#e28743",
     },
-    {
-      id: 2,
-      img: elearning,
-      header: "E-Reader website",
-      text: "A freelance project I am doing for a client who is building a cross platform reader application .",
-      live: "https://librumreader.netlify.app/",
-      repo: "https://github.com/moedeera/ereader",
-      color: "steelblue",
-    },
+
     {
       id: 3,
       img: bootcamp,
@@ -47,6 +39,15 @@ export const Portfolio = () => {
       repo: "https://github.com/moedeera/SuperDoniar",
       color: "#9A031E",
     },
+    {
+      id: 2,
+      img: elearning,
+      header: "E-Reader website",
+      text: "A freelance project I am doing for a client who is building a cross platform reader application .",
+      live: "https://librumreader.netlify.app/",
+      repo: "https://github.com/moedeera/ereader",
+      color: "steelblue",
+    },
 
     {
       id: 5,
@@ -62,7 +63,7 @@ export const Portfolio = () => {
       img: old,
       header: "Old Portfolio Website",
       text: "This was started around 2020 and was my first attempt to create a portfolio website.",
-      live: "www.deeracode.com",
+      live: "https://www.deeracode.com",
       repo: "https://github.com/moedeera/Login-Practice",
       color: "#003B36 ",
     },
