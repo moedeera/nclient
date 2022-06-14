@@ -22,15 +22,6 @@ export const Portfolio = () => {
     },
 
     {
-      id: 3,
-      img: bootcamp,
-      header: "Coding Bootcamp site",
-      text: "  A mock coding Boot camp website built with CSS, HTML and JavaScript.It also can connect to a backend via form.",
-      live: "https://deercoded.com",
-      repo: "https://github.com/moedeera/FED-HT-website-design",
-      color: "#5448C8",
-    },
-    {
       id: 4,
       img: diner,
       header: "Dining site",
@@ -57,6 +48,15 @@ export const Portfolio = () => {
       live: "https://www.deeracode.ca",
       repo: "https://www.deeracode.ca",
       color: "#E98A15",
+    },
+    {
+      id: 3,
+      img: bootcamp,
+      header: "Coding Bootcamp site",
+      text: "  A mock coding Boot camp website built with CSS, HTML and JavaScript.It also can connect to a backend via form.",
+      live: "https://deercoded.com",
+      repo: "https://github.com/moedeera/FED-HT-website-design",
+      color: "#5448C8",
     },
     {
       id: 6,
