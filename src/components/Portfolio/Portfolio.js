@@ -22,15 +22,6 @@ export const Portfolio = () => {
     },
 
     {
-      id: 4,
-      img: diner,
-      header: "Dining site",
-      text: "  A dining website for a local business in Saskatoon, This was created using CSS,JavaScript and googleMaps.",
-      live: "https://super-donair.com",
-      repo: "https://github.com/moedeera/SuperDoniar",
-      color: "#9A031E",
-    },
-    {
       id: 2,
       img: elearning,
       header: "E-Reader website",
@@ -38,6 +29,15 @@ export const Portfolio = () => {
       live: "https://www.librum-reader.com/",
       repo: "https://github.com/moedeera/ereader",
       color: "steelblue",
+    },
+    {
+      id: 4,
+      img: diner,
+      header: "Dining site",
+      text: "  A dining website for a local business in Saskatoon, This was created using CSS,JavaScript and googleMaps.",
+      live: "https://super-donair.com",
+      repo: "https://github.com/moedeera/SuperDoniar",
+      color: "#9A031E",
     },
 
     {
